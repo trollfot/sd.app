@@ -1,5 +1,0 @@
-# Create this file: svn propget svn:externals . > EXTERNALS.txt
-# Apply this file:  svn propset svn:externals -F EXTERNALS.txt .
-
-# Common Tools from SD package
-ATVideo https://svn.plone.org/svn/collective/ATVideo/branches/engage
