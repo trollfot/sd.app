@@ -1,0 +1,9 @@
+<input type="text"
+       tal:attributes="name string:${options/name};
+		       value options/key"
+       />
+
+<input type="text"
+       tal:attributes="name string:${options/name};
+		       value options/value"
+       />

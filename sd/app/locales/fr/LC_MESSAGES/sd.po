@@ -1,0 +1,168 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: sd\n"
+"POT-Creation-Date: 2007-10-12 16:08+0100\n"
+"PO-Revision-Date: 2007-10-12 16:08+0100\n"
+"Last-Translator: Souheil CHELFOUH <souheil@chelfouh.com>\n"
+"Language-Team: Souheil CHELFOUH <souheil@chelfouh.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language-Code: fr\n"
+"Language-Name: Français\n"
+"Preferred-Encodings: utf-8\n"
+"Domain: meeting\n"
+"X-Is-Fallback-For: fr-be fr-ca fr-lu fr-mc fr-ch fr-fr\n"
+
+
+## Les vues ##
+msgid  "default"
+msgstr "Vue par défaut"
+
+msgid  "photo_album"
+msgstr "Album photo avec vignettes"
+
+msgid  "paragraph_right_image"
+msgstr "Image sur la droite"
+
+msgid  "custom_view"
+msgstr "Vue personnalisée"
+
+msgid  "simplelisting"
+msgstr "Contenu sous forme d'une simple liste"
+
+msgid  "topic_chapter_view"
+msgstr "Collection-chapitre"
+
+msgid  "enhanced_photo_album"
+msgstr "Album photo avec diaporama (javascript)"
+
+msgid  "content_summary_view"
+msgstr "Vue sommaire avec prévisualisation"
+
+msgid  "chapter_renderer"
+msgstr "Affichage par paragraphe"
+
+
+## Les formulaires ##
+msgid  "chapter_prefs"
+msgstr "Préférences pour le chapitre"
+
+msgid  "Chapter preferences"
+msgstr "Préférences pour le chapitre"
+
+msgid  "adv_chapter_config"
+msgstr "Configuration avancée du chapitre"
+
+msgid  "Advanced chapter configuration"
+msgstr "Configuration avancée du chapitre"
+
+msgid  "chapter_prefs_desc"
+msgstr "Les options ci-dessous vous permettent de personaliser le "
+       "comportement du chapitre"
+
+msgid  "paragraph_prefs"
+msgstr "Préférences pour le paragraphe"
+
+msgid  "Paragraph preferences"
+msgstr "Préférences pour le paragraphe"
+
+msgid  "adv_paragraph_config"
+msgstr "Configuration avancée du paragraphe"
+
+msgid  "Advanced paragraph configuration"
+msgstr "Configuration avancée du paragraphe"
+
+msgid  "paragraph_prefs_desc"
+msgstr "Les options ci-dessous vous permettent de personaliser le "
+       "comportement du paragraphe"
+
+
+## Les champs ##
+msgid  "Title"
+msgstr "Titre"
+
+msgid  "Layout"
+msgstr "Affichage"
+
+msgid  "chapter_layout_desc"
+msgstr "Type d'affichage utilisé pour le chapitre"
+
+msgid  "paragraph_layout_desc"
+msgstr "Type d'affichage utilisé pour le paragraphe"
+
+msgid  "show_title"
+msgstr "Activer le rendu du titre"
+
+msgid  "show_title_desc"
+msgstr "Décoché, le titre ne sera pas rendu lors de l'affichage du document"
+
+msgid  "show_description"
+msgstr "Activer le rendu de la description"
+
+msgid  "show_description_desc"
+msgstr "Décoché, la description ne sera pas rendue lors de l'affichage du document"
+
+msgid  "slideshow_timer"
+msgstr "Minutage"
+
+msgid  "slideshow_timer_desc"
+msgstr "Temps entre chaque image (en seconde)"
+
+msgid "no_image"
+msgstr "Aucune image"
+
+msgid "leave_empty"
+msgstr "Ne pas mettre d'image"
+
+msgid "upload_image"
+msgstr "Télécharger une nouvelle image:"
+
+msgid "keep_image"
+msgstr "Garder l'image existante"
+
+msgid "delete_image"
+msgstr "Supprimer l'image"
+
+msgid "upload_new_image"
+msgstr "Remplacer l'image:"
+
+msgid "label_next"
+msgstr "Suivant"
+
+msgid "label_previous"
+msgstr "Précédent"
+
+msgid  "timer"
+msgstr "Temps entre chaque image (en secondes)"
+
+msgid  "timer_desc"
+msgstr "Cette valeur définit l'intervalle de temps entre chaque image. Si la valeur est de 0, la transition devra s'effectuer manuellement."
+
+msgid  "slideshow_links"
+msgstr "Afficher les liens suivant-précédent"
+
+msgid  "Target folder or topic"
+msgstr "Répertoire ou collection source"
+
+msgid  "Find the source which provides the pictures."
+msgstr "Selectionner la source fournissant les images du diaporama"
+
+msgid  "slideshow_links_desc"
+msgstr "Vous pouvez afficher des liens permettant de passer manuellement d'un image à l'autre"
+
+msgid  "Edit Slideshow Portlet"
+msgstr "Editer la boite diaporama"
+
+msgid  "This portlet display a collection of images."
+msgstr "Cette boite affiche un album photo sous la forme d'un diaporama."
+
+msgid  "configure_display"
+msgstr "Configuration du rendu"
+
+msgid  "configuration_form_name"
+msgstr "Options de personnalisation"
+
+msgid  "no_custom_view"
+msgstr "La vue personnalisée n'est pas active sur cet élément."

@@ -1,0 +1,29 @@
+<div tal:replace="structure provider:sd.above_content_body" />
+<div class="photo-album" tal:define="images view/contents">
+  <tal:paragraphs repeat="item images">
+  <div class="photoAlbumEntry"
+       tal:define="item_url item/getURL;
+		   item_title_or_id item/pretty_title_or_id;
+		   item_description item/Description;">
+    <a href="" alt="" class="pop-image"
+       tal:define="info item/hasImageAndCaption"
+       tal:condition="info/image|nothing"
+       tal:attributes="alt info/caption|item_description;
+		       title item_title_or_id;
+		       rel context/getId;
+		       href string:$item_url/image;">
+      <span class="photoAlbumEntryWrapper">
+	<img src="" alt=""
+	     tal:attributes="alt info/caption|item_description;
+			     title item_title_or_id;
+			     src string:$item_url/image_thumb;" />
+      </span>
+      <span class="photoAlbumEntryTitle"
+	    tal:content="item_title_or_id">
+	Title
+      </span>
+    </a>
+  </div>
+  </tal:paragraphs>
+  <div class="structured-footer">&nbsp;</div>
+</div>

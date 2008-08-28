@@ -1,0 +1,36 @@
+<div tal:replace="structure provider:sd.above_content_body" />
+
+<div class="enhanced-photo-album"
+     tal:define="images view/contents"
+     tal:attributes="id string:gallery-${context/UID}">   
+
+  <ul class="nav">
+    <tal:thumbs repeat="image images">
+    <li tal:attributes="style python:repeat['image'].start and
+			             'opacity: 1' or 'opacity: 0.3'">
+      <a href="#">
+	<img src="" alt="" title=""
+	     tal:attributes="src string:${image/getURL}/image_tile;
+			     alt image/Title;
+			     title image/Description" />
+      </a>
+    </li>
+    </tal:thumbs>
+  </ul>
+
+  <div class="main_image">
+    <tal:thumbs repeat="image images">
+      <a href=""
+	 class="pop-image"
+	 tal:attributes="href string:${image/getURL}/image;
+			 rel context/UID;">
+	<img src="" alt="" title=""
+	     tal:attributes="src string:${image/getURL}/image_preview;
+			     alt image/Title;
+			     title image/Description" />
+      </a>
+  </tal:thumbs>
+  </div>
+  <div class="structured-footer">&nbsp;</div>
+</div>
+<script language="javascript" tal:content="view/javascript" />

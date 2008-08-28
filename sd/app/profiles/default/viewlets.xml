@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<object>
+
+  <order manager="above_content_body"
+	 skinname="Plone Default">
+    <viewlet name="sd.batch" />
+  </order>
+
+  <order manager="sd.below_item_title"
+	 skinname="Plone Default">
+    <viewlet name="sd.kss_layout" />
+    <viewlet name="sd.ordering" insert-before="*"/>
+  </order>
+
+</object>

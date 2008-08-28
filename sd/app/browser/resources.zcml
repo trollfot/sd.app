@@ -1,0 +1,54 @@
+<configure 
+    xmlns="http://namespaces.zope.org/browser">
+
+  <!-- Images -->
+  
+  <resource
+      name="sd.renderer.config.gif"
+      file="resources/images/config.gif"
+      />
+
+  <!-- Stylesheets -->
+
+  <resource
+      name="sd.css"
+      file="resources/stylesheets/sd.css"
+      />
+
+  <resource
+      name="thickbox.css"
+      file="resources/stylesheets/thickbox.css"
+      />
+
+
+  <!-- KSS files -->
+
+  <resource
+      name="sd.kss"
+      file="resources/kss/sd.kss"
+      />
+  
+
+  <!-- Javascripts -->
+
+  <resource
+      name="jquery.intercept-min.js"
+      file="resources/javascripts/jquery.intercept-min.js"
+      />
+
+  <resource
+      name="jquery.sd.js"
+      file="resources/javascripts/jquery.sd.js"
+      />
+  
+  <resource
+      name="jquery.cycle.js"
+      file="resources/javascripts/jquery.cycle.js"
+      />
+
+  <resource
+      name="thickbox.js"
+      file="resources/javascripts/thickbox.js"
+      />
+  
+</configure>

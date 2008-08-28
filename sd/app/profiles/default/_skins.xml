@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!--<object name="portal_skins"
+	allow_any="False"
+	cookie_persistence="False"
+	default_skin="sd"
+	request_varname="plone_skin">
+ <skin-path name="sd" based-on="Plone Default">
+
+ </skin-path>
+</object>-->

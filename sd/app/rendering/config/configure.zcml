@@ -1,0 +1,21 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:sd="http://namespaces.zope.org/sd"
+    i18n_domain="sd">
+  
+  <include package="sd.config" />
+
+  <browser:viewlet
+      name="sd.layout_configuration"
+      manager="sd.app.rendering.browser.interfaces.IAboveContentBody"
+      class=".viewlets.LayoutConfiguration"
+      permission="cmf.ModifyPortalContent" 
+      />
+
+  <sd:rendererConfiguration
+      name="enhanced_photo_album"
+      schema=".interfaces.IEnhancedPhotoAlbumConfig"
+      sheet=".sheets.EnhancedPhotoAlbumConfig"
+      />
+
+</configure>

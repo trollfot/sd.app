@@ -1,0 +1,409 @@
+.field {
+  clear: both;
+}
+
+#structured-document .documentDescription {
+  clear: both;
+}
+
+#sd-document-introduction {
+  margin-top: 1em;
+}
+
+.discussion {
+  margin: 0;
+}
+
+.structured-footer {
+  clear: both;
+}
+
+.structured-paragraph {
+  padding-top: 1em !important;
+}
+
+.chapter-title {
+  padding: 0;
+  margin: 2em 0 0.2em 0;
+  font-size: 120%;
+}
+
+.chapter-body {
+  padding: 0 0 0 1.5em;;
+}
+
+.chapter-title a:hover,
+.chapter-title a {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+
+.structured-paragraph {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+}
+
+.paragraph-body {
+  margin: 0.5em 0 0 0;
+  padding: 0;
+}
+
+.structured-paragraph-footer {
+  padding: 0.5em 0 0 0;
+  margin: 0 0 0.5em 0;
+  clear: both;
+}
+
+.paragraph-image-right {
+  float: right;
+  padding: 0 0 0 0.5em;
+  position: relative;
+}
+
+.paragraph-image-left {
+  float: left;
+  padding: 0 0.5em 0 0;
+  position: relative;
+}
+
+.structured-paragraph a {
+  text-decoration: none !important;
+}
+
+.paragraph-image {
+  text-align: center;
+}
+
+.paragraph-title {
+  font-size: 110%;
+  margin: 0 0 0.2em 0;
+  padding: 0;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-color: #ddd;
+}
+
+.paragraph-image-comment {
+  padding: 0.3em 0 0 0;
+}
+
+#document-whole-index {
+  margin: 1em 0 2em 0;
+  width: 20em;
+}
+
+#document-whole-index dd {
+  margin: 0;
+  padding: 0.5em 0;
+}
+
+#document-whole-index dd li a {
+  border-bottom: 1px solid #ddd;
+}
+
+#document-whole-index dd li a:hover {
+  background-color: #eee;
+}
+
+#document-whole-index,
+.object-actions {
+  padding: 0.4em;
+  border: 1px solid #ddd;
+  background-color: #f4f4f4;
+}
+
+#document-whole-index dl {
+  margin: 1em 2em 0.5em 2em;
+}
+
+.object-actions {
+  margin: 0 0 0.5em 0;
+}
+
+.object-actions ul {
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+
+.object-actions ul li {
+  margin: 0;
+  padding: 0;
+  display: inline;
+  list-style-type: none;
+  list-style-position: outside;
+  list-style-image: none;
+}
+
+.object-actions ul li a {
+  color: #666;
+}
+
+.object-actions .action a,
+#subjects-list dd a {
+  padding: 0 0.4em 0 0.1em;
+  border-right: 1px solid #aaa;
+  border-bottom: 0;
+}
+
+.object-actions .last-action a,
+#subjects-list dd a.last-keyword {
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.next-previous-bottom {
+  margin-top: 2em;
+}
+
+dd#add-chapter {
+  margin: 0;
+}
+
+dd#add-chapter a {
+  background: transparent url(structuredchapter_icon.gif) 0 0 no-repeat;
+  padding-left: 18px;
+}
+
+ul.chapter-translations {
+  float: right;
+  margin: 0 1em 0 0 !important;
+}
+
+.chapter-ordering {
+  float: right;
+}
+
+#structured-document-index {
+  margin: 0.5em;
+  background-color: white;
+  border: 1px solid #666;
+}
+
+#structured-document-index legend {
+  background-color: transparent;
+  font-weight: bold;
+}
+
+.structured-form-description {
+  color: #666;
+  font-size: 90%;
+}
+
+#structured-document-portlets {
+  padding: 0 0 2em 2em;
+  width: 17em;
+  vertical-align: top;
+}
+
+#structured-document-portlets a {
+  border: 0 !important;
+}
+
+#structured-document-portlets dd.portletItem {
+  font-size: 90%;
+}
+
+#structured-document-portlets dd.portletItem dd {
+  margin: 0;
+}
+
+#structured-document-portlets .block-title {
+  font-size: 110%;
+  font-weight: bold;
+}
+
+#structured-document-portlets .picture {
+  text-align: center;
+}
+
+#structured-document-portlets .picture .picture-caption {
+  color: #666;
+}
+
+
+span.reordering {
+  display: block;
+  float: left;
+  margin: 0 0.4em;
+}
+
+span.reordering a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+div.structured-actions {
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ddd;
+  background-color: #f4f4f4;
+  height: 1.5em;
+}
+
+div.structuredDropDownActions {
+  float: right;
+}
+
+a.action-header {
+  margin: 0 0.4em;
+}
+
+div.structured-actions ul.item-actionmenu {
+  margin: 0;
+  height: 1.5em;
+  line-height: 1.4em;
+  border-left: 1px solid #ddd;
+}
+
+.item-actionmenu,
+.item-actionmenu li {
+  list-style-type: none;
+  list-style-position: outside;
+  list-style-image: none;
+}
+
+.item-actionmenu a:visited,
+.item-actionmenu a:active,
+.item-actionmenu a {
+  border: 0 !important;
+  color: #666 !important;
+  font-size: 90%;
+}
+
+dd.portletItem table.block-details {
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+dl.portlet dd.picture {
+  padding: 1em 1em 0 1em !important;
+}
+
+.document-with-blocks {
+  margin-right: 19em;
+  position: relative;
+}
+
+.batch_navigation {
+  padding: 0.5em 0.2em;
+}
+
+.batch_navigation a {
+  text-decoration: none;
+}
+
+.batch_navigation a:hover {
+  background-color: #f4f4f4;
+}
+
+.item-actionmenu ul.submenu li a {
+  padding-left: 15px !important;
+}
+
+.item-actionmenu ul.submenu li a.selected-layout {
+  background: transparent url(bullet.gif) 3px 0 no-repeat !important;
+}
+
+.item-actionmenu ul.submenu {
+  position: absolute;
+  width: 15em;
+  background: #f4f4f4;
+  border-color: #ddd;
+  border-width: 1px;
+  border-style: none solid;
+  margin: 0;
+  z-index: 3;
+  display: none;
+}
+
+.item-actionmenu ul.submenu .layout{
+  border-color: #ddd;
+  border-width: 1px;
+  padding: 0.1em 0;
+  border-style: none none solid none;
+}
+
+.item-actionmenu li.unfolded ul.submenu {
+  display: block;
+}
+
+.item-actionmenu ul.submenu li {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.item-actionmenu ul.submenu a,
+.item-actionmenu ul.submenu a:hover {
+  margin: 0;
+  display: block;
+  position: static !important;
+  white-space: normal;
+}
+
+.item-actionmenu ul.submenu li a.selected-layout:hover,
+.item-actionmenu ul.submenu a:hover {
+  background-color: #e4e4e4 !important;
+}
+
+
+.enhanced-photo-album .nav {
+  margin: 0.5em; 0 !important;
+}
+
+.enhanced-photo-album .nav ul {
+  margin: 0 !important;
+}
+
+.enhanced-photo-album .nav li {
+  display: block;
+  height: 80px;
+  width: 80px;
+  margin: 0 10px 10px 0;
+  padding: auto;
+  border: 1px solid #ddd;
+  line-height: 80px;
+  text-align: center;
+  background-color: white;
+  float: left;
+}
+
+.enhanced-photo-album .main_image {
+  text-align: center;
+  clear: left;
+}
+
+.slideshow {
+  overflow: auto;
+}
+
+.slideshow p {
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+
+.slideshow p img {
+  display: block;
+  margin: 0 auto;
+}
+
+#structured-document-content {
+  border: 0;
+  width: 100%;
+}
+
+#main-structured-document-content {
+  vertical-align: top;
+}
+
+.configuration-sheet {
+  padding: 1em 0 1em 18px;
+  background: transparent url(++resource++sd.renderer.config.gif) 0 50% no-repeat !important;
+}

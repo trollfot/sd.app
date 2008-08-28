@@ -1,0 +1,13 @@
+<configure xmlns="http://namespaces.zope.org/zope">
+  
+  <!-- Additional and internal packages -->
+  <include package="sd.rendering" />
+  <include package=".browser" />
+  <include package=".config" />
+
+  <!-- Configuration files to register renderers -->
+  <include file="meta.zcml" />
+  <include file="chapters.zcml" />
+  <include file="paragraphs.zcml" />
+
+</configure>

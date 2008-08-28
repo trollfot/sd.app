@@ -1,0 +1,29 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="sd">
+
+  <div metal:fill-slot="main"
+       class="structured-chapter simplechapter"
+       tal:define="kssClassesView context/@@kss_field_decorator_view;
+		   getKssClasses nocall:kssClassesView/getKssClassesInlineEditable;">
+
+    <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+    <h1 class="documentFirstHeading"> 
+      <metal:field use-macro="python:context.widget('title', mode='view')">
+	Title
+      </metal:field>
+    </h1>
+
+    <div tal:replace="structure provider:plone.belowcontenttitle" />
+
+    <div tal:attributes="id string:kssattr-bodyid-${context/UID};
+			 class string:chapter-body kssattr-uid-${context/UID}"
+	 tal:condition="options/chapter"
+	 tal:content="structure options/chapter/render" />
+
+    <div tal:replace="structure provider:plone.belowcontentbody" />
+
+  </div>
+
+</html>

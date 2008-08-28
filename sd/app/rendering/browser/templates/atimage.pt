@@ -1,0 +1,23 @@
+<div class="paragraph-image"
+     tal:define="size context/size">
+  <a href=""
+     class="discreet pop-image"
+     tal:attributes="href context/absolute_url;
+		     rel context/aq_parent/getId;">
+    <tal:block condition="size"
+	       replace="structure python: context.tag(scale='preview')" />
+    <br />
+    <span class="visualNoPrint" i18n:domain="plone">
+      <img src="" alt="" tal:replace="structure here/search_icon.gif" />
+      <span i18n:translate="label_click_to_view_full_image">
+	Click to view full-size image&hellip;
+      </span>
+    </span>
+  </a>
+  
+  <p class="structured-paragraph-footer discreet">
+    <strong tal:content="context/Title" />
+    <span tal:content="string:: ${context/Description}"
+	  tal:condition="context/Description"/>
+  </p>
+</div>

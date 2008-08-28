@@ -1,0 +1,26 @@
+<div class="structuredDropDownActions"
+     tal:define="default view/default_layout">
+  <ul tal:attributes="class string:item-actionmenu kssattr-uid-${view/uid}">
+    <li class="action">
+      <a class="action-header"
+	 tal:attributes="href view/url"
+	 i18n:domain="plone"
+	 i18n:translate="label_current_item_views"
+	 i18n:attributes="alt label_current_item_views;
+			  title label_current_item_views">
+	Item display
+      </a>
+      &#8681;
+      <ul class="submenu"
+	  tal:define="voc view/vocabulary">
+	<li tal:repeat="term voc" class="layout">
+	  <a href="#"
+	     tal:define="selected python: term.value == default
+			 and 'selected-layout' or ''"
+	     tal:attributes="class string:kssattr-layout-${term/value} $selected;"
+	     tal:content="term/title" />
+	</li>
+      </ul>
+    </li>
+  </ul>
+</div>

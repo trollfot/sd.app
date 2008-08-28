@@ -1,0 +1,61 @@
+<configure
+    xmlns="http://namespaces.plone.org/plone"
+    i18n_domain="sd">
+
+  <!-- Register the blocks -->
+  <portlet
+      name="sd.country"
+      interface=".interfaces.ICountryBlock"
+      assignment=".country.Country"
+      renderer=".country.Renderer"
+      addview=".country.AddForm"
+      editview=".country.EditForm"
+      view_permission="zope2.View"
+      edit_permission="cmf.ModifyPortalContent"
+      />
+
+  <portlet
+      name="sd.person"
+      interface=".interfaces.IPersonBlock"
+      assignment=".person.Person"
+      renderer=".person.Renderer"
+      addview=".person.AddForm"
+      editview=".person.EditForm"
+      view_permission="zope2.View"
+      edit_permission="cmf.ModifyPortalContent"
+      />
+
+  <portlet
+      name="sd.book"
+      interface=".interfaces.IBookBlock"
+      assignment=".book.Book"
+      renderer=".book.Renderer"
+      addview=".book.AddForm"
+      editview=".book.EditForm"
+      view_permission="zope2.View"
+      edit_permission="cmf.ModifyPortalContent"
+      />
+
+  <portlet
+      name="sd.toc"
+      interface=".interfaces.ITableOfContents"
+      assignment=".toc.TableOfContents"
+      renderer=".toc.Renderer"
+      addview=".toc.AddForm"
+      editview=".toc.EditForm"
+      view_permission="zope2.View"
+      edit_permission="cmf.ModifyPortalContent"
+      />
+
+  <portlet
+      name="sd.slideshow"
+      interface=".slideshow.ISlideshowPortlet"
+      assignment=".slideshow.Assignment"
+      renderer=".slideshow.Renderer"
+      addview=".slideshow.AddForm"
+      editview=".slideshow.EditForm"
+      view_permission="zope2.View"
+      edit_permission="cmf.ModifyPortalContent"
+      />
+
+</configure>

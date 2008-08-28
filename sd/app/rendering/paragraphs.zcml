@@ -1,0 +1,102 @@
+<configure xmlns="http://namespaces.zope.org/sd">
+
+  <paragraphRenderer
+      template="browser/templates/atdocument.pt"
+      description="A simple document/page display"
+      targets="Products.ATContentTypes.interface.IATDocument"
+      />
+
+  <paragraphRenderer
+      template="browser/templates/atimage.pt"
+      description="Image in medium size, centered in the document"
+      targets="Products.ATContentTypes.interface.IATImage"
+      />
+
+  <paragraphRenderer
+      template="browser/templates/atevent.pt"
+      description="Classical event layout with the infos on the right"
+      targets="Products.ATContentTypes.interface.IATEvent"
+      />
+
+  <paragraphRenderer
+      template="browser/templates/atfile.pt"
+      description="A file showing a download link"
+      targets="Products.ATContentTypes.interface.IATFile"
+      />
+
+  <paragraphRenderer
+      template="browser/templates/atlink.pt"
+      description="A basic link to a remote url"
+      targets="Products.ATContentTypes.interface.IATLink"
+      />
+
+  <paragraphRenderer
+      description="Paragraph with an image aligned on the left"
+      renderer=".paragraphs.ImageContentRenderer"
+      targets="sd.app.contents.interfaces.ISimpleParagraph
+	       Products.ATContentTypes.interface.IATNewsItem"
+      template="browser/templates/imagecontent_left.pt"
+      />
+
+  <paragraphRenderer
+      name="paragraph_right_image"
+      description="Paragraph with an image aligned on the right"
+      renderer=".paragraphs.ImageContentRenderer"
+      targets="sd.app.contents.interfaces.ISimpleParagraph
+	       Products.ATContentTypes.interface.IATNewsItem"
+      template="browser/templates/imagecontent_right.pt"
+      />
+
+
+  <!-- Folders -->
+  <paragraphRenderer
+      targets="Products.ATContentTypes.interface.IATFolder
+	       Products.ATContentTypes.interface.IATTopic
+	       sd.app.contents.interfaces.ISimpleChapter"
+      description="Listing of the content"
+      template="browser/templates/folder_listing.pt"
+      folderish="True"
+      />
+
+  <paragraphRenderer
+      name="photo_album"
+      targets="Products.ATContentTypes.interface.IATFolder
+	       Products.ATContentTypes.interface.IATTopic
+	       sd.app.contents.interfaces.ISimpleChapter"
+      description="Photo album with thumbnails"
+      template="browser/templates/photoalbum.pt"
+      filtering="Products.ATContentTypes.interface.image.IPhotoAlbumAble"
+      folderish="True"
+      />
+
+  <paragraphRenderer
+      name="enhanced_photo_album"
+      renderer=".chapters.EnhancedPhotoalbum"
+      targets="Products.ATContentTypes.interface.IATFolder
+	       Products.ATContentTypes.interface.IATTopic
+	       sd.app.contents.interfaces.ISimpleChapter"
+      description="Photo album with JS effects"
+      template="browser/templates/enhanced_photoalbum.pt"
+      filtering="Products.ATContentTypes.interface.image.IPhotoAlbumAble"
+      folderish="True"
+      />
+
+  <paragraphRenderer
+      name="content_summary_view"
+      targets="Products.ATContentTypes.interface.IATFolder
+	       Products.ATContentTypes.interface.IATTopic
+	       sd.app.contents.interfaces.ISimpleChapter"
+      description="A list summarizing the listed content"
+      template="browser/templates/folder_summary.pt"
+      folderish="True"
+      />
+
+  <paragraphRenderer
+      name="custom_view"
+      renderer=".chapters.TopicCustomRenderer"
+      targets="Products.ATContentTypes.interface.topic.IATTopic"
+      template="browser/templates/topic_custom_view.pt"
+      folderish="True"
+      />
+
+</configure>

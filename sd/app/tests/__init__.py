@@ -1,0 +1,2 @@
+"""Structured Document testing package.
+"""

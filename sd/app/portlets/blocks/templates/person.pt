@@ -1,0 +1,30 @@
+<dl class="portlet portlet-person"
+    i18n:domain="sd">
+  <dt class="portletHeader">
+    <span class="portletTopLeft"></span>
+    <a class="tile" tal:content="view/Title" />
+    <span class="portletTopRight"></span>
+  </dt>
+  <dd class="portletItem odd picture"
+      tal:define="flag view/tag; comment view/caption"
+      tal:condition="flag">
+    <a class="pop-image"
+       tal:attributes="href view/getImageUrl;
+		       alt comment;">
+      <tal:portait replace="structure flag" />
+    </a>
+    <div class="picture-caption"
+	 tal:condition="comment"
+	 tal:content="comment">
+      caption
+    </div>
+  </dd>
+  <dd class="portletItem odd">
+    <table class="vertical listing block-details">
+      <tr tal:repeat="detail view/personal_details">
+	<th tal:content="detail/label" />
+	<td tal:content="detail/value" />
+      </tr>
+    </table>
+  </dd>
+</dl>

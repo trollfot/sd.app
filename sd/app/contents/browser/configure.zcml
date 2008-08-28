@@ -1,0 +1,35 @@
+<configure
+    xmlns="http://namespaces.zope.org/browser"
+    xmlns:zope="http://namespaces.zope.org/zope">
+
+  <zope:adapter factory=".nextprevious.SDNextPrevious" />
+
+  <page
+      for="sd.contents.interfaces.IStructuredDocument"
+      name="document_whole"
+      template="templates/document_whole.pt"
+      class=".providers.DocumentContentProvider"
+      permission="zope2.View"
+      allowed_interface=".interfaces.IDocumentContentProvider"
+      />
+
+  <page
+      for="sd.contents.interfaces.IStructuredChapter"
+      name="chapter_view"
+      class=".chapters.SimpleChapterView"
+      permission="zope2.View"
+      />
+
+  <page
+      for="sd.contents.interfaces.IStructuredParagraph"
+      name="paragraph_view"
+      class=".paragraphs.SimpleParagraphView"
+      permission="zope2.View"
+      />
+
+  <resourceDirectory
+      name="sd.icons"
+      directory="icons"
+      />
+
+</configure>

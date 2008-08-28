@@ -1,0 +1,45 @@
+div.structured-paragraph-actions li.layout a:click {
+   evt-click-preventdefault: True;
+   action-server: changeParagraphLayout;
+   changeParagraphLayout-layout: kssAttr('layout');
+   changeParagraphLayout-item: kssAttr('uid', true);
+}
+
+div.structured-chapter-actions li.layout a:click {
+   evt-click-preventdefault: True;
+   action-server: changeChapterLayout;
+   changeChapterLayout-layout: kssAttr('layout');
+   changeChapterLayout-item: kssAttr('uid', true);
+}
+
+.chapter-body > .batch_navigation > a.batch:click {
+   evt-click-preventdefault: True;
+   evt-click-allowbubbling: True;
+   action-server: chapterBatch;
+   chapterBatch-item: kssAttr('uid', True);
+   chapterBatch-action: nodeAttr("name");
+   chapterBatch-page: nodeAttr("rel");
+}
+
+.paragraph-body > .batch_navigation > a.batch:click {
+   evt-click-preventdefault: True;
+   evt-click-allowbubbling: True;
+   action-server: paragraphBatch;
+   paragraphBatch-item: kssAttr('uid', True);
+   paragraphBatch-action: nodeAttr("name");
+   paragraphBatch-page: nodeAttr("rel");
+}
+
+a.move_up:click {
+   evt-click-preventdefault: True;
+   action-server: orderMoveUp;
+   orderMoveUp-parent: kssAttr('parent');
+   orderMoveUp-oid: kssAttr('oid');
+}
+
+a.move_down:click {
+   evt-click-preventdefault: True;
+   action-server: orderMoveDown;
+   orderMoveDown-parent: kssAttr('parent');
+   orderMoveDown-oid: kssAttr('oid');
+}

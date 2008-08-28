@@ -1,0 +1,67 @@
+<configure 
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five">
+
+  <!-- Subpackages -->
+  <include package=".browser" />
+
+
+  <!-- Forms adapters -->
+  <adapter
+      factory=".adapters.DynamicLayoutChapterAdapter" 
+      provides="sd.contents.interfaces.IDynamicStructuredChapter"
+      />
+
+  <adapter
+      factory=".adapters.DynamicLayoutParagraphAdapter"
+      provides="sd.contents.interfaces.IDynamicStructuredParagraph"
+      />
+
+  <adapter
+      factory=".adapters.AnnonationBatchAdapter"
+      provides="sd.contents.interfaces.IBatchProvider"
+      />
+
+
+  <!-- Implementations -->
+  <five:implements
+      class="Products.ATContentTypes.content.image.ATImage"
+      interface="sd.contents.interfaces.IExternalStructuredParagraph
+		 Products.ATContentTypes.interface.image.IPhotoAlbumAble" />
+
+  <five:implements
+      class="Products.ATContentTypes.content.document.ATDocument"
+      interface="sd.contents.interfaces.IExternalStructuredParagraph" />
+
+
+  <five:implements
+      class="Products.ATContentTypes.content.folder.ATFolder"
+      interface="sd.contents.interfaces.IExternalStructuredChapter
+		 sd.contents.interfaces.IExternalStructuredParagraph
+		 sd.contents.interfaces.IPossibleBatchProvider" />
+
+  <five:implements
+      class="Products.ATContentTypes.content.topic.ATTopic"
+      interface="sd.contents.interfaces.IExternalStructuredChapter
+		 sd.contents.interfaces.IExternalStructuredParagraph
+		 sd.contents.interfaces.IPossibleBatchProvider" />
+
+  <five:implements
+      class="Products.ATContentTypes.content.event.ATEvent"
+      interface="sd.contents.interfaces.IExternalStructuredParagraph" />
+
+  <five:implements
+      class="Products.ATContentTypes.content.newsitem.ATNewsItem"
+      interface="sd.contents.interfaces.IExternalStructuredParagraph
+		 Products.ATContentTypes.interface.image.IPhotoAlbumAble
+		 Products.ATContentTypes.interface.image.IImageContent" />
+
+  <five:implements
+      class="Products.ATContentTypes.content.file.ATFile"
+      interface="sd.contents.interfaces.IExternalStructuredParagraph" />
+
+  <five:implements
+      class="Products.ATContentTypes.content.link.ATLink"
+      interface="sd.contents.interfaces.IExternalStructuredParagraph" />
+
+</configure>

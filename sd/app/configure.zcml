@@ -1,0 +1,28 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:i18n="http://namespaces.zope.org/i18n">
+  
+  <!-- Needed external packages -->
+  <include package="zope.annotation" />
+  <include package="sd.common" />
+
+  <!-- subpackages -->
+  <include package=".forms" />
+  <include package=".browser" />
+  <include package=".contents" />
+  <include package=".portlets" />
+  <include package=".rendering" />
+
+  <!-- Other configuration files -->
+  <include file="profiles.zcml"/>
+
+  <!-- Initialize this package and use the given method -->
+  <five:registerPackage
+      package="."
+      initialize=".contents.at_processing" />
+
+  <!-- Translations -->
+  <i18n:registerTranslations directory="locales"/>
+
+</configure>

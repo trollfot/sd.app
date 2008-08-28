@@ -1,0 +1,19 @@
+<div class="batch_navigation discreet"
+     i18n:domain="sd"
+     tal:define="prev_url view/prev_url;
+		 next_url view/next_url;">
+
+  <a href="#" name="previous" class="batch"
+     tal:attributes="rel view/prev;
+		     href prev_url"
+     tal:omit-tag="not:prev_url"
+     ><strong tal:omit-tag="not:prev_url">&#8592;
+  <tal:i18n i18n:translate="label_previous">Previous</tal:i18n></strong></a>
+  &bull;
+  <a href="#" name="next" class="batch"
+     tal:attributes="rel view/next;
+		     href next_url"
+     tal:omit-tag="not:next_url">
+    <strong tal:omit-tag="not:next_url"><tal:i18n i18n:translate="label_next">Next</tal:i18n>
+  &#8594;</strong></a>
+</div>

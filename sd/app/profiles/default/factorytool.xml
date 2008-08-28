@@ -1,0 +1,7 @@
+<object name="portal_factory" meta_type="Plone Factory Tool">
+  <factorytypes>
+    <type portal_type="StructuredDocument" />
+    <type portal_type="SimpleChapter" />
+    <type portal_type="SimpleParagraph" />
+  </factorytypes>
+</object>

@@ -1,0 +1,21 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:meta="http://namespaces.zope.org/meta">
+
+    <meta:directives namespace="http://namespaces.zope.org/sd">
+        
+        <meta:directive
+            name="chapterRenderer"
+            schema=".metadirectives.IStructuredRendererDirective"
+            handler=".metaconfigure.chapterDirective"
+            />
+            
+        <meta:directive
+            name="paragraphRenderer"
+            schema=".metadirectives.IStructuredRendererDirective"
+            handler=".metaconfigure.paragraphDirective"
+            />
+        
+    </meta:directives>
+           
+</configure>

@@ -1,0 +1,44 @@
+<tal:loop repeat="paragraph options/paragraphs">
+<div class="structured-paragraph"
+     tal:define="url context/absolute_url;
+		 cuid context/UID;
+		 puid paragraph/UID;
+		 oid paragraph/getId"
+     tal:attributes="id string:$cuid-$oid;
+		     class string:structured-paragraph kssattr-uid-$puid">
+
+  <a tal:attributes="name string:$cuid-$oid"
+     tal:content="nothing">An anchor to the paragraph</a>
+
+  <tal:block define="item paragraph" 
+	     replace="structure provider:sd.above_item_title" />
+
+  <h3 class="paragraph-title"
+      tal:condition="paragraph/show_title">
+    <a tal:content="paragraph/Title"
+       tal:attributes="title paragraph/Title;
+		       href  string:${paragraph/absolute_url}/view;
+		       name  paragraph/getId;">
+      Paragraph title
+    </a>
+  </h3>
+
+  <div class="structured-actions structured-paragraph-actions"
+       tal:define="item nocall:paragraph;
+		   content provider:sd.below_item_title" 
+       tal:condition="content"
+       tal:content="structure content" />
+
+  <tal:show condition="paragraph/show_description">
+    <p class="discreet paragraph-description"
+       tal:condition="paragraph/Description"
+       tal:content="paragraph/Description" />
+  </tal:show>
+  
+  <div tal:attributes="id string:kssattr-bodyid-$puid"
+       class="paragraph-body">
+    <tal:paragraph content="structure paragraph/render" />
+  </div>
+
+</div>
+</tal:loop>
