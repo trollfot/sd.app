@@ -19,7 +19,7 @@
       </tr>
     </thead>
     <tbody>
-      <tal:brain tal:repeat="obj view/content">
+      <tal:brain tal:repeat="obj view/contents">
 	<tr tal:define="oddrow repeat/obj/odd;"
 	    tal:attributes="class python:oddrow and 'even' or 'odd'">
 	  <tal:fields repeat="field fields"
