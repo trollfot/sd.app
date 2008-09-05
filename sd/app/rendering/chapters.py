@@ -1,17 +1,18 @@
 # -*- coding: utf-8 -*-
+from zope.cachedescriptors.property import Lazy
 
 class TopicCustomRenderer(object):
     """Custom view
     """
-    @property
+    @Lazy
     def enabled(self):
         return self.context.getCustomView()
     
-    @property
+    @Lazy
     def fields(self):
         return self.context.getCustomViewFields()
 
-    @property
+    @Lazy
     def metadatas(self):
         return self.context.listMetaDataFields(False)
 
@@ -19,7 +20,7 @@ class TopicCustomRenderer(object):
 class EnhancedPhotoalbum(object):
     """A content fetcher that adds javascript
     """
-    @property
+    @Lazy
     def timer(self):
         conf = self.configuration
         return conf and conf.timer * 1000 or 0

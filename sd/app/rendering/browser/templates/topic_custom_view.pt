@@ -46,7 +46,7 @@
     </tbody>
   </table>
 </tal:custom>
-<tal:notcustom i18n:domain="sd">
+<tal:notcustom condition="not: enabled" i18n:domain="sd">
   <span class="discreet" i18n:translate="no_custom_view">
     The custom view is not enabled on this collection.
   </span>
