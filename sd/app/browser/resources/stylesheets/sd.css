@@ -18,13 +18,9 @@
   clear: both;
 }
 
-.structured-paragraph {
-  padding-top: 1em !important;
-}
-
 .chapter-title {
   padding: 0;
-  margin: 2em 0 0.2em 0;
+  margin: 1em 0 0.2em 0;
   font-size: 120%;
 }
 
@@ -38,7 +34,6 @@
   text-decoration: none;
 }
 
-
 .structured-paragraph {
   margin: 0;
   padding: 0;
@@ -46,7 +41,7 @@
 }
 
 .paragraph-body {
-  margin: 0.5em 0 0 0;
+  margin: 0.5em 0 0.2em 0;
   padding: 0;
 }
 
@@ -58,13 +53,13 @@
 
 .paragraph-image-right {
   float: right;
-  padding: 0 0 0 0.5em;
+  padding: 0 0 0 1.1em;
   position: relative;
 }
 
 .paragraph-image-left {
   float: left;
-  padding: 0 0.5em 0 0;
+  padding: 0 1.1em 0 0;
   position: relative;
 }
 
@@ -78,7 +73,7 @@
 
 .paragraph-title {
   font-size: 110%;
-  margin: 0 0 0.2em 0;
+  margin: 0.4em 0 0.2em 0;
   padding: 0;
   border-width: 0 0 1px 0;
   border-style: solid;
@@ -223,6 +218,9 @@ ul.chapter-translations {
   color: #666;
 }
 
+.portlet-toc .portletItem ol {
+  margin: 0 0 0 2em;
+}
 
 span.reordering {
   display: block;
@@ -239,7 +237,7 @@ span.reordering a {
 
 div.structured-actions {
   padding: 0;
-  margin: 0;
+  margin: 0.2em 0;
   border: 1px solid #ddd;
   background-color: #f4f4f4;
   height: 1.5em;
@@ -281,7 +279,7 @@ dd.portletItem table.block-details {
 }
 
 dl.portlet dd.picture {
-  padding: 1em 1em 0 1em !important;
+  padding: 1em !important;
 }
 
 .document-with-blocks {
