@@ -16,7 +16,7 @@
 	      tal:content="comment">
 	  Image's caption text
 	</span>
-	</tal:comment>
+      </tal:comment>
     </a>
   </div>
   
@@ -24,6 +24,6 @@
      tal:content="structure context/getText">
     Paragraph's body text
   </p>
-
+  
   <div class="structured-footer" />
 </div>

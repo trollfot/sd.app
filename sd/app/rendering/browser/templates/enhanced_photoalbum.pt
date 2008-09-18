@@ -1,8 +1,10 @@
-<div tal:replace="structure provider:sd.above_content_body" />
+<tal:images define="images view/contents">
 
 <div class="enhanced-photo-album"
-     tal:define="images view/contents"
+     tal:condition="images"
      tal:attributes="id string:gallery-${context/UID}">   
+
+  <div tal:replace="structure provider:sd.above_content_body" />
 
   <ul class="nav">
     <tal:thumbs repeat="image images">
@@ -32,5 +34,14 @@
   </tal:thumbs>
   </div>
   <div class="structured-footer">&nbsp;</div>
+  <script language="javascript" tal:content="view/javascript" />
 </div>
-<script language="javascript" tal:content="view/javascript" />
+
+<p class="discreet"
+   i18n:domain="plone"
+   tal:condition="not: images"
+   i18n:translate="description_no_items_in_folder">
+  There are currently no items in this folder.
+</p>
+
+</tal:images>
