@@ -25,7 +25,7 @@
 
   <!-- custom widgets -->
   <zope:adapter
-      for="zope.schema.interfaces.IObject
+      for="..interfaces.ITermField
 	   zope.publisher.interfaces.browser.IBrowserRequest"
       provides="zope.app.form.interfaces.IInputWidget"
       factory=".widgets.TermWidget"

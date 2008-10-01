@@ -5,7 +5,12 @@ from zope.interface import Interface
 
 
 class ITerm(Interface):
-    """A very simple term representing a couple key/value
+    """A very simple term representing a couple key/value.
     """
     label = TextLine(title=u'Label')
     value = TextLine(title=u'Value')
+
+
+class ITermField(Interface):
+    """A field using an ITerm as an object value.
+    """
