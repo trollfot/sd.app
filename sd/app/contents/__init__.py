@@ -1,6 +1,7 @@
 """SD application contents
 """
-from sd import PROJECTNAME
+PROJECTNAME = "sd"
+
 from Products.CMFCore.utils import ContentInit
 from Products.Archetypes import process_types
 from Products.Archetypes.public import listTypes
