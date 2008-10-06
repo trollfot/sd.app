@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 # Imports: Structured Document
-from sd import PROJECTNAME
+from sd.app.contents import PROJECTNAME
 from sd.contents.container  import StructuredContainer
 from sd.contents.interfaces import IStructuredChapter
 from sd.contents.interfaces import IStructuredDocument

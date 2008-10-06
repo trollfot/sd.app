@@ -4,7 +4,7 @@ from zope.interface import implements, directlyProvides
 from Products.ATContentTypes.content import document, newsitem, image
 from Products.ATContentTypes.interface.image import IPhotoAlbumAble
 
-from sd import PROJECTNAME
+from sd.app.contents import PROJECTNAME
 from interfaces import ISimpleParagraph
 from image_content import *
 

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from zope.interface import Interface, implements
-from sd import PROJECTNAME
+from sd.app.contents import PROJECTNAME
 from sd.contents.container import StructuredContainer
 from sd.contents.interfaces import IStructuredParagraph, IBatchProvider
 from interfaces import ISimpleChapter
