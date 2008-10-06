@@ -3,15 +3,12 @@
   <catalogmap>
     <type portal_type="StructuredDocument">
       <catalog value="portal_catalog"/>
-      <catalog value="uid_catalog"/>
     </type>
     <type portal_type="SimpleChapter">
       <catalog value="portal_catalog"/>
-      <catalog value="uid_catalog"/>
     </type>
     <type portal_type="SimpleParagraph">
       <catalog value="portal_catalog"/>
-      <catalog value="uid_catalog"/>
     </type>
   </catalogmap>
 </archetypetool>
