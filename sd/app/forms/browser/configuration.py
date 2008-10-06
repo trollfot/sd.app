@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
 
 from zope.formlib import form
+from zope.i18nmessageid import MessageFactory
 from plone.app.form.base import EditForm
-from sd import _
 from sd.contents.interfaces import IBatchProvider
 from sd.contents.interfaces import IDynamicStructuredChapter
 from sd.contents.interfaces import IDynamicStructuredParagraph
+
+_ = MessageFactory("sd")
 
 
 class StructuredBatchForm(EditForm):

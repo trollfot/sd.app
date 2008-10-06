@@ -2,16 +2,18 @@
 
 from zope.interface import Attribute
 from zope.schema import Int, List, TextLine, Object, Choice, Bool
+from zope.i18nmessageid import MessageFactory
 
 from Products.ATContentTypes.interface import IATTopic
 from Products.Archetypes.interfaces._base import IBaseFolder
 from plone.app.vocabularies.catalog import SearchableTextSourceBinder
 
-from sd import _
 from sd.imaging.field import ImageField
 from sd.imaging.interfaces import IPortletWithImage
 from sd.contents.interfaces import IStructuredBlock
 from sd.app.forms.interfaces import ITerm
+
+_ = MessageFactory("sd")
 
 
 class IStructuredIllustratedBlock(IStructuredBlock, IPortletWithImage):

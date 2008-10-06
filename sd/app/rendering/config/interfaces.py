@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 
 from zope.schema import Int, Bool
+from zope.i18nmessageid import MessageFactory
 from sd.config.interfaces import IConfigurationSheet
-from sd import _
+
+_ = MessageFactory("sd")
 
 
 class IEnhancedPhotoAlbumConfig(IConfigurationSheet):

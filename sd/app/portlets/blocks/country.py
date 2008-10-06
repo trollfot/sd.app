@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
+
 from zope.interface import implements
 from zope.formlib.form import Fields
+from zope.i18nmessageid import MessageFactory
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-
-from sd import _
 from sd.imaging.portlet import *
 from interfaces import ICountryBlock
+
+_ = MessageFactory("sd")
 
 
 class Country(AssignmentWithImage):

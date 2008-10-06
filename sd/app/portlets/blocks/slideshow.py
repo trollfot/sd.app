@@ -3,6 +3,7 @@
 from zope.formlib import form
 from zope.interface import implements
 from zope.component import getMultiAdapter
+from zope.i18nmessageid import MessageFactory
 
 from plone.memoize.instance import memoize
 from plone.app.portlets.portlets import base
@@ -13,8 +14,9 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.ATContentTypes.interface import IATTopic
 from Products.CMFPlone.utils import normalizeString
 
-from sd import _
 from interfaces import ISlideshowPortlet
+
+_ = MessageFactory("sd")
 
 
 class Assignment(base.Assignment):

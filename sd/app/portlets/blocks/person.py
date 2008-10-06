@@ -3,10 +3,12 @@
 from zope.interface import implements
 from zope.formlib.form import Fields
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from zope.i18nmessageid import MessageFactory
 
-from sd import _
 from sd.imaging.portlet import *
 from interfaces import IPersonBlock
+
+_ = MessageFactory("sd")
 
 
 class Person(AssignmentWithImage):

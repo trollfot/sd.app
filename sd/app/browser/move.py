@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
 from zope.interface import Interface
+from zope.i18nmessageid import MessageFactory
 from kss.core import KSSView, kssaction
 from Products.CMFCore.utils import getToolByName
 from Products.Five import BrowserView
-from sd import _
+
+_ = MessageFactory("sd")
+
 
 class SdOrdering(BrowserView):
 

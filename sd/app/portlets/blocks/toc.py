@@ -2,12 +2,13 @@
 
 from zope.interface import implements
 from zope.formlib.form import Fields
+from zope.i18nmessageid import MessageFactory
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone.app.portlets.portlets import base
-
-from sd import _
 from sd.common.portlets.base import BasePortletRenderer
 from interfaces import ITableOfContents
+
+_ = MessageFactory("sd")
 
 
 class TableOfContents(base.Assignment):
