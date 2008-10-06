@@ -12,10 +12,10 @@ from Products.Archetypes.public import registerType
 from Products.ATContentTypes.content.document import ATDocument
 
 
-class StructuredDocument( StructuredContainer ):
-    """A structured document"""
-
-    implements( IStructuredDocument )
+class StructuredDocument(StructuredContainer):
+    """A structured document
+    """
+    implements(IStructuredDocument)
 
     # Configuration of my type
     schema = StructuredContainer.schema.copy() + \
