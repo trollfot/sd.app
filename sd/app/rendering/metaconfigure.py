@@ -15,7 +15,7 @@ from sd.common.pagetemplate import ViewPageTemplateAndMacroFile
 
 def chapterDirective(_context, targets, renderer=None, template=None,
                      name="default", filtering = None, description=None,
-                     folderish=True, macro=None):
+                     folderish=True, macro=None, layer=None):
 
     cname = "Chapter renderer %s" % name
     attrs = {}
@@ -43,14 +43,17 @@ def chapterDirective(_context, targets, renderer=None, template=None,
     if filtering:
         klass._filtering = filtering
 
+    if layer is None:
+        layer = IBrowserRequest
+
     for target in targets:
         adapter(_context, (klass,), provides = IChapterRenderer,
-                for_ = (target,IBrowserRequest), name = name, trusted=True)
+                for_ = (target,layer), name = name, trusted=True)
     
 
 def paragraphDirective(_context, targets, renderer=None, template=None,
                        name="default", filtering = None, description=None,
-                       folderish=False, macro=None):
+                       folderish=False, macro=None, layer=None):
     
     cname = "Paragraph renderer %s" % name
     attrs = {}
@@ -78,6 +81,9 @@ def paragraphDirective(_context, targets, renderer=None, template=None,
     if filtering:
         klass._filtering = filtering
 
+    if layer is None:
+        layer = IBrowserRequest
+        
     for target in targets:
         adapter(_context, (klass,), provides = IParagraphRenderer,
-                for_ = (target,IBrowserRequest), name = name, trusted=True)
+                for_ = (target,layer), name = name, trusted=True)

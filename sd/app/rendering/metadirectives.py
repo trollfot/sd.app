@@ -48,3 +48,7 @@ class IStructuredRendererDirective(Interface):
         title=u"Defines if the renderer should provide folder's utilities",
         required=False
         )
+
+    layer = configuration_fields.GlobalInterface(
+        title=u"Skin layer interface",
+        required=False)
