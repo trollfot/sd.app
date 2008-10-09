@@ -16,7 +16,7 @@
   <property name="product">sd.app</property>
   <property name="factory">addSimpleParagraph</property>
   <property name="allow_discussion">False</property>
-  <property name="global_allow">False</property>
+  <property name="global_allow">True</property>
 
   <!-- Views and aliases configuration -->
   <property name="immediate_view">paragraph_view</property>
