@@ -8,7 +8,9 @@
 
   <ul class="nav">
     <tal:thumbs repeat="image images">
-    <li tal:attributes="style python:repeat['image'].start and
+    <li tal:define="info image/hasImageAndCaption"
+	tal:condition="info/image|nothing"
+	tal:attributes="style python:repeat['image'].start and
 			             'opacity: 1' or 'opacity: 0.3'">
       <a href="#">
 	<img src="" alt="" title=""
@@ -24,6 +26,8 @@
     <tal:thumbs repeat="image images">
       <a href=""
 	 class="pop-image"
+	 tal:define="info image/hasImageAndCaption"
+	 tal:condition="info/image|nothing"
 	 tal:attributes="href string:${image/getURL}/image;
 			 rel context/UID;">
 	<img src="" alt="" title=""
