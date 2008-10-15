@@ -5,7 +5,7 @@ from zope.interface import Interface
 class IDocumentContentProvider(Interface):
     """Interface to get the structure of a structured document
     """
-    def contents():
-        """Returns a list of brains, representing the contained objects.
+    def contents(self, full_objects=True):
+        """Returns a list of contained items. If full_objects is set to None,
+        it returns the corresponding catalog brains instead.
         """
-        
