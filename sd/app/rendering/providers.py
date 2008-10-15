@@ -3,6 +3,7 @@
 from zope.interface import Interface, implements
 from zope.component import queryAdapter, adapts, provideAdapter
 from zope.component import queryMultiAdapter
+from zope.cachedescriptors.property import CachedProperty
 from zope.publisher.interfaces.browser import IBrowserRequest
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
@@ -31,7 +32,7 @@ class DocumentChaptering(BaseStructuredContentProvider):
 
         return self.template(chapters = chapters)
 
-    @property
+    @CachedProperty
     def chapters(self):
         return self.view.contents(full_objects=True)
 
@@ -56,7 +57,7 @@ class DocumentParagraphing(BaseStructuredContentProvider):
 
         return self.template(paragraphs = paragraphs)
 
-    @property
+    @CachedProperty
     def paragraphs(self):
         return self.view.contents(full_objects=True)
 

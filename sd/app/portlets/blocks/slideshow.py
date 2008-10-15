@@ -4,14 +4,13 @@ from zope.formlib import form
 from zope.interface import implements
 from zope.component import getMultiAdapter
 from zope.i18nmessageid import MessageFactory
+from zope.cachedescriptors.property import CachedProperty
 
-from plone.memoize.instance import memoize
 from plone.app.portlets.portlets import base
 from plone.portlets.interfaces import IPortletDataProvider
 from plone.app.form.widgets.uberselectionwidget import UberSelectionWidget
 
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-from Products.ATContentTypes.interface import IATTopic
 from Products.CMFPlone.utils import normalizeString
 
 from interfaces import ISlideshowPortlet
@@ -36,7 +35,7 @@ class Assignment(base.Assignment):
         self.timer = timer
         self.links = links
 
-    @property
+    @CachedProperty
     def title(self):
         """Title of the portlet
         """
@@ -55,16 +54,15 @@ class Renderer(base.Renderer):
     def Title(self):
         return self.data.name
 
-    @property
+    @CachedProperty
     def available(self):
         return len(self.results)
 
-    @property
+    @CachedProperty
     def show_links(self):
         return self.data.links
 
-    @property
-    @memoize
+    @CachedProperty
     def results(self):
         """Get the actual result brains from the collection.
         It will limit the actual selection to photos.
@@ -78,7 +76,7 @@ class Renderer(base.Renderer):
             results = handler and handler.query_contents(contentFilter) or []
         return results
 
-    @property
+    @CachedProperty
     def javascript_snippet(self):
         return """jq(document).ready(function(){ 
           jq('#slideshow-%(uid)s .slideshow').cycle({ 
@@ -93,8 +91,7 @@ class Renderer(base.Renderer):
           """ % {'uid': self.uid,
                  'timer': self.data.timer*1000}
 
-    @property
-    @memoize
+    @CachedProperty
     def source(self):
         """Get the source provider.
         """
