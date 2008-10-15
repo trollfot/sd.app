@@ -15,6 +15,7 @@ from Products.ATContentTypes.interface import IATTopic
 from Products.CMFPlone.utils import normalizeString
 
 from interfaces import ISlideshowPortlet
+from sd.common.adapters.interfaces import IContentQueryHandler
 
 _ = MessageFactory("sd")
 
@@ -72,11 +73,9 @@ class Renderer(base.Renderer):
         source = self.source
         iface = "Products.ATContentTypes.interface.image.IPhotoAlbumAble"
         if source is not None:
-            if IATTopic.providedBy(source):
-                results = source.queryCatalog(object_provides = iface)
-            else:
-                filters = dict(object_provides = iface)
-                results = source.getFolderContents(contentFilter = filters)
+            contentFilter = dict(object_provides = iface)
+            handler = IContentQueryHandler(source, None)
+            results = handler and handler.query_contents(contentFilter) or []
         return results
 
     @property

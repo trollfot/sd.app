@@ -5,13 +5,13 @@ from Products.Five  import BrowserView
 from Products.CMFCore.utils import getToolByName
 from plone.memoize.instance import memoize
 from sd.rendering.interfaces import IStructuredDocumentView
-from interfaces import IDocumentContentProvider
+from sd.common.adapters.interfaces import IContentQueryHandler
 
 
 class DocumentContentProvider(BrowserView):
     """Access to a document contents
     """
-    implements(IDocumentContentProvider, IStructuredDocumentView)
+    implements(IStructuredDocumentView)
     
     def __init__(self, context, request):
         self.context = context
@@ -19,7 +19,9 @@ class DocumentContentProvider(BrowserView):
 
     @memoize
     def contents(self, full_objects=True):
-        iface  = {"object_provides":
-                  'sd.contents.interfaces.IStructuredChapter'}       
-        return self.context.getFolderContents(contentFilter = iface,
-                                              full_objects = full_objects)
+        contentFilter  = {"object_provides":
+                          'sd.contents.interfaces.IStructuredChapter'}
+        handler = IContentQueryHandler(self.context)
+        brains = handler and handler.query_contents(contentFilter) or []
+        return (full_objects and [brain.getObject() for brain in brains]
+                or brains)

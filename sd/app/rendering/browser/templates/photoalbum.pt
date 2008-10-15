@@ -5,14 +5,13 @@
 <div class="photo-album" tal:condition="images">
   <tal:paragraphs repeat="item images">
   <div class="photoAlbumEntry"
+       tal:condition="info/image|nothing"
+       tal:define="info item/hasImageAndCaption">
+    <a href="" alt="" class="pop-image"
        tal:define="item_url item/getURL;
 		   item_title_or_id item/pretty_title_or_id;
-		   item_description item/Description;">
-    <a href="" alt="" class="pop-image"
-       tal:define="info item/hasImageAndCaption"
-       tal:condition="info/image|nothing"
-       tal:attributes="alt info/caption|item_description;
-		       title item_title_or_id;
+		   item_description item/Description;"
+       tal:attributes="title item_title_or_id;
 		       rel context/getId;
 		       href string:$item_url/image;">
       <span class="photoAlbumEntryWrapper">

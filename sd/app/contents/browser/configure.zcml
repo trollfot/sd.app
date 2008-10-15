@@ -10,7 +10,7 @@
       template="templates/document_whole.pt"
       class=".providers.DocumentContentProvider"
       permission="zope2.View"
-      allowed_interface=".interfaces.IDocumentContentProvider"
+      allowed_attributes="contents"
       />
 
   <page

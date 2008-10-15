@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from zope.interface import implements
+from zope.interface import Interface, implements
 from zope.component import queryAdapter, adapts, provideAdapter
 from zope.component import queryMultiAdapter
 from zope.publisher.interfaces.browser import IBrowserRequest
@@ -15,7 +15,7 @@ class DocumentChaptering(BaseStructuredContentProvider):
     """A content provider serving chapters.
     """
     implements(IStructuredDocumentChaptering)
-    adapts(IStructuredDocument, IBrowserRequest, IStructuredDocumentView)
+    adapts(Interface, IBrowserRequest, IBaseStructuredContentProvider)
 
     template = ViewPageTemplateFile("browser/templates/chaptering.pt")
 
@@ -33,14 +33,14 @@ class DocumentChaptering(BaseStructuredContentProvider):
 
     @property
     def chapters(self):
-        return self.__parent__.contents(full_objects=True)
+        return self.view.contents(full_objects=True)
 
 
 class DocumentParagraphing(BaseStructuredContentProvider):
     """A content provider serving paragraphs.
     """
     implements(IStructuredDocumentParagraphing)
-    adapts(IStructuredChapter, IBrowserRequest, IStructuredChapterView)
+    adapts(Interface, IBrowserRequest, IBaseStructuredContentProvider)
 
     template = ViewPageTemplateFile("browser/templates/paragraphing.pt")
 
@@ -58,7 +58,7 @@ class DocumentParagraphing(BaseStructuredContentProvider):
 
     @property
     def paragraphs(self):
-        return self.__parent__.contents(full_objects=True)
+        return self.view.contents(full_objects=True)
 
 
 # Registering content providers
