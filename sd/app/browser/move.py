@@ -33,7 +33,7 @@ class SdOrdering(BrowserView):
 class KssSdOrdering(KSSView):
 
     def getObjectFromUid(self, uid):
-        cat = getToolByName(self.context, 'uid_catalog')
+        cat = getToolByName(self.context, 'portal_catalog')
         res = cat and cat(UID=uid) or None
         return res and res[0].getObject() or None
 
@@ -41,6 +41,10 @@ class KssSdOrdering(KSSView):
     @kssaction
     def orderMoveUp(self, parent, oid):
         obj  = self.getObjectFromUid(parent)
+
+        if obj is None:
+            return self.render()
+        
         idxs = obj.objectIds()
         idx  = idxs.index(oid)
 
@@ -63,6 +67,10 @@ class KssSdOrdering(KSSView):
     @kssaction
     def orderMoveDown(self, parent, oid):
         obj  = self.getObjectFromUid(parent)
+        
+        if obj is None:
+            return self.render()
+        
         idxs = obj.objectIds()
         idx  = idxs.index(oid)
         length = len(idxs)
