@@ -33,6 +33,13 @@
       />
 
   <viewlet
+      name="sd.access"
+      manager=".interfaces.IBelowRendererTitle"
+      class=".viewlets.AccessViewlet"
+      permission="cmf.ModifyPortalContent" 
+      />
+
+  <viewlet
       name="sd.kss_layout"
       manager=".interfaces.IBelowRendererTitle"
       class=".viewlets.LayoutViewlet"

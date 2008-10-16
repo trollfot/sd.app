@@ -8,8 +8,9 @@
 
   <order manager="sd.below_item_title"
 	 skinname="Plone Default">
-    <viewlet name="sd.kss_layout" />
     <viewlet name="sd.ordering" insert-before="*"/>
+    <viewlet name="sd.access" insert-after="sd.ordering"/>
+    <viewlet name="sd.kss_layout" />
   </order>
 
 </object>

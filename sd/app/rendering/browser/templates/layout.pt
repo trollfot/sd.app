@@ -5,15 +5,16 @@
       <a class="action-header"
 	 tal:attributes="href view/url"
 	 i18n:domain="plone"
-	 i18n:translate="label_current_item_views"
-	 i18n:attributes="alt label_current_item_views;
-			  title label_current_item_views">
-	Item display
+	 ><tal:header
+	      i18n:translate="label_current_item_views"
+	      i18n:attributes="alt label_current_item_views;
+			       title label_current_item_views"
+	      >Item display</tal:header>
+	<small>&#9660;</small>
       </a>
-      &#8681;
       <ul class="submenu"
 	  tal:define="voc view/vocabulary">
-	<li tal:repeat="term voc" class="layout">
+	<li tal:repeat="term voc" class="layout submenu-item">
 	  <a href="#"
 	     tal:define="selected python: term.value == default
 			 and 'selected-layout' or ''"

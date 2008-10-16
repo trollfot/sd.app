@@ -81,3 +81,11 @@ class LayoutViewlet(ViewletBase):
     def update(self):           
         self.uid = self.manager.item.UID()
         self.url = self.manager.item._edit_url
+
+
+class AccessViewlet(ViewletBase):
+    render = ViewPageTemplateFile("templates/access.pt")
+
+    def update(self):
+        self.access = self.manager.item.absolute_url()
+        self.edit = self.access + '/edit'

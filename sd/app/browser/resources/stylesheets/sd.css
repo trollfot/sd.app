@@ -102,8 +102,7 @@
   background-color: #eee;
 }
 
-#document-whole-index,
-.object-actions {
+#document-whole-index {
   padding: 0.4em;
   border: 1px solid #ddd;
   background-color: #f4f4f4;
@@ -111,42 +110,6 @@
 
 #document-whole-index dl {
   margin: 1em 2em 0.5em 2em;
-}
-
-.object-actions {
-  margin: 0 0 0.5em 0;
-}
-
-.object-actions ul {
-  margin: 0;
-  padding: 0;
-  display: inline;
-}
-
-.object-actions ul li {
-  margin: 0;
-  padding: 0;
-  display: inline;
-  list-style-type: none;
-  list-style-position: outside;
-  list-style-image: none;
-}
-
-.object-actions ul li a {
-  color: #666;
-}
-
-.object-actions .action a,
-#subjects-list dd a {
-  padding: 0 0.4em 0 0.1em;
-  border-right: 1px solid #aaa;
-  border-bottom: 0;
-}
-
-.object-actions .last-action a,
-#subjects-list dd a.last-keyword {
-  border-right: 0;
-  border-bottom: 0;
 }
 
 .next-previous-bottom {
@@ -319,7 +282,7 @@ dl.portlet dd.picture {
   display: none;
 }
 
-.item-actionmenu ul.submenu .layout{
+.item-actionmenu ul.submenu .submenu-item {
   border-color: #ddd;
   border-width: 1px;
   padding: 0.1em 0;
