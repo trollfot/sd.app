@@ -1,0 +1,26 @@
+<div class="structuredDropDownActions">
+  <ul class="item-actionmenu">
+    <li class="action">
+      <a class="action-header"
+	 tal:attributes="href view/access"
+	 i18n:domain="plone"
+	 ><tal:header
+	      i18n:translate="Actions"
+	      i18n:attributes="alt Actions;
+			       title Actions"
+		 >Actions</tal:header>
+      <small>&#9660;</small>
+      </a>
+      <ul class="submenu" i18n:domain="plone">
+	<li class="submenu-item">
+	  <a tal:attributes="href view/access"
+	     i18n:translate="">View</a>
+	</li>
+	<li class="submenu-item">
+	  <a tal:attributes="href view/edit"
+	     i18n:translate="">Edit</a>
+	</li>
+      </ul>
+    </li>
+  </ul>
+</div>
