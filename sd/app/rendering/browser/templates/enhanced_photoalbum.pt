@@ -28,12 +28,13 @@
 	 class="pop-image"
 	 tal:define="info image/hasImageAndCaption"
 	 tal:condition="info/image|nothing"
-	 tal:attributes="href string:${image/getURL}/image;
+	 tal:attributes="href string:${image/getURL}/image_large;
 			 rel context/UID;">
 	<img src="" alt="" title=""
 	     tal:attributes="src string:${image/getURL}/image_preview;
 			     alt image/Title;
 			     title image/Description" />
+      <h6 tal:content="image/Title|image/Description" />
       </a>
   </tal:thumbs>
   </div>

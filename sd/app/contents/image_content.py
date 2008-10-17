@@ -6,9 +6,10 @@ from Products.Archetypes.public import (listTypes, DisplayList, Schema,
 ORIGINAL_SIZE = (600,600)
 
 TAG_SIZES = ATImageSchema['image'].sizes
-TAG_NAMES = DisplayList((lambda l: (l.sort(), l.reverse(), l)[2])
-                        ([(k, '%d x %d pixels' % v) for k, v
-                          in TAG_SIZES.items()]))
+TAG_VALUES = [(v, k, '%d x %d pixels' % v) for k, v in TAG_SIZES.items()]
+TAG_VALUES.sort()
+TAG_VALUES.reverse()
+TAG_NAMES = DisplayList([ (k, label) for v, k, label in TAG_VALUES ])
 
 tagselector = Schema((
     StringField('image_scale',
