@@ -1,0 +1,19 @@
+<span class="reordering"
+      tal:define="url context/absolute_url;
+		  oid context/getId;
+		  uid context/parentUID">
+
+  <a type="submit"
+     tal:attributes="href string:$url/@@doMoveUp?oid=$oid;
+		     class string:move_up kssattr-parent-$uid
+		     kssattr-oid-$oid"
+     >&uarr;</a>
+  
+  <a type="submit"
+     href="#"
+     tal:attributes="href string:$url/@@doMoveDown?oid=$oid;
+		     class string:move_down kssattr-parent-$uid
+		     kssattr-oid-$oid"
+     >&darr;</a>
+  
+</span>

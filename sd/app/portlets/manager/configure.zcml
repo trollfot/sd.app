@@ -1,0 +1,40 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser">
+
+    <!-- Portlet management pages -->    
+    <browser:page
+      for="sd.contents.interfaces.IStructuredDocument"
+      class=".manage.ManageSDBlocks"
+      name="manage-blocks"
+      template="templates/manage-blocks.pt"
+      permission="cmf.ModifyPortalContent"
+      />
+
+    <!-- Renderers for the blocks column -->
+    <adapter
+	factory=".render.SDBlocksEditRenderer"
+	provides="plone.portlets.interfaces.IPortletManagerRenderer"
+	/>
+
+    <adapter
+	factory=".render.SDBlocksManagerRenderer"
+	provides="plone.portlets.interfaces.IPortletManagerRenderer"
+	/>
+
+    <!-- Namespace traversal adapters for various types of portlets -->
+    <adapter
+	name="blocks"
+	factory=".traversal.SDBlocksNamespace"
+	/>
+    
+    <!-- Specific portlet storage -->
+    <adapter factory=".assignable.localPortletAssignmentMappingAdapter" />
+
+    <!-- Specific security checker -->
+    <adapter factory=".check.BlockPermissionChecker" />
+
+    <!-- Specific context provider for the portlets -->
+    <adapter factory=".context.BlockContext" />
+
+</configure>

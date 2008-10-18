@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<archetypetool>
+  <catalogmap>
+    <type portal_type="StructuredDocument">
+      <catalog value="portal_catalog"/>
+    </type>
+    <type portal_type="SimpleChapter">
+      <catalog value="portal_catalog"/>
+    </type>
+    <type portal_type="SimpleParagraph">
+      <catalog value="portal_catalog"/>
+    </type>
+  </catalogmap>
+</archetypetool>

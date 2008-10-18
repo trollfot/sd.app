@@ -1,0 +1,68 @@
+<configure 
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five">
+
+  <!-- Subpackages -->
+  <include package=".browser" />
+
+
+  <!-- Forms adapters -->
+  <adapter
+      factory=".adapters.DynamicLayoutAdapter"
+      provides="sd.contents.interfaces.IDynamicStructuredItem"
+      />
+
+  <adapter
+      factory=".adapters.AnnonationBatchAdapter"
+      provides="sd.contents.interfaces.IBatchProvider"
+      />
+
+
+  <!-- Implementations -->
+  <five:implements
+      class="Products.ATContentTypes.content.image.ATImage"
+      interface="sd.contents.interfaces.IExternalStructuredItem
+		 Products.ATContentTypes.interface.image.IPhotoAlbumAble"
+      />
+
+  <five:implements
+      class="Products.ATContentTypes.content.document.ATDocument"
+      interface="sd.contents.interfaces.IExternalStructuredItem"
+      />
+
+
+  <five:implements
+      class="Products.ATContentTypes.content.folder.ATFolder"
+      interface="sd.contents.interfaces.IExternalStructuredItem
+		 sd.contents.interfaces.IPossibleBatchProvider"
+      />
+
+  <five:implements
+      class="Products.ATContentTypes.content.topic.ATTopic"
+      interface="sd.contents.interfaces.IExternalStructuredItem
+		 sd.contents.interfaces.IPossibleBatchProvider"
+      />
+
+  <five:implements
+      class="Products.ATContentTypes.content.event.ATEvent"
+      interface="sd.contents.interfaces.IExternalStructuredItem"
+      />
+
+  <five:implements
+      class="Products.ATContentTypes.content.newsitem.ATNewsItem"
+      interface="sd.contents.interfaces.IExternalStructuredItem
+		 Products.ATContentTypes.interface.image.IPhotoAlbumAble
+		 Products.ATContentTypes.interface.image.IImageContent"
+      />
+
+  <five:implements
+      class="Products.ATContentTypes.content.file.ATFile"
+      interface="sd.contents.interfaces.IExternalStructuredItem"
+      />
+
+  <five:implements
+      class="Products.ATContentTypes.content.link.ATLink"
+      interface="sd.contents.interfaces.IExternalStructuredItem"
+      />
+
+</configure>

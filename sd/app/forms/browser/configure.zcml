@@ -1,0 +1,28 @@
+<configure
+    xmlns="http://namespaces.zope.org/browser"
+    xmlns:zope="http://namespaces.zope.org/zope">
+
+  <page
+     name="sd.preferences"
+     for="sd.contents.interfaces.IStructuredItem"
+     class=".configuration.PreferencesForm"
+     permission="cmf.ModifyPortalContent"
+     />
+
+  <page
+     name="sd.batch"
+     for="sd.contents.interfaces.IPossibleBatchProvider"
+     class=".configuration.BatchForm"
+     permission="cmf.ModifyPortalContent"
+     />
+
+  <!-- custom widgets -->
+  <zope:adapter
+      for="..interfaces.ITermField
+	   zope.publisher.interfaces.browser.IBrowserRequest"
+      provides="zope.app.form.interfaces.IInputWidget"
+      factory=".widgets.TermWidget"
+      permission="zope.Public"
+      />
+
+</configure>

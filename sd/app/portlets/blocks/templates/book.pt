@@ -1,0 +1,47 @@
+<dl class="portlet portlet-book"
+    i18n:domain="sd">
+  <dt class="portletHeader">
+    <span class="portletTopLeft"></span>
+    <a class="tile" tal:content="view/Title" />
+    <span class="portletTopRight"></span>
+  </dt>
+  <dd class="portletItem odd picture"
+      tal:define="cover view/tag;
+		  comment view/caption"
+      tal:condition="cover">
+    <a class="pop-image"
+       tal:attributes="href view/getImageUrl;
+		       alt comment;">
+      <tal:portait replace="structure cover" />
+    </a>
+    <div class="picture-caption"
+	 tal:condition="comment"
+	 tal:content="comment">
+      caption
+    </div>
+  </dd>
+  <dd class="portletItem odd">
+    <table class="vertical listing block-details">
+      <tr tal:condition="view/author">
+	<th i18n:translate="">Author</th>
+	<td tal:content="view/author" />
+      </tr>
+      <tr tal:condition="view/publishing_year">
+	<th i18n:translate="">Year of publication</th>
+	<td tal:content="view/publishing_year" />
+      </tr>
+      <tr tal:condition="view/serie">
+	<th i18n:translate="">Serie</th>
+	<td tal:content="view/serie" />
+      </tr>
+      <tr tal:condition="view/tome">
+	<th i18n:translate="">Tome</th>
+	<td tal:content="view/tome" />
+      </tr>
+      <tr tal:repeat="detail view/details">
+	<th tal:content="detail/label" />
+	<td tal:content="detail/value" />
+      </tr>
+    </table>
+  </dd>
+</dl>

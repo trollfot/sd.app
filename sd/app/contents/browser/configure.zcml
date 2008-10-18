@@ -1,0 +1,12 @@
+<configure
+    xmlns="http://namespaces.zope.org/browser"
+    xmlns:zope="http://namespaces.zope.org/zope">
+
+  <zope:adapter factory=".nextprevious.SDNextPrevious" />
+
+  <resourceDirectory
+      name="sd.icons"
+      directory="icons"
+      />
+
+</configure>

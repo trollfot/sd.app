@@ -1,0 +1,107 @@
+<configure xmlns="http://namespaces.zope.org/sd">
+
+  <renderer
+      description="Default chapter view"
+      targets="Products.ATContentTypes.interface.IATFolder
+	       Products.ATContentTypes.interface.IATTopic"
+      template="browser/templates/simplechapter.pt"
+      filtering="sd.contents.interfaces.base.IStructuredItem"
+      folderish="True"
+      />
+
+  <renderer
+      name="simplelisting"
+      description="Listing of the content"
+      targets="Products.ATContentTypes.interface.IATFolder
+	       Products.ATContentTypes.interface.IATTopic"
+      template="browser/templates/folder_listing.pt"
+      folderish="True"
+      />
+
+  <renderer
+      name="photo_album"
+      description="Photo album with thumbnails"
+      targets="Products.ATContentTypes.interface.IATFolder
+	       Products.ATContentTypes.interface.IATTopic"
+      template="browser/templates/photoalbum.pt"
+      filtering="Products.ATContentTypes.interface.image.IPhotoAlbumAble"
+      folderish="True"
+      />
+
+  <renderer
+      name="enhanced_photo_album"
+      description="Photo album with JS effects"
+      renderer=".chapters.EnhancedPhotoalbum"
+      targets="Products.ATContentTypes.interface.IATFolder
+	       Products.ATContentTypes.interface.IATTopic"
+      template="browser/templates/enhanced_photoalbum.pt"
+      filtering="Products.ATContentTypes.interface.image.IPhotoAlbumAble"
+      folderish="True"
+      />
+
+  <renderer
+      name="content_summary_view"
+      description="A list summarizing the listed content"
+      targets="Products.ATContentTypes.interface.IATFolder
+	       Products.ATContentTypes.interface.IATTopic"
+      template="browser/templates/folder_summary.pt"
+      folderish="True"
+      />
+
+  <renderer
+      name="custom_view"
+      description="Displays the collection with its custom view"
+      renderer=".renderers.TopicCustomRenderer"
+      targets="Products.ATContentTypes.interface.topic.IATTopic"
+      template="browser/templates/topic_custom_view.pt"
+      folderish="True"
+      />
+
+  <renderer
+      template="browser/templates/atdocument.pt"
+      description="A simple document/page display"
+      targets="Products.ATContentTypes.interface.IATDocument"
+      />
+
+  <renderer
+      template="browser/templates/atimage.pt"
+      description="Image in medium size, centered in the document"
+      targets="Products.ATContentTypes.interface.IATImage"
+      />
+
+  <renderer
+      template="browser/templates/atevent.pt"
+      description="Classical event layout with the infos on the right"
+      targets="Products.ATContentTypes.interface.IATEvent"
+      />
+
+  <renderer
+      template="browser/templates/atfile.pt"
+      description="A file showing a download link"
+      targets="Products.ATContentTypes.interface.IATFile"
+      />
+
+  <renderer
+      template="browser/templates/atlink.pt"
+      description="A basic link to a remote url"
+      targets="Products.ATContentTypes.interface.IATLink"
+      />
+
+  <renderer
+      description="Paragraph with an image aligned on the left"
+      renderer=".renderers.ImageContentRenderer"
+      targets="sd.app.contents.interfaces.ISimpleParagraph
+	       Products.ATContentTypes.interface.IATNewsItem"
+      template="browser/templates/imagecontent_left.pt"
+      />
+
+  <renderer
+      name="paragraph_right_image"
+      description="Paragraph with an image aligned on the right"
+      renderer=".renderers.ImageContentRenderer"
+      targets="sd.app.contents.interfaces.ISimpleParagraph
+	       Products.ATContentTypes.interface.IATNewsItem"
+      template="browser/templates/imagecontent_right.pt"
+      />
+
+</configure>

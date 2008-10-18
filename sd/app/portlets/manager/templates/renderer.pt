@@ -1,0 +1,9 @@
+<tal:portlets define="portlets options/portlets"
+	      condition="portlets">
+  <tal:block repeat="portlet portlets">
+    <tal:portlet
+	attributes="id string:portletwrapper-${portlet/hash};
+		    class string:kssattr-portlethash-${portlet/hash};"
+	content="structure python:view.safe_render(portlet['renderer'])" />
+  </tal:block>
+</tal:portlets>

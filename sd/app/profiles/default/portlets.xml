@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<portlets xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+  
+ <!-- contextual portlet manager -->
+ <portletmanager 
+   name="sd.blocks" 
+   type="sd.app.portlets.manager.interfaces.IStructuredDocumentBlocks"
+   />
+
+ <!-- portlets -->
+ <portlet 
+   addview="sd.country"
+   title="Country portlet"
+   description="A portlet representing a country."
+   i18n:attributes="title title_country_portlet;
+                    description description_country_portlet">
+   <for interface="plone.app.portlets.interfaces.IColumn" />
+   <for interface="sd.app.portlets.manager.interfaces.IStructuredDocumentBlocks" />
+ </portlet>
+
+ <portlet 
+   addview="sd.person"
+   title="Person or character portlet"
+   description="A portlet representing a person or character."
+   i18n:attributes="title title_person_portlet;
+                    description description_person_portlet">
+   <for interface="plone.app.portlets.interfaces.IColumn" />
+   <for interface="sd.app.portlets.manager.interfaces.IStructuredDocumentBlocks" />
+ </portlet>
+
+ <portlet 
+   addview="sd.book"
+   title="Book portlet"
+   description="A portlet representing a book or any other kind of publication."
+   i18n:attributes="title title_book_portlet;
+                    description description_book_portlet">
+   <for interface="plone.app.portlets.interfaces.IColumn" />
+   <for interface="sd.app.portlets.manager.interfaces.IStructuredDocumentBlocks" />
+ </portlet>
+
+ <portlet 
+   addview="sd.toc"
+   title="Table of contents"
+   description="A portlet displaying the content of the document."
+   i18n:attributes="title title_toc_portlet;
+                    description description_toc_portlet">
+   <for interface="sd.app.portlets.manager.interfaces.IStructuredDocumentBlocks" />
+ </portlet>
+
+ <portlet 
+   addview="sd.slideshow"
+   title="Slideshow portlet"
+   description="A portlet displaying a slideshow from a folder or collection."
+   i18n:attributes="title title_slideshow_portlet;
+                    description description_slideshow_portlet">
+   <for interface="plone.app.portlets.interfaces.IColumn" />
+   <for interface="sd.app.portlets.manager.interfaces.IStructuredDocumentBlocks" />
+ </portlet>
+
+</portlets>

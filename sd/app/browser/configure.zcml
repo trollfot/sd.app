@@ -1,0 +1,69 @@
+<configure 
+    xmlns="http://namespaces.zope.org/browser">
+
+  <include file="resources.zcml" />
+
+  <page
+      for="*"
+      name="if_checkers"
+      class=".checkers.SDAvailabilityCheckers"
+      allowed_interface=".interfaces.ISDAvailabilityCheckers"
+      permission="zope2.View"
+      />
+
+  <page
+      for="*"
+      name="sd.batch"
+      class=".batch.AjaxBatch"
+      attribute="batch"
+      permission="zope2.View"
+      />
+
+  <page
+      for="*"
+      name="doMoveUp"
+      class=".move.SdOrdering"
+      attribute="doMoveUp"
+      permission="cmf.ModifyPortalContent"
+      />
+
+  <page
+      for="*"
+      name="doMoveDown"
+      class=".move.SdOrdering"
+      attribute="doMoveDown"
+      permission="cmf.ModifyPortalContent"
+      />
+
+  <page
+      for="sd.rendering.interfaces.IStructuredRenderer"
+      name="reordering"
+      template="templates/reordering.pt"
+      permission="cmf.ModifyPortalContent"
+      />
+
+  <page
+      for="sd.contents.interfaces.IStructuredContainer"
+      name="orderMoveUp"
+      class=".move.KssSdOrdering"
+      attribute="orderMoveUp"
+      permission="cmf.ModifyPortalContent"
+      />
+  
+  <page
+      for="sd.contents.interfaces.IStructuredContainer"
+      name="orderMoveDown"
+      class=".move.KssSdOrdering"
+      attribute="orderMoveDown"
+      permission="cmf.ModifyPortalContent"
+      />
+
+  <page
+      for="sd.contents.interfaces.IStructuredContainer"
+      name="changeLayout"
+      class=".layout.ChangeLayout"
+      attribute="changeLayout"
+      permission="cmf.ModifyPortalContent"
+      />
+
+</configure>

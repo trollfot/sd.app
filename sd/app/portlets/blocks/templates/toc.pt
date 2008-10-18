@@ -1,0 +1,25 @@
+<dl class="portlet portlet-toc"
+    i18n:domain="sd">
+  <dt class="portletHeader">
+    <span class="portletTopLeft"></span>
+    <a class="tile" tal:content="view/Title" />
+    <span class="portletTopRight"></span>
+  </dt>
+  <dd class="portletItem">
+    <ol tal:define="entries view/entries;
+		    desc view/display_description">
+      <li tal:repeat="chapter entries">
+	<a href=""
+	   tal:attributes="href string:#${chapter/getId};
+			   title chapter/Description;"
+	   tal:content="chapter/Title">
+	  Chapter's title
+	</a>
+	<br/>
+	<span class="discreet"
+	      tal:condition="desc"
+	      tal:content="chapter/Description" />
+      </li>
+    </ol>
+  </dd>
+</dl>

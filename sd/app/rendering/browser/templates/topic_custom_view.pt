@@ -1,0 +1,54 @@
+<div tal:replace="structure provider:sd.above_content_body" />
+<tal:enabled define="enabled view/enabled">
+<tal:custom
+    i18n:domain="plone"
+    condition="enabled"
+    define="plone_view context/@@plone;
+	    vocab view/metadatas;
+	    fields view/fields">
+
+  <table class="listing"
+	 summary="Content listing"
+	 cellpadding="0" cellspacing="0" width="100%"
+	 i18n:attributes="summary summary_content_listing;">
+    <thead>
+      <tr>
+	<th tal:repeat="field fields"
+	    tal:content="python:vocab.getValue(field, field)"
+	    i18n:translate=""/>
+      </tr>
+    </thead>
+    <tbody>
+      <tal:brain tal:repeat="obj view/contents">
+	<tr tal:define="oddrow repeat/obj/odd;"
+	    tal:attributes="class python:oddrow and 'even' or 'odd'">
+	  <tal:fields repeat="field fields"
+		      define="url obj/getURL;
+			      item_icon python:plone_view.getIcon(obj);
+			      obj_type obj/portal_type;
+			      title_or_id obj/pretty_title_or_id">
+
+	    <tal:block define="value python: getattr(obj, field, None)">
+	      <td tal:condition="python: field != 'Title'"
+		  tal:content="python:context.formatCatalogMetadata(value)"
+		  i18n:translate=""/>
+	      <td tal:condition="python: field == 'Title'">
+		<img tal:replace="structure item_icon/html_tag" />
+		<a href="#"
+		   tal:attributes="href string:${url}/view;"
+		   tal:content="title_or_id" />
+		
+	      </td>
+	    </tal:block>
+	  </tal:fields>
+	</tr>
+      </tal:brain>
+    </tbody>
+  </table>
+</tal:custom>
+<tal:notcustom condition="not: enabled" i18n:domain="sd">
+  <span class="discreet" i18n:translate="no_custom_view">
+    The custom view is not enabled on this collection.
+  </span>
+</tal:notcustom>
+</tal:enabled>

@@ -1,0 +1,21 @@
+<configure
+    xmlns="http://namespaces.zope.org/genericsetup"
+    i18n_domain="sd">
+  
+  <registerProfile
+        name="default"
+        title="Structured Document"
+        directory="profiles/default"
+        description="Extension profile for Structured Document package"
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+
+  <registerProfile
+        name="uninstall"
+        title="Structured Document uninstaller"
+        directory="profiles/uninstall"
+        description="Uninstallation profile for Structured Document package"
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+
+</configure>

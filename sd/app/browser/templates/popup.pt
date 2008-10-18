@@ -1,0 +1,13 @@
+<iframe id='TB_HideSelect' style="height: 3365px; width: 1657px;" />
+<div id='TB_overlay' style="height: 3365px; width: 1657px;"></div>
+<div id='TB_window'  style="width: 630px; left: 521px; top: 187px; display: block;">
+  <a href="" id="TB_ImageOff" title="Close">
+    <img id="TB_Image"
+	 tal:attributes="href options/url;
+			 alt options/caption;" />
+  </a>
+  <div id='TB_caption' tal:content="options/caption" />
+  <div id='TB_closeWindow'
+       ><a href='#' id='TB_closeWindowButton' title='Close'>close</a>
+  </div>
+</div>
