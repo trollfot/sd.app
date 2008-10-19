@@ -29,11 +29,12 @@
 	<td id="main-structured-document-content">
 	  <tal:tableOfcontents condition="context/getTableContents">
 	    <dl id="document-whole-index"
+		i18n:domain="atcontenttypes"
 		tal:condition="chapters"
 		class="collapsible inline collapsedOnClick">
 	      <dt class="collapsibleHeader"
-		  i18n:translate="label_chapters_index">
-		Index
+		  i18n:translate="help_enable_table_of_contents">
+		Table of contents
 	      </dt>
 	      <dd class="collapsibleContent">
 		<ol>
@@ -41,7 +42,7 @@
 		    <a href=""
 		       tal:attributes="href string:$here_url#${chapter/getId};
 				       title chapter/Description;"
-		   tal:content="chapter/Title">
+		   tal:content="python: chapter.Title() or chapter.getId()">
 		      Chapter's title
 		</a>
 		<br/>

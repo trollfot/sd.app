@@ -18,6 +18,7 @@ tagselector = Schema((
                 vocabulary = TAG_NAMES,
                 widget = SelectionWidget(label="Size of the image",
                                          label_msgid="label_sizes",
+                                         default="thumb",
                                          description=("Size of the thumbnail "
                                                       "displayed in the "
                                                       "paragraph's body"),
