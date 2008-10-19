@@ -3,12 +3,15 @@
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     name="SimpleParagraph"
     meta_type="Factory-based Type Information with dynamic views"
-    i18n:domain="plone">
+    i18n:domain="sd">
   
-  <property name="title">SimpleParagraph</property>
-  <property name="description">
-    A folder which can contain other items.
-  </property>
+  <property
+      name="title"
+      i18n:translate="SimpleParagraph">Illustrated document</property>
+  <property
+      name="description"
+      i18n:translate="SimpleParagraph_desc"
+      >A document (page) with a related image</property>
 
   <!-- General configuration -->
   <property name="content_icon">++resource++sd.icons/paragraph.png</property>
@@ -19,8 +22,8 @@
   <property name="global_allow">True</property>
 
   <!-- Views and aliases configuration -->
-  <property name="immediate_view">paragraph_view</property>
-  <property name="default_view">paragraph_view</property>
+  <property name="immediate_view">@@sd.generic_view</property>
+  <property name="default_view">@@sd.generic_view</property>
   <alias from="(Default)" to="(dynamic view)"/>
   <alias from="edit" to="atct_edit"/>
   <alias from="sharing" to="@@sharing"/>

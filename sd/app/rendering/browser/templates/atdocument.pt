@@ -1,2 +1,2 @@
-<div class="atdocument-paragraph"
+<div class="embedded-atdocument"
      tal:content="structure context/getText" />

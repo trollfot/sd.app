@@ -20,6 +20,10 @@
 	  <a tal:attributes="href view/edit"
 	     i18n:translate="">Edit</a>
 	</li>
+	<li class="submenu-item" i18n:domain="sd">
+	  <a tal:attributes="href view/preferences"
+	     i18n:translate="sd.preferences">Rendering preferences</a>
+	</li>
       </ul>
     </li>
   </ul>

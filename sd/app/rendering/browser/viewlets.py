@@ -88,3 +88,4 @@ class AccessViewlet(ViewletBase):
     def update(self):
         self.access = self.manager.item.absolute_url()
         self.edit = self.access + '/edit'
+        self.preferences = self.access + '/@@sd.preferences'

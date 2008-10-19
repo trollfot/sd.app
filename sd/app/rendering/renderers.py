@@ -9,6 +9,10 @@ class ImageContentRenderer(object):
     def getSize(self):
         method = getattr(aq_base(self.context), "getImage_scale", None)
         return method is not None and method() or 'thumb'
+
+    @CachedProperty
+    def caption(self):
+        return self.context.getImageCaption() or self.Title()
     
     @CachedProperty
     def image(self):

@@ -10,7 +10,7 @@ from sd.contents.interfaces import IDynamicStructuredItem
 class ChangeLayout(KSSView):
 
     def getObjectFromUid(self, uid):
-        cat = getToolByName(self.context, 'uid_catalog')
+        cat = getToolByName(self.context, 'portal_catalog')
         res = cat and cat(UID=uid) or None
         return res and res[0].getObject() or None
     

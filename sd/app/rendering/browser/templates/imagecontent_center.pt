@@ -1,5 +1,5 @@
 <div class="imagecontent">
-  <div class="embedded-image-left"
+  <div class="embedded-image-center"
        tal:condition="view/image">
     <a class="pop-image"
        tal:attributes="href string:${view/absolute_url}/image;

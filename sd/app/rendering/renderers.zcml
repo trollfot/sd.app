@@ -10,7 +10,7 @@
       />
 
   <renderer
-      name="simplelisting"
+      name="sd-listing"
       description="Listing of the content"
       targets="Products.ATContentTypes.interface.IATFolder
 	       Products.ATContentTypes.interface.IATTopic"
@@ -19,7 +19,7 @@
       />
 
   <renderer
-      name="photo_album"
+      name="sd-photo_album"
       description="Photo album with thumbnails"
       targets="Products.ATContentTypes.interface.IATFolder
 	       Products.ATContentTypes.interface.IATTopic"
@@ -29,9 +29,9 @@
       />
 
   <renderer
-      name="enhanced_photo_album"
+      name="sd-enhanced_photo_album"
       description="Photo album with JS effects"
-      renderer=".chapters.EnhancedPhotoalbum"
+      renderer=".renderers.EnhancedPhotoalbum"
       targets="Products.ATContentTypes.interface.IATFolder
 	       Products.ATContentTypes.interface.IATTopic"
       template="browser/templates/enhanced_photoalbum.pt"
@@ -40,7 +40,7 @@
       />
 
   <renderer
-      name="content_summary_view"
+      name="sd-summary_view"
       description="A list summarizing the listed content"
       targets="Products.ATContentTypes.interface.IATFolder
 	       Products.ATContentTypes.interface.IATTopic"
@@ -49,7 +49,7 @@
       />
 
   <renderer
-      name="custom_view"
+      name="sd-topic-custom_view"
       description="Displays the collection with its custom view"
       renderer=".renderers.TopicCustomRenderer"
       targets="Products.ATContentTypes.interface.topic.IATTopic"
@@ -88,7 +88,7 @@
       />
 
   <renderer
-      description="Paragraph with an image aligned on the left"
+      description="Illustrated document with an image aligned on the left"
       renderer=".renderers.ImageContentRenderer"
       targets="sd.app.contents.interfaces.ISimpleParagraph
 	       Products.ATContentTypes.interface.IATNewsItem"
@@ -96,12 +96,21 @@
       />
 
   <renderer
-      name="paragraph_right_image"
-      description="Paragraph with an image aligned on the right"
+      name="sd-imagecontent-right"
+      description="Illustrated document with an image aligned on the right"
       renderer=".renderers.ImageContentRenderer"
       targets="sd.app.contents.interfaces.ISimpleParagraph
 	       Products.ATContentTypes.interface.IATNewsItem"
       template="browser/templates/imagecontent_right.pt"
+      />
+
+  <renderer
+      name="sd-imagecontent-center"
+      description="Illustrated document with a centered image"
+      renderer=".renderers.ImageContentRenderer"
+      targets="sd.app.contents.interfaces.ISimpleParagraph
+	       Products.ATContentTypes.interface.IATNewsItem"
+      template="browser/templates/imagecontent_center.pt"
       />
 
 </configure>

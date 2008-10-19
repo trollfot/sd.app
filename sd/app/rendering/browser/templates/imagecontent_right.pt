@@ -1,26 +1,25 @@
-<div class="paragraph-body">
-  <div class="paragraph-image-right"
-       tal:define="image view/image"
-       tal:condition="image">
+<div class="imagecontent">
+  <div class="embedded-image-right"
+       tal:condition="view/image">
     <a class="pop-image"
-       tal:attributes="href string:${context/absolute_url}/image;
-		       title context/getImageCaption|context/Title;
-		       alt context/getImageCaption|context/Title;
+       tal:attributes="href string:${view/absolute_url}/image;
+		       title view/caption;
+		       alt view/caption;
 		       rel context/aq_parent/getId;">
-      <tal:image replace="structure image" />
+      <tal:image replace="structure view/image" />
       <br/>
-      <tal:comment define="comment context/getImageCaption"
-		   condition="comment">
-	<img src="" alt="" tal:replace="structure here/search_icon.gif" />
-	<span class="discreet paragraph-image-comment"
-	      tal:content="comment">
-	  Image's caption text
-	</span>
+      <tal:comment condition="view/caption">
+      <img src="" alt=""
+	   tal:attributes="src string:${view/absolute_url}/search_icon.gif" />
+      <span class="discreet embedded-image-comment"
+	    tal:content="view/caption">
+	Image's caption text
+      </span>
       </tal:comment>
     </a>
   </div>
   
-  <p class="paragraph-text"
+  <p class="imagecontent-text"
      tal:content="structure context/getText">
     Paragraph's body text
   </p>

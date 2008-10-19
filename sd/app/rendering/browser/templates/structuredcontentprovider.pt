@@ -1,48 +1,42 @@
-<tal:chaptering repeat="chapter viewletmanager/renderers">
+<tal:loop repeat="item viewletmanager/renderers">
      
-<div tal:define="url context/absolute_url;
-		 duid context/UID;
-		 cuid chapter/UID;
-		 oid chapter/getId"
-     tal:attributes="id string:$duid-$oid;
-		     class string:structured-chapter simplechapter
-                                  kssattr-uid-$cuid">
+<dl tal:attributes="id string:${context/UID}-${item/getId};
+		    class string:structured-item kssattr-uid-${item/UID}">
 
-  <a tal:attributes="name string:$duid-$oid"
-     tal:content="nothing">An anchor to the chapter</a>
-
-  <tal:block define="item chapter" 
+  <tal:block define="item nocall:item" 
 	     replace="structure provider:sd.above_item_title" />
 
-  <h2 class="chapter-title"
-      tal:condition="chapter/show_title">
-    <a tal:content="chapter/Title"
-       tal:attributes="title chapter/Title;
-		       href  string:${chapter/absolute_url}/view;
-		       name  chapter/getId;">
-      Chapter title
+  <dt class="structured-item-title"
+      tal:condition="item/show_title">
+    <a tal:content="item/Title"
+       tal:attributes="title item/Title;
+		       href  string:${item/absolute_url}/@@sd.generic_view;
+		       name  item/getId;">
+      Title
     </a>
-  </h2>
+  </dt>
 
-  <div class="structured-actions structured-chapter-actions"
-       tal:define="item nocall:chapter;
+  <dd class="structured-item-content">
+    <div class="structured-actions"
+       tal:define="item nocall:item;
 		   content provider:sd.below_item_title"
        tal:condition="content"
        tal:content="structure content" />
   
-  <tal:show condition="chapter/show_description">
-    <p class="discreet"
-       tal:condition="chapter/Description"
-       tal:content="chapter/Description">
-      Chapter description
+    <tal:desc condition="item/show_description">
+    <p class="discreet structured-item-description"
+      tal:condition="item/Description"
+       tal:content="item/Description">
+      Description
     </p>
-  </tal:show>
+    </tal:desc>
   
-  <div tal:attributes="id string:kssattr-bodyid-$cuid"
-       class="chapter-body">
-    <tal:paragraph content="structure chapter/render" />
-  </div>
+    <div tal:attributes="id string:kssattr-bodyid-${item/UID}"
+	 class="structured-item-body">
+      <tal:paragraph content="structure item/render" />
+    </div>
+  </dd>
   
-</div>
+</dl>
 
-</tal:chaptering>
+</tal:loop>

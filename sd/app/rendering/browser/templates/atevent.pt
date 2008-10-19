@@ -1,4 +1,4 @@
-<div class="atevent-paragraph">
+<div class="embedded-atevent">
   <div class="eventDetails vcard">
     <table class="vertical listing"
 	   summary="Event details" i18n:attributes="summary summary_event_details;">

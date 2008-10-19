@@ -12,69 +12,58 @@ msgstr ""
 "Language-Code: fr\n"
 "Language-Name: Français\n"
 "Preferred-Encodings: utf-8\n"
-"Domain: meeting\n"
+"Domain: sd\n"
 "X-Is-Fallback-For: fr-be fr-ca fr-lu fr-mc fr-ch fr-fr\n"
 
+msgid  "StructuredDocument"
+msgstr "Document Structuré"
+
+msgid  "StructuredDocument_desc"
+msgstr "Un dossier dont la vue est paramétrable"
+
+msgid  "manage_portlets_link"
+msgstr "Configurer les portlets"
+
+msgid  "Illustrated document"
+msgstr "Document illustré"
+
+msgid  "SimpleParagraph_desc"
+msgstr "Un document avec une image"
 
 ## Les vues ##
 msgid  "default"
 msgstr "Vue par défaut"
 
-msgid  "photo_album"
+msgid  "sd.photo_album"
 msgstr "Album photo avec vignettes"
 
-msgid  "paragraph_right_image"
+msgid  "sd.imagecontent.right"
 msgstr "Image sur la droite"
 
-msgid  "custom_view"
+msgid  "sd.imagecontent.center"
+msgstr "Image centré au dessus du texte"
+
+msgid  "sd.topic.custom_view"
 msgstr "Vue personnalisée"
 
-msgid  "simplelisting"
+msgid  "sd.listing"
 msgstr "Contenu sous forme d'une simple liste"
 
-msgid  "topic_chapter_view"
-msgstr "Collection-chapitre"
-
-msgid  "enhanced_photo_album"
+msgid  "sd.enhanced_photo_album"
 msgstr "Album photo avec diaporama (javascript)"
 
-msgid  "content_summary_view"
+msgid  "sd.summary_view"
 msgstr "Vue sommaire avec prévisualisation"
-
-msgid  "chapter_renderer"
-msgstr "Affichage par paragraphe"
 
 
 ## Les formulaires ##
-msgid  "chapter_prefs"
-msgstr "Préférences pour le chapitre"
+msgid  "sd.preferences"
+msgstr "Préférences de rendu"
 
-msgid  "Chapter preferences"
-msgstr "Préférences pour le chapitre"
+msgid  "adv_config"
+msgstr "Configuration avancée"
 
-msgid  "adv_chapter_config"
-msgstr "Configuration avancée du chapitre"
-
-msgid  "Advanced chapter configuration"
-msgstr "Configuration avancée du chapitre"
-
-msgid  "chapter_prefs_desc"
-msgstr "Les options ci-dessous vous permettent de personaliser le "
-       "comportement du chapitre"
-
-msgid  "paragraph_prefs"
-msgstr "Préférences pour le paragraphe"
-
-msgid  "Paragraph preferences"
-msgstr "Préférences pour le paragraphe"
-
-msgid  "adv_paragraph_config"
-msgstr "Configuration avancée du paragraphe"
-
-msgid  "Advanced paragraph configuration"
-msgstr "Configuration avancée du paragraphe"
-
-msgid  "paragraph_prefs_desc"
+msgid  "sd.preferences.desc"
 msgstr "Les options ci-dessous vous permettent de personaliser le "
        "comportement du paragraphe"
 

@@ -1,15 +1,15 @@
-<div class="paragraph-body atfile-paragraph"
+<div class="embedded-atfile"
      i18n:domain="plone"
      tal:define="size python:context.getObjSize(context);
 		 content_type context/get_content_type|context/Format;">
 
-  <p class="discreet" class="atfile-paragraph-infos">
+  <p class="discreet" class="atfile-infos">
     <a href=""
-       tal:attributes="href context/absolute_url">
+       tal:attributes="href view/absolute_url">
       <img tal:define="icon python:context.getIcon(1)"
-	   tal:attributes="src string:${context/absolute_url}/${icon};
-			   atl context/Description" />
-      <tal:block tal:content="context/getId" />
+	   tal:attributes="src string:${view/absolute_url}/${icon};
+			   atl view/Description" />
+      <tal:block tal:content="view/getId" />
     </a>
     &mdash;
     <span>    

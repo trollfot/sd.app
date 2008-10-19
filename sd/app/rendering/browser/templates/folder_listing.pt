@@ -1,6 +1,7 @@
 <div tal:replace="structure provider:sd.above_content_body" />
 <tal:listing define="folderContents view/contents">
-<dl tal:condition="folderContents">
+<dl tal:condition="folderContents"
+    class="embedded-folder-listing">
   <tal:entry tal:define="plone_view context/@@plone;"
 	     tal:repeat="item folderContents">
     <tal:block tal:define="item_url item/getURL|item/absolute_url;
@@ -8,34 +9,17 @@
 			   item_title_or_id item/pretty_title_or_id;
 			   item_description item/Description;
 			   item_type item/portal_type;
-			   item_creator item/Creator;
-			   item_start item/start/ISO|item/StartDate|nothing;
-			   item_end item/end/ISO|item/EndDate|nothing;
 			   item_icon python:plone_view.getIcon(item);
 			   item_type_title item/Type;">
-      <dt style="margin-top: 0.5em">
-	<span class="summary"
-	      tal:condition="python:item_type != 'Link'">
+      <dt>
+	<span class="summary">
 	  <img tal:replace="structure item_icon/html_tag" />
 	  <a href="#"
 	     tal:attributes="href string:$item_url/view;"
 	     tal:content="item_title_or_id">
 	    Item Title
 	  </a>
-	</span>
-	
-	<tal:to_external condition="python:item_type == 'Link'">
-	  <span>
-	    <img tal:replace="structure item_icon/html_tag" />
-	    <a href="#"
-	       class="link-plain"
-	       tal:content="item_title_or_id"
-	       tal:attributes="href item/getRemoteUrl;">
-	      External Link
-	    </a>
-	  </span>
-	</tal:to_external>
-	
+	</span>	
       </dt>
       
       <dd tal:condition="item_description"

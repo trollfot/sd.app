@@ -12,7 +12,7 @@ _ = MessageFactory("sd")
 class BatchForm(EditForm):
     """Batch configuration panel.
     """
-    label = _(u"batch_prefs",
+    label = _(u"sd.batch",
               default=u"Batch preferences")
     
     form_name = _(u"adv_batch_config",
@@ -22,12 +22,12 @@ class BatchForm(EditForm):
 
 
 class PreferencesForm(EditForm):
-    """Structured paragraph configuration panel.
+    """Structured item configuration panel.
     """
-    label = _(u"paragraph_prefs",
-              default=u"Paragraph preferences")
+    label = _(u"sd.preferences",
+              default=u"Rendering preferences")
     
-    form_name = _(u"adv_paragraph_config",
-                  default=u"Advanced paragraph configuration")
+    form_name = _(u"adv_config",
+                  default=u"Advanced configuration")
 
     form_fields = form.FormFields(IDynamicStructuredItem)
