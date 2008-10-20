@@ -9,7 +9,6 @@ from sd.app.tests import base
 class TestSetup(ptc.PloneTestCase):
 
     types = ('StructuredDocument',
-             'SimpleChapter',
              'SimpleParagraph')
 
     def testPortalTypes(self):

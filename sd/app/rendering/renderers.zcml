@@ -3,6 +3,7 @@
   <renderer
       description="Default chapter view"
       targets="Products.ATContentTypes.interface.IATFolder
+	       Products.ATContentTypes.interface.IATBTreeFolder
 	       Products.ATContentTypes.interface.IATTopic"
       template="browser/templates/simplechapter.pt"
       filtering="sd.contents.interfaces.base.IStructuredItem"
@@ -13,6 +14,7 @@
       name="sd-listing"
       description="Listing of the content"
       targets="Products.ATContentTypes.interface.IATFolder
+	       Products.ATContentTypes.interface.IATBTreeFolder
 	       Products.ATContentTypes.interface.IATTopic"
       template="browser/templates/folder_listing.pt"
       folderish="True"
@@ -22,6 +24,7 @@
       name="sd-photo_album"
       description="Photo album with thumbnails"
       targets="Products.ATContentTypes.interface.IATFolder
+	       Products.ATContentTypes.interface.IATBTreeFolder
 	       Products.ATContentTypes.interface.IATTopic"
       template="browser/templates/photoalbum.pt"
       filtering="Products.ATContentTypes.interface.image.IPhotoAlbumAble"
@@ -33,6 +36,7 @@
       description="Photo album with JS effects"
       renderer=".renderers.EnhancedPhotoalbum"
       targets="Products.ATContentTypes.interface.IATFolder
+	       Products.ATContentTypes.interface.IATBTreeFolder
 	       Products.ATContentTypes.interface.IATTopic"
       template="browser/templates/enhanced_photoalbum.pt"
       filtering="Products.ATContentTypes.interface.image.IPhotoAlbumAble"
@@ -43,6 +47,7 @@
       name="sd-summary_view"
       description="A list summarizing the listed content"
       targets="Products.ATContentTypes.interface.IATFolder
+	       Products.ATContentTypes.interface.IATBTreeFolder
 	       Products.ATContentTypes.interface.IATTopic"
       template="browser/templates/folder_summary.pt"
       folderish="True"

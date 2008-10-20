@@ -38,6 +38,12 @@
       />
 
   <five:implements
+      class="Products.ATContentTypes.interface.folder.IATBTreeFolder"
+      interface="sd.contents.interfaces.IExternalStructuredItem
+                 sd.contents.interfaces.IPossibleBatchProvider"
+      />
+
+  <five:implements
       class="Products.ATContentTypes.content.topic.ATTopic"
       interface="sd.contents.interfaces.IExternalStructuredItem
 		 sd.contents.interfaces.IPossibleBatchProvider"
