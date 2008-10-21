@@ -3,7 +3,6 @@
   <renderer
       description="Default chapter view"
       targets="Products.ATContentTypes.interface.IATFolder
-	       Products.ATContentTypes.interface.IATBTreeFolder
 	       Products.ATContentTypes.interface.IATTopic"
       template="browser/templates/simplechapter.pt"
       filtering="sd.contents.interfaces.base.IStructuredItem"
@@ -11,10 +10,25 @@
       />
 
   <renderer
+      name="sd-content-rendering"
+      description="Default chapter view"
+      targets="Products.ATContentTypes.interface.IATBTreeFolder"
+      template="browser/templates/simplechapter.pt"
+      filtering="sd.contents.interfaces.base.IStructuredItem"
+      folderish="True"
+      />
+
+  <renderer
+      description="Listing of the content"
+      targets="Products.ATContentTypes.interface.IATBTreeFolder"
+      template="browser/templates/folder_listing.pt"
+      folderish="True"
+      />
+
+  <renderer
       name="sd-listing"
       description="Listing of the content"
       targets="Products.ATContentTypes.interface.IATFolder
-	       Products.ATContentTypes.interface.IATBTreeFolder
 	       Products.ATContentTypes.interface.IATTopic"
       template="browser/templates/folder_listing.pt"
       folderish="True"
