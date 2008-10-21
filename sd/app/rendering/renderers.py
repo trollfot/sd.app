@@ -12,7 +12,7 @@ class ImageContentRenderer(object):
 
     @CachedProperty
     def caption(self):
-        return self.context.getImageCaption() or self.Rights()
+        return self.context.getImageCaption() or self.context.Rights()
     
     @CachedProperty
     def image(self):

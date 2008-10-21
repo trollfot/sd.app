@@ -38,7 +38,7 @@
       />
 
   <five:implements
-      class="Products.ATContentTypes.interface.folder.IATBTreeFolder"
+      class="Products.ATContentTypes.content.folder.ATBTreeFolder"
       interface="sd.contents.interfaces.IExternalStructuredItem
                  sd.contents.interfaces.IPossibleBatchProvider"
       />
