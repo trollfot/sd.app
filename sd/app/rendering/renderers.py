@@ -1,11 +1,27 @@
 # -*- coding: utf-8 -*-
+
+import sd.rendering
+from five import grok
+from sd.rendering import base
 from Acquisition import aq_base
 from zope.cachedescriptors.property import CachedProperty
+from Products.ATContentTypes import interface as atct
 
 
-class ImageContentRenderer(object):
+grok.templatedir('browser/templates')
+
+
+class ATDocument(sd.rendering.StructuredRenderer):
+    """A simple document rendering.
+    """
+    sd.rendering.target(atct.IATDocument)
+
+
+class ImageContentRenderer(sd.rendering.StructuredRenderer):
     """Basic renderer for an object with an image.
-    """    
+    """
+    sd.rendering.target(atct.IImageContent)
+    
     def getSize(self):
         method = getattr(aq_base(self.context), "getImage_scale", None)
         return method is not None and method() or 'thumb'
@@ -19,25 +35,21 @@ class ImageContentRenderer(object):
         return self.context.tag(scale=self.getSize())
 
 
-class TopicCustomRenderer(object):
-    """Custom view
+class PhotoAlbum(sd.rendering.FolderishRenderer):
+    """A photoalbum.
     """
-    @CachedProperty
-    def enabled(self):
-        return self.context.getCustomView()
+    sd.rendering.name(u"sd_photoalbum")
+    sd.rendering.target(atct.IATFolder)
+    sd.rendering.target(atct.IATBTreeFolder)
+    sd.rendering.target(atct.IATTopic)
+    sd.rendering.restrict(atct.IPhotoAlbumAble)
     
-    @CachedProperty
-    def fields(self):
-        return self.context.getCustomViewFields()
 
-    @CachedProperty
-    def metadatas(self):
-        return self.context.listMetaDataFields(False)
-
-
-class EnhancedPhotoalbum(object):
+class EnhancedPhotoalbum(PhotoAlbum):
     """A content fetcher that adds javascript
     """
+    sd.rendering.name(u"sd_enhanced_photoalbum")
+        
     @CachedProperty
     def timer(self):
         conf = self.configuration
@@ -63,3 +75,24 @@ class EnhancedPhotoalbum(object):
         })
         """ % {"uid" : self.UID(),
                "timer": self.timer }
+
+
+class TopicCustomRenderer(sd.rendering.FolderishRenderer):
+    """Custom view
+    """
+    sd.rendering.name(u"sd_topiccustom")
+    sd.rendering.target(atct.IATTopic)
+    
+    @CachedProperty
+    def enabled(self):
+        return self.context.getCustomView()
+    
+    @CachedProperty
+    def fields(self):
+        return self.context.getCustomViewFields()
+
+    @CachedProperty
+    def metadatas(self):
+        return self.context.listMetaDataFields(False)
+
+

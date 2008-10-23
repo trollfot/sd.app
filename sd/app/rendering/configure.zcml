@@ -1,12 +1,13 @@
-<configure xmlns="http://namespaces.zope.org/zope">
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:grok="http://namespaces.zope.org/grok">
   
   <!-- Additional and internal packages -->
   <include package="sd.rendering" />
   <include package=".browser" />
   <include package=".config" />
 
-  <!-- Configuration files to register renderers -->
-  <include file="meta.zcml" />
-  <include file="renderers.zcml" />
+  <!-- Grokking the renderers -->
+  <grok:grok package=".renderers" />
 
 </configure>

@@ -15,17 +15,17 @@ grok.templatedir('templates')
 class DocumentContentProvider(grok.View):
     """Access to a document contents
     """
+    grok.require('zope2.View')
     grok.name('sd.document.onepage')
     grok.context(IStructuredDocument)
-    grok.require('zope2.View')
     grok.implements(IStructuredView)
 
     @CachedProperty
     def _contents(self):
-        contentFilter  = {"object_provides":
-                          'sd.contents.interfaces.IStructuredItem'}
+        contentFilter = {"object_provides":
+                         'sd.contents.interfaces.base.IStructuredItem'}
         handler = IContentQueryHandler(self.context)
-        brains = handler and handler.query_contents(contentFilter) or []
+        brains = handler and handler.query_contents(**contentFilter) or []
         return [brain.getObject() for brain in brains]
 
     def contents(self, *args, **kwargs):

@@ -11,12 +11,12 @@ grok.templatedir('browser/templates')
 
 
 class StructuredContentProvider(grok.ViewletManager):
-    """A content provider serving.
+    """A content provider serving the contents.
     """
     grok.name("sd.contents")
+    grok.require('zope2.View')
     grok.view(IStructuredView)
     grok.context(IStructuredItem)
-    grok.require('zope2.View')
     
     @CachedProperty
     def renderers(self):
