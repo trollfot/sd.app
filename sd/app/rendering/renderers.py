@@ -1,20 +1,39 @@
 # -*- coding: utf-8 -*-
 
 import sd.rendering
-from five import grok
-from sd.rendering import base
 from Acquisition import aq_base
 from zope.cachedescriptors.property import CachedProperty
+from five import grok
+from sd.rendering import base
+from sd.rendering.interfaces import IStructuredDefaultRenderer
 from Products.ATContentTypes import interface as atct
 
 
-grok.templatedir('browser/templates')
+grok.templatedir('templates')
 
 
 class ATDocument(sd.rendering.StructuredRenderer):
     """A simple document rendering.
     """
     sd.rendering.target(atct.IATDocument)
+
+
+class ATFile(sd.rendering.StructuredRenderer):
+    """A simple document rendering.
+    """
+    sd.rendering.target(atct.IATFile)
+
+
+class ATLink(sd.rendering.StructuredRenderer):
+    """A simple document rendering.
+    """
+    sd.rendering.target(atct.IATLink)
+
+
+class ATEvent(sd.rendering.StructuredRenderer):
+    """A simple document rendering.
+    """
+    sd.rendering.target(atct.IATEvent)
 
 
 class ImageContentRenderer(sd.rendering.StructuredRenderer):
