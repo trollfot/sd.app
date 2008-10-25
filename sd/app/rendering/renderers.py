@@ -15,7 +15,12 @@ grok.templatedir('templates')
 class ATDocument(sd.rendering.StructuredRenderer):
     """A simple document rendering.
     """
+    sd.rendering.name("sd_atdocument")
+    grok.provides(IStructuredDefaultRenderer)
     sd.rendering.target(atct.IATDocument)
+
+    def render(self):
+        return self.context.getText()
 
 
 class ATFile(sd.rendering.StructuredRenderer):
@@ -36,9 +41,10 @@ class ATEvent(sd.rendering.StructuredRenderer):
     sd.rendering.target(atct.IATEvent)
 
 
-class ImageContentRenderer(sd.rendering.StructuredRenderer):
+class ImageContent(sd.rendering.StructuredRenderer):
     """Basic renderer for an object with an image.
     """
+    sd.rendering.name(u"sd_imagecontent_center")
     sd.rendering.target(atct.IImageContent)
     
     def getSize(self):
@@ -54,18 +60,36 @@ class ImageContentRenderer(sd.rendering.StructuredRenderer):
         return self.context.tag(scale=self.getSize())
 
 
-class PhotoAlbum(sd.rendering.FolderishRenderer):
-    """A photoalbum.
+class ImageContentLeft(ImageContent):
+    """Basic renderer for an object with an image.
     """
-    sd.rendering.name(u"sd_photoalbum")
+    sd.rendering.name(u"sd_imagecontent_left")
+
+
+class ImageContentRight(ImageContent):
+    """Basic renderer for an object with an image.
+    """
+    sd.rendering.name(u"sd_imagecontent_right")
+
+
+class FolderListing(sd.rendering.FolderishRenderer):
+    """A listing of the content.
+    """
+    sd.rendering.name(u"sd_folderlisting")
     sd.rendering.target(atct.IATFolder)
     sd.rendering.target(atct.IATBTreeFolder)
     sd.rendering.target(atct.IATTopic)
+
+
+class PhotoAlbum(FolderListing):
+    """A simple photo album.
+    """
+    sd.rendering.name(u"sd_photoalbum")
     sd.rendering.restrict(atct.IPhotoAlbumAble)
     
 
 class EnhancedPhotoalbum(PhotoAlbum):
-    """A content fetcher that adds javascript
+    """A photo album with slideshow options and javascript.
     """
     sd.rendering.name(u"sd_enhanced_photoalbum")
         
@@ -96,7 +120,7 @@ class EnhancedPhotoalbum(PhotoAlbum):
                "timer": self.timer }
 
 
-class TopicCustomRenderer(sd.rendering.FolderishRenderer):
+class TopicCustomView(sd.rendering.FolderishRenderer):
     """Custom view
     """
     sd.rendering.name(u"sd_topiccustom")

@@ -6,7 +6,7 @@ from zope.component import queryMultiAdapter
 from zope.cachedescriptors.property import CachedProperty
 from sd.contents.interfaces import IStructuredDocument, IStructuredItem
 from sd.contents.interfaces import IDynamicStructuredItem
-from sd.rendering.interfaces import IStructuredView, IStructuredRenderer
+from sd.rendering.interfaces import IStructuredView, IRendererResolver
 from sd.common.adapters.interfaces import IContentQueryHandler
 
 grok.templatedir('templates')
@@ -39,10 +39,10 @@ class GenericView(grok.View):
     grok.context(IStructuredItem)
     grok.require('zope2.View')
 
-    @CachedProperty
+
     def body(self):
-        item = IDynamicStructuredItem(self.context)
-        renderer = queryMultiAdapter((self.context, self.request),
-                                     IStructuredRenderer,
-                                     name = item.sd_layout)
-        return renderer.render() or u""
+        import pdb
+        pdb.set_trace()
+        resolver = queryMultiAdapter((self.context, self.request),
+                                     IRendererResolver)
+        return resolver.renderer and resolver.renderer.render() or u""

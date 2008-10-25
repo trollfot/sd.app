@@ -3,9 +3,8 @@
 from five import grok
 from zope.component import queryMultiAdapter
 from zope.cachedescriptors.property import CachedProperty
-
-from sd.contents.interfaces import IStructuredItem, IDynamicStructuredItem
-from sd.rendering.interfaces import IStructuredView, IStructuredRenderer
+from sd.rendering.interfaces import IStructuredView, IRendererResolver
+from sd.contents.interfaces import IStructuredItem
 
 grok.templatedir('browser/templates')
 
@@ -17,15 +16,9 @@ class StructuredContentProvider(grok.ViewletManager):
     grok.require('zope2.View')
     grok.view(IStructuredView)
     grok.context(IStructuredItem)
-    
+
     @CachedProperty
     def renderers(self):
-        renderers = list()
-        for content in self.view.contents(full_objects=True):
-            name = IDynamicStructuredItem(content).sd_layout
-            renderer = queryMultiAdapter((content, self.request),
-                                         IStructuredRenderer,
-                                         name = name)
-            if renderer:
-                renderers.append(renderer)
-        return renderers
+        return [queryMultiAdapter((content, self.request),
+                                  IRendererResolver).renderer
+                for content in self.view.contents(full_objects=True)]

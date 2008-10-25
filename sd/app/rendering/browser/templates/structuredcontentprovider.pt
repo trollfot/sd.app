@@ -1,6 +1,7 @@
 <tal:loop repeat="item viewletmanager/renderers">
      
-<dl tal:attributes="id string:${context/UID}-${item/getId};
+<dl tal:condition="nocall:item"
+    tal:attributes="id string:${context/UID}-${item/getId};
 		    class string:structured-item kssattr-uid-${item/UID}">
 
   <tal:block define="item nocall:item" 
