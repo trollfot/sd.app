@@ -1,50 +1,63 @@
 # -*- coding: utf-8 -*-
 
 import sd.rendering
-from Acquisition import aq_base
-from zope.cachedescriptors.property import CachedProperty
 from five import grok
+from Acquisition import aq_base
+from zope.i18nmessageid import MessageFactory
+from zope.cachedescriptors.property import CachedProperty
 from sd.rendering import base
 from sd.rendering.interfaces import IStructuredDefaultRenderer
 from Products.ATContentTypes import interface as atct
 
 
 grok.templatedir('templates')
+_ = MessageFactory("sd")
 
 
 class ATDocument(sd.rendering.StructuredRenderer):
-    """A simple document rendering.
-    """
-    sd.rendering.name("sd_atdocument")
-    grok.provides(IStructuredDefaultRenderer)
+
+    label = _("sd_atdocument",
+              default=u"A simple document rendering.")
+    
     sd.rendering.target(atct.IATDocument)
 
     def render(self):
         return self.context.getText()
 
 
+
 class ATFile(sd.rendering.StructuredRenderer):
-    """A simple document rendering.
-    """
+
+    label = _("sd_atfile",
+              default=u"A simple file rendering.")
+    
     sd.rendering.target(atct.IATFile)
 
 
+
 class ATLink(sd.rendering.StructuredRenderer):
-    """A simple document rendering.
-    """
+
+    label = _("sd_atlink",
+              default=u"A simple link rendering.")
+    
     sd.rendering.target(atct.IATLink)
 
 
+
 class ATEvent(sd.rendering.StructuredRenderer):
-    """A simple document rendering.
-    """
+
+    label = _("sd_atevent",
+              default=u"Event rendering.")
+    
     sd.rendering.target(atct.IATEvent)
 
 
+
 class ImageContent(sd.rendering.StructuredRenderer):
-    """Basic renderer for an object with an image.
-    """
-    sd.rendering.name(u"sd_imagecontent_center")
+
+    label = _("sd_imagecontent_center",
+              default=u"Centered image above text.")
+
     sd.rendering.target(atct.IImageContent)
     
     def getSize(self):
@@ -61,32 +74,36 @@ class ImageContent(sd.rendering.StructuredRenderer):
 
 
 class ImageContentLeft(ImageContent):
-    """Basic renderer for an object with an image.
+    """Text with an image on the left.
     """
     sd.rendering.name(u"sd_imagecontent_left")
 
 
 class ImageContentRight(ImageContent):
-    """Basic renderer for an object with an image.
+    """Text with an image on the right.
     """
     sd.rendering.name(u"sd_imagecontent_right")
 
 
 class FolderListing(sd.rendering.FolderishRenderer):
-    """A listing of the content.
-    """
-    sd.rendering.name(u"sd_folderlisting")
+
+    label = _("sd_folderlisting",
+              default=u"A listing of the content.")
+
     sd.rendering.target(atct.IATFolder)
     sd.rendering.target(atct.IATBTreeFolder)
     sd.rendering.target(atct.IATTopic)
 
 
-class PhotoAlbum(FolderListing):
+class PhotoAlbum(sd.rendering.FolderishRenderer):
     """A simple photo album.
     """
     sd.rendering.name(u"sd_photoalbum")
     sd.rendering.restrict(atct.IPhotoAlbumAble)
-    
+    sd.rendering.target(atct.IATFolder)
+    sd.rendering.target(atct.IATBTreeFolder)
+    sd.rendering.target(atct.IATTopic)
+
 
 class EnhancedPhotoalbum(PhotoAlbum):
     """A photo album with slideshow options and javascript.

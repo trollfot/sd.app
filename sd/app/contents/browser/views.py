@@ -39,10 +39,8 @@ class GenericView(grok.View):
     grok.context(IStructuredItem)
     grok.require('zope2.View')
 
-
+    @CachedProperty
     def body(self):
-        import pdb
-        pdb.set_trace()
         resolver = queryMultiAdapter((self.context, self.request),
                                      IRendererResolver)
         return resolver.renderer and resolver.renderer.render() or u""

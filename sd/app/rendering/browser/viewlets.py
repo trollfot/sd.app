@@ -73,11 +73,8 @@ class LayoutViewlet(ViewletBase):
                            context=self.context)
         return voc(self.manager.item)
 
-    @property
-    def default_layout(self):
-        return self.manager.item.__name__
-
-    def update(self):           
+    def update(self):
+        self.default_layout = self.manager.item.__view_name__
         self.uid = self.manager.item.UID()
         self.url = self.manager.item._edit_url
 
