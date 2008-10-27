@@ -55,10 +55,8 @@
 	    </dl>
 	  </tal:tableOfcontents>
 
-	  <div id="structured-document-introduction">
-	    <tal:text
-		metal:use-macro="python:context.widget('text', mode='view')" />
-	  </div>
+	  <div id="structured-document-introduction"
+	       tal:content="structure context/getText|nothing" />
 
 	  <div id="structured-document-body" 
 	       tal:condition="chapters"
