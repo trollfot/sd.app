@@ -9,12 +9,6 @@
      permission="cmf.ModifyPortalContent"
      />
 
-  <page
-     name="sd.batch"
-     for="sd.contents.interfaces.IPossibleBatchProvider"
-     class=".configuration.BatchForm"
-     permission="cmf.ModifyPortalContent"
-     />
 
   <!-- custom widgets -->
   <zope:adapter

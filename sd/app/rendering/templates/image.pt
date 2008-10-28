@@ -1,0 +1,23 @@
+<div class="atimage"
+     tal:define="size context/size">
+  <a href=""
+     class="discreet pop-image"
+     tal:attributes="href view/absolute_url;
+		     rel context/aq_parent/getId;">
+    <tal:block condition="size"
+	       replace="structure view/image" />
+    <br />
+    <span class="visualNoPrint" i18n:domain="plone">
+      <img src="" alt="" tal:replace="structure here/search_icon.gif" />
+      <span i18n:translate="label_click_to_view_full_image">
+	Click to view full-size image&hellip;
+      </span>
+    </span>
+  </a>
+  
+  <p class="structured-item-footer discreet">
+    <strong tal:content="view/Title" />
+    <span tal:content="string:: ${view/Description}"
+	  tal:condition="view/Description"/>
+  </p>
+</div>

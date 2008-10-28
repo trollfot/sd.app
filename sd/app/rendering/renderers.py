@@ -46,6 +46,17 @@ class ATEvent(sd.rendering.StructuredRenderer):
               default=u"Classical event rendering.")
     
 
+class Image(sd.rendering.StructuredRenderer):
+    sd.rendering.target(atct.IATImage)
+
+    label = _("sd_image",
+              default=u"Centered image.")
+
+    @CachedProperty
+    def image(self):
+        return self.context.tag(scale="preview")
+
+
 class ImageContent(sd.rendering.StructuredRenderer):
     sd.rendering.target(atct.IImageContent)
 

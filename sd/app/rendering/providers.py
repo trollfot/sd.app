@@ -8,7 +8,6 @@ from sd.contents.interfaces import IStructuredItem
 
 grok.templatedir('browser/templates')
 
-
 class StructuredContentProvider(grok.ViewletManager):
     """A content provider serving the contents.
     """

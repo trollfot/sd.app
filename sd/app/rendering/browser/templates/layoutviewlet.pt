@@ -1,9 +1,9 @@
 <div class="structuredDropDownActions"
-     tal:define="default view/default_layout">
-  <ul tal:attributes="class string:item-actionmenu kssattr-uid-${view/uid}">
+     tal:define="default viewlet/default_layout">
+  <ul tal:attributes="class string:item-actionmenu kssattr-uid-${viewlet/uid}">
     <li class="action">
       <a class="action-header"
-	 tal:attributes="href view/url"
+	 tal:attributes="href viewlet/url"
 	 i18n:domain="plone"
 	 ><tal:header
 	      i18n:translate="label_current_item_views"
@@ -13,7 +13,7 @@
 	<small>&#9660;</small>
       </a>
       <ul class="submenu"
-	  tal:define="voc view/vocabulary">
+	  tal:define="voc viewlet/vocabulary">
 	<li tal:repeat="term voc" class="layout submenu-item">
 	  <a href="#"
 	     tal:define="selected python: term.value == default

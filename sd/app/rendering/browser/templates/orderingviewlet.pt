@@ -1,7 +1,7 @@
 <span class="reordering"
-      tal:define="url view/url;
-		  oid view/oid;
-		  uid view/uid">
+      tal:define="url viewlet/url;
+		  oid viewlet/oid;
+		  uid viewlet/uid">
 
   <a type="submit"
      tal:attributes="href string:$url/@@doMoveUp?oid=$oid;

@@ -9,5 +9,6 @@
 
   <!-- Grokking the renderers -->
   <grok:grok package=".renderers" />
+  <grok:grok package=".providers" />
 
 </configure>
