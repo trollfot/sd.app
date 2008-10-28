@@ -4,6 +4,7 @@ import sd.rendering
 from five import grok
 from Acquisition import aq_base
 from zope.i18nmessageid import MessageFactory
+from zope.component import queryMultiAdapter
 from zope.cachedescriptors.property import CachedProperty
 from sd.rendering import base
 from sd.rendering.interfaces import IStructuredDefaultRenderer
@@ -15,50 +16,41 @@ _ = MessageFactory("sd")
 
 
 class ATDocument(sd.rendering.StructuredRenderer):
-
-    label = _("sd_atdocument",
-              default=u"A simple document rendering.")
-    
     sd.rendering.target(atct.IATDocument)
 
+    label = _("sd_atdocument",
+              default=u"Document rendering.")
+    
     def render(self):
         return self.context.getText()
 
 
-
 class ATFile(sd.rendering.StructuredRenderer):
-
-    label = _("sd_atfile",
-              default=u"A simple file rendering.")
-    
     sd.rendering.target(atct.IATFile)
 
-
+    label = _("sd_atfile",
+              default=u"Classical file rendering.")
+    
 
 class ATLink(sd.rendering.StructuredRenderer):
-
-    label = _("sd_atlink",
-              default=u"A simple link rendering.")
-    
     sd.rendering.target(atct.IATLink)
-
-
-
-class ATEvent(sd.rendering.StructuredRenderer):
-
-    label = _("sd_atevent",
-              default=u"Event rendering.")
     
+    label = _("sd_atlink",
+              default=u"Classical link rendering.")
+    
+    
+class ATEvent(sd.rendering.StructuredRenderer):
     sd.rendering.target(atct.IATEvent)
 
-
+    label = _("sd_atevent",
+              default=u"Classical event rendering.")
+    
 
 class ImageContent(sd.rendering.StructuredRenderer):
+    sd.rendering.target(atct.IImageContent)
 
     label = _("sd_imagecontent_center",
-              default=u"Centered image above text.")
-
-    sd.rendering.target(atct.IImageContent)
+              default=u"Centered image above text.")    
     
     def getSize(self):
         method = getattr(aq_base(self.context), "getImage_scale", None)
@@ -74,41 +66,51 @@ class ImageContent(sd.rendering.StructuredRenderer):
 
 
 class ImageContentLeft(ImageContent):
-    """Text with an image on the left.
-    """
-    sd.rendering.name(u"sd_imagecontent_left")
+    sd.rendering.name(u"imagecontent_left")
+
+    label = _("imagecontent_left",
+              default=u"Text with an image on the left.")
 
 
 class ImageContentRight(ImageContent):
-    """Text with an image on the right.
-    """
     sd.rendering.name(u"sd_imagecontent_right")
+
+    label = _("imagecontent_right",
+              default=u"Text with an image on the right.")
 
 
 class FolderListing(sd.rendering.FolderishRenderer):
+    sd.rendering.target(atct.IATFolder)
+    sd.rendering.target(atct.IATBTreeFolder)
+    sd.rendering.target(atct.IATTopic)
 
     label = _("sd_folderlisting",
-              default=u"A listing of the content.")
+              default=u"Listing of the content.")
 
+
+class FolderAsChapter(sd.rendering.FolderishRenderer):
+    sd.rendering.name(u"sd_chapter")
     sd.rendering.target(atct.IATFolder)
     sd.rendering.target(atct.IATBTreeFolder)
     sd.rendering.target(atct.IATTopic)
 
+    label = _("chapter",
+              default=u"Contents as standalone items.")
 
-class PhotoAlbum(sd.rendering.FolderishRenderer):
-    """A simple photo album.
-    """
+
+class PhotoAlbum(FolderAsChapter):
     sd.rendering.name(u"sd_photoalbum")
     sd.rendering.restrict(atct.IPhotoAlbumAble)
-    sd.rendering.target(atct.IATFolder)
-    sd.rendering.target(atct.IATBTreeFolder)
-    sd.rendering.target(atct.IATTopic)
+
+    label = _("photoalbum",
+              default=u"Photo album with thumbnails.")
 
 
 class EnhancedPhotoalbum(PhotoAlbum):
-    """A photo album with slideshow options and javascript.
-    """
     sd.rendering.name(u"sd_enhanced_photoalbum")
+
+    label = _("enhanced_photoalbum",
+              default=u"Photo album with slideshow options and javascript.")
         
     @CachedProperty
     def timer(self):
@@ -138,10 +140,11 @@ class EnhancedPhotoalbum(PhotoAlbum):
 
 
 class TopicCustomView(sd.rendering.FolderishRenderer):
-    """Custom view
-    """
     sd.rendering.name(u"sd_topiccustom")
     sd.rendering.target(atct.IATTopic)
+
+    label = _("topiccustom",
+              default=u"Custom view (if defined).")
     
     @CachedProperty
     def enabled(self):
@@ -154,5 +157,3 @@ class TopicCustomView(sd.rendering.FolderishRenderer):
     @CachedProperty
     def metadatas(self):
         return self.context.listMetaDataFields(False)
-
-
