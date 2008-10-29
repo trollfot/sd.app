@@ -11,14 +11,14 @@ from plone.app.vocabularies.catalog import SearchableTextSourceBinder
 from sd.imaging.field import ImageField
 from sd.imaging.interfaces import IPortletWithImage
 from sd.contents.interfaces import IStructuredBlock
-from sd.app.forms.interfaces import ITerm
+from sd.app.forms.fields import TermField
 
 _ = MessageFactory("sd")
 
 
 class IStructuredIllustratedBlock(IStructuredBlock, IPortletWithImage):
     """A marker interface for structured blocks with an image field.
-    """    
+    """
 
 class ICountryBlock(IStructuredIllustratedBlock):
     """A schema representing a country.
@@ -33,7 +33,7 @@ class ICountryBlock(IStructuredIllustratedBlock):
         title = _(u"Local names"),
         description = _(u"The country name in other dialects or languages."),
         default = list(),
-        value_type = Object(schema=ITerm),
+        value_type = TermField(),
         required = False
         )
 
@@ -52,7 +52,7 @@ class IPersonBlock(IStructuredIllustratedBlock):
         title = _(u"Details"),
         description = _(u"Add more information"),
         default = list(),
-        value_type = Object(schema=ITerm),
+        value_type = TermField(),
         required = False
         )
 
@@ -116,7 +116,7 @@ class IBookBlock(IStructuredIllustratedBlock):
         title = _(u"Details"),
         description = _(u"Add more information"),
         default = list(),
-        value_type = Object(schema=ITerm),
+        value_type = TermField(),
         required = False
         )
 
