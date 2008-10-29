@@ -16,23 +16,7 @@
      <property name="url_expr">string:$object_url/@@sd.preferences</property>
      <property name="icon_expr"></property>
      <property
-	 name="available_expr">object/@@if_checkers/show_preferences_tab</property>
-     <property name="permissions">
-       <element value="Modify portal content"/>
-     </property>
-     <property name="visible">True</property>
-   </object>
-
-   <object i18n:domain="sd"
-	   name="batch"
-	   meta_type="CMF Action" >
-     <property name="title"
-	       i18n:translate="batch">Batching</property>
-     <property name="description"></property>
-     <property name="url_expr">string:$object_url/@@sd.batch</property>
-     <property name="icon_expr"></property>
-     <property
-	 name="available_expr">object/@@if_checkers/is_batchable</property>
+	 name="available_expr">object/@@sd.show_preferences|nothing</property>
      <property name="permissions">
        <element value="Modify portal content"/>
      </property>

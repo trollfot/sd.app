@@ -1,7 +1,11 @@
-<configure
-    xmlns="http://namespaces.zope.org/zope"
-    xmlns:five="http://namespaces.zope.org/five">
-  
-  <include package=".browser" />
+<configure xmlns="http://namespaces.zope.org/zope">
+
+  <adapter
+      for=".interfaces.ITermField
+	   zope.publisher.interfaces.browser.IBrowserRequest"
+      provides="zope.app.form.interfaces.IInputWidget"
+      factory=".browser.widgets.TermWidget"
+      permission="zope.Public"
+      />
 
 </configure>

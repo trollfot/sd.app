@@ -3,37 +3,29 @@
 from five import grok
 from zope.formlib import form
 from zope.i18nmessageid import MessageFactory
-from plone.app.form.base import EditForm
-from sd.contents.interfaces import IBatchProvider
-from sd.contents.interfaces import IDynamicStructuredItem
-from sd.contents.interfaces import IPossibleBatchProvider
+from sd.contents import interfaces
 
 _ = MessageFactory("sd")
 
+grok.templatedir("templates")
 
-class BatchForm(grok.EditForm):
-    """Batch configuration panel.
-    """
-    grok.name("sd.batch")
-    grok.context(IPossibleBatchProvider)
-    grok.require("cmf.ModifyPortalContent")
-    
-    label = _(u"sd.batch",
-              default=u"Batch preferences")
-    
-    form_name = _(u"adv_batch_config",
-                  default=u"Advanced batch configuration")
-    
-    form_fields = form.FormFields(IBatchProvider)
-
-
-class PreferencesForm(EditForm):
+class PreferencesForm(grok.EditForm):
     """Structured item configuration panel.
     """
+    grok.name("sd.preferences")
+    grok.context(interfaces.IStructuredItem)
+    grok.require("cmf.ModifyPortalContent")
+
     label = _(u"sd.preferences",
               default=u"Rendering preferences")
     
     form_name = _(u"adv_config",
                   default=u"Advanced configuration")
-
-    form_fields = form.FormFields(IDynamicStructuredItem)
+    
+    @property
+    def form_fields(self):
+        ifaces = [interfaces.IDynamicStructuredItem]
+        if interfaces.IPossibleBatchProvider.providedBy(self.context):
+            ifaces.append(interfaces.IBatchProvider)
+        return form.FormFields(*ifaces)
+    

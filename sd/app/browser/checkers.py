@@ -1,29 +1,14 @@
 # -*- coding: utf-8 -*-
 
-# Zope
-from zope.interface import implements
-from zope.cachedescriptors.property import CachedProperty
-from Products.Five.browser import BrowserView
-from plone.memoize.view import memoize
-
-# Locals
-from interfaces import ISDAvailabilityCheckers
-from sd.contents.interfaces import *
+from five import grok
+from sd.contents.interfaces import IStructuredItem
 
 
-class SDAvailabilityCheckers(BrowserView):
+class ShowPreferences(grok.View):
 
-    implements(ISDAvailabilityCheckers)
+    grok.context(IStructuredItem)
+    grok.name("sd.show_preferences")
+    grok.require("zope2.View")
 
-    @memoize
-    def show_preferences_tab(self, context=None):
-        if not context:
-            context = self.context
-        parent = getattr(context.aq_inner, 'aq_parent', None)        
-        if parent and IStructuredDocument.providedBy(parent):
-            return IStructuredItem.providedBy(context)
-        return False
-
-    @CachedProperty
-    def is_batchable(self):
-        return bool(IBatchProvider(self.context, False))
+    def render(self):
+        return True
