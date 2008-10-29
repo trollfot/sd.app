@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 
-from zope.interface import Interface, Attribute
+from zope.interface import Interface
+from zope.app.publisher.interfaces.browser import IBrowserMenu
+from zope.app.publisher.interfaces.browser import IBrowserSubMenuItem
 
-
-class ISDAvailabilityCheckers( Interface ):
-    """A convenient way to check interfaces availability on objects.
+class IStructuredMenu(IBrowserMenu):
     """
-    def show_preferences_tab(self, context=None):
-        """
-        """
+    """
 
-    is_batchable = Attribute(u"Boolean value to enable or not the batch tab.")
+class IStructuredSubMenu(IBrowserSubMenuItem):
+    """
+    """

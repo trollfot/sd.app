@@ -3,6 +3,12 @@
 
   <include file="resources.zcml" />
 
+  <menu
+      id="sd_contentmenu_options"
+      title="Structured Document options"
+      class=".menu.StructuredDocumentOptions"
+      />
+
   <page
       for="*"
       name="sd.batch"

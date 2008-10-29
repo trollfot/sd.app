@@ -53,11 +53,4 @@
     <permission value="Modify portal content"/>
   </action>
 
-  <action i18n:translate="manage_portlets_link"
-	  title="Manage portlets" action_id="manage_portlets_link" category="object"
-	  condition_expr=""
-	  url_expr="string:${object_url}/@@manage-blocks" visible="True">
-    <permission value="Modify portal content"/>
-  </action>
-
 </object>

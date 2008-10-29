@@ -23,5 +23,23 @@
      <property name="visible">True</property>
    </object>
 
+   <object i18n:domain="sd"
+	   name="sd.portlets"
+	   meta_type="CMF Action" >
+     <property name="title"
+	       i18n:translate="sd.portlets">Embedded portlets</property>
+     <property name="description"></property>
+     <property name="url_expr">string:$object_url/@@manage-blocks</property>
+     <property name="icon_expr"></property>
+     <property
+	 name="available_expr">object/@@sd.is_structured_document|nothing</property>
+     <property name="permissions">
+       <element value="Modify portal content"/>
+     </property>
+     <property name="visible">True</property>
+   </object>
+
  </object>
+
+
 </object>

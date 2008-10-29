@@ -4,21 +4,18 @@ import sd.rendering
 from five import grok
 from Acquisition import aq_base
 from zope.i18nmessageid import MessageFactory
-from zope.component import queryMultiAdapter
 from zope.cachedescriptors.property import CachedProperty
-from sd.rendering import base
-from sd.rendering.interfaces import IStructuredDefaultRenderer
+from sd.app.contents import interfaces as sdct
 from Products.ATContentTypes import interface as atct
-
 
 grok.templatedir('templates')
 _ = MessageFactory("sd")
 
 
-class ATDocument(sd.rendering.StructuredRenderer):
-    sd.rendering.target(atct.IATDocument)
+class Document(sd.rendering.StructuredRenderer):
+    sd.rendering.target(sdct.ITextContent)
 
-    label = _("sd_atdocument",
+    label = _("sd_document",
               default=u"Document rendering.")
     
     def render(self):
@@ -58,18 +55,19 @@ class Image(sd.rendering.StructuredRenderer):
 
 
 class ImageContent(sd.rendering.StructuredRenderer):
-    sd.rendering.target(atct.IImageContent)
+    sd.rendering.target(sdct.ITextWithImage)
 
     label = _("sd_imagecontent_center",
               default=u"Centered image above text.")    
     
     def getSize(self):
-        method = getattr(aq_base(self.context), "getImage_scale", None)
-        return method is not None and method() or 'thumb'
+        scale = getattr(aq_base(self.context), "getImage_scale", None)
+        return scale is not None and scale() or 'thumb'
 
     @CachedProperty
     def caption(self):
-        return self.context.getImageCaption() or self.context.Rights()
+        caption = getattr(aq_base(self.context), "getImageCaption", None)
+        return caption is not None and caption() or self.context.Rights()
     
     @CachedProperty
     def image(self):
@@ -111,7 +109,7 @@ class FolderAsChapter(sd.rendering.FolderishRenderer):
 
 class PhotoAlbum(FolderAsChapter):
     sd.rendering.name(u"sd_photoalbum")
-    sd.rendering.restrict(atct.IPhotoAlbumAble)
+    sd.rendering.restrict(atct.IImageContent)
 
     label = _("photoalbum",
               default=u"Photo album with thumbnails.")

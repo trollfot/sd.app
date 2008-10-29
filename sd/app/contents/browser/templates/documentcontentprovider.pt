@@ -27,7 +27,7 @@
     <table id="structured-document-content">
       <tr>
 	<td id="main-structured-document-content">
-	  <tal:tableOfcontents condition="context/getTableContents">
+	  <tal:tableOfcontents condition="context/getTableContents|nothing">
 	    <dl id="document-whole-index"
 		i18n:domain="atcontenttypes"
 		tal:condition="chapters"

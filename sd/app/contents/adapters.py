@@ -1,18 +1,16 @@
 # -*- coding: utf-8 -*-
 
-from zope.component import adapts
-from zope.interface import implements
+from five import grok
 from sd.contents.interfaces import *
-from sd.common.adapters.base import BaseAdapter
 from sd.common.fields.annotation import AdapterAnnotationProperty
 
 
-class AnnonationBatchAdapter(BaseAdapter):
+class AnnonationBatchAdapter(grok.Adapter):
     """This adapter provides the field necessary for batch properties
     It will store the data in annotations.
     """
-    adapts(IPossibleBatchProvider)
-    implements(IBatchProvider)
+    grok.context(IPossibleBatchProvider)
+    grok.provides(IBatchProvider)
 
     batch_size = AdapterAnnotationProperty(
         IBatchProvider['batch_size'],
@@ -20,12 +18,13 @@ class AnnonationBatchAdapter(BaseAdapter):
         )
 
 
-class DynamicLayoutAdapter(BaseAdapter):
-    """This adapter provides the fields necessary for paragraphs'
+class DynamicLayoutAdapter(grok.Adapter):
+    """This adapter provides the fields necessary for embedded
     layout properties. It will store the data in annotations.
     """
-    adapts(IStructuredItem)
-    implements(IDynamicStructuredItem, IUndirectLayoutProvider)
+    grok.context(IStructuredItem)
+    grok.implements(IUndirectLayoutProvider)
+    grok.provides(IDynamicStructuredItem)
 
     sd_layout = AdapterAnnotationProperty(
         IDynamicStructuredItem["sd_layout"],

@@ -5,31 +5,17 @@
   <!-- Subpackages -->
   <include package=".browser" />
 
-
-  <!-- Forms adapters -->
-  <adapter
-      factory=".adapters.DynamicLayoutAdapter"
-      provides="sd.contents.interfaces.IDynamicStructuredItem"
-      />
-
-  <adapter
-      factory=".adapters.AnnonationBatchAdapter"
-      provides="sd.contents.interfaces.IBatchProvider"
-      />
-
-
   <!-- Implementations -->
   <five:implements
       class="Products.ATContentTypes.content.image.ATImage"
-      interface="sd.contents.interfaces.IExternalStructuredItem
-		 Products.ATContentTypes.interface.image.IPhotoAlbumAble"
+      interface="sd.contents.interfaces.IExternalStructuredItem"
       />
 
   <five:implements
       class="Products.ATContentTypes.content.document.ATDocument"
-      interface="sd.contents.interfaces.IExternalStructuredItem"
+      interface="sd.contents.interfaces.IExternalStructuredItem
+		 sd.app.contents.interfaces.ITextContent"
       />
-
 
   <five:implements
       class="Products.ATContentTypes.content.folder.ATFolder"
@@ -51,13 +37,14 @@
 
   <five:implements
       class="Products.ATContentTypes.content.event.ATEvent"
-      interface="sd.contents.interfaces.IExternalStructuredItem"
+      interface="sd.app.contents.interfaces.ITextContent
+		 sd.contents.interfaces.IExternalStructuredItem"
       />
 
   <five:implements
       class="Products.ATContentTypes.content.newsitem.ATNewsItem"
       interface="sd.contents.interfaces.IExternalStructuredItem
-		 Products.ATContentTypes.interface.image.IPhotoAlbumAble
+		 sd.app.contents.interfaces.ITextWithImage
 		 Products.ATContentTypes.interface.image.IImageContent"
       />
 
