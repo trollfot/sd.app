@@ -1,14 +1,22 @@
 # -*- coding: utf-8 -*-
 
+from five import grok
+from zope.publisher.interfaces.browser import IBrowserRequest
 from zope.app.form.browser.widget import SimpleInputWidget
+from zope.app.form.interfaces import IInputWidget
 from zope.app.pagetemplate.viewpagetemplatefile import ViewPageTemplateFile
-from sd.app.forms.objects import MinimalTerm
+
+from objects import MinimalTerm
+from interfaces import ITermField
 
 
-class TermWidget(SimpleInputWidget):
+class TermWidget(grok.MultiAdapter, SimpleInputWidget):
     """The term widget simply renders 2 text inputs that are used as
     a dict key/value couple.
     """
+    grok.adapts(ITermField, IBrowserRequest)
+    grok.provides(IInputWidget)
+    
     template = ViewPageTemplateFile('templates/dict_widget.pt')
 
     def __call__(self):
