@@ -102,6 +102,7 @@ class StructuredDocumentOptions(menu.BrowserMenu):
                   'submenu': None,
                   }
                 )
+
         return results
 
         

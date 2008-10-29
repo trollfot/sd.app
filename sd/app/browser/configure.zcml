@@ -11,7 +11,7 @@
 
   <page
       for="*"
-      name="sd.batch"
+      name="batch"
       class=".batch.AjaxBatch"
       attribute="batch"
       permission="zope2.View"
