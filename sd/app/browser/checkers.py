@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 from five import grok
-
 from sd.contents import interfaces as sdct
 from zope.interface import directlyProvides, noLongerProvides
+
 
 class ShowPreferences(grok.View):
 
