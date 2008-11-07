@@ -35,7 +35,7 @@ class Tagging(grok.View):
         directlyProvides(self.context, sdct.IStructuredDocument)
         self.context.setLayout("@@sd.document.onepage")
         self.context.reindexObject()
-        self.request.RESPONSE.redirect(self.context.absolute_url())
+        self.redirect(self.context.absolute_url())
 
 
 class UnTagging(grok.View):
@@ -48,7 +48,7 @@ class UnTagging(grok.View):
         noLongerProvides(self.context, sdct.IStructuredDocument)
         self.context.setLayout(self.context.getDefaultLayout())
         self.context.reindexObject()
-        self.request.RESPONSE.redirect(self.context.absolute_url())
+        self.redirect(self.context.absolute_url())
 
 
 class DocumentOptions(grok.View):
@@ -61,4 +61,4 @@ class DocumentOptions(grok.View):
         layout = self.request.get('layout', None)
         if layout:
             self.context.setLayout(layout)
-        self.request.RESPONSE.redirect(self.context.absolute_url())
+        self.redirect(self.context.absolute_url())

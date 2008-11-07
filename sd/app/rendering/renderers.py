@@ -116,7 +116,7 @@ class PhotoAlbum(FolderAsChapter):
 
 
 class EnhancedPhotoalbum(PhotoAlbum):
-    sd.rendering.name(u"sd_enhanced_photoalbum")
+    sd.rendering.name("sd_enhanced_photoalbum")
 
     label = _("enhanced_photoalbum",
               default=u"Photo album with slideshow options and javascript.")

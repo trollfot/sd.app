@@ -13,7 +13,7 @@
       />
 
   <sd:rendererConfiguration
-      name="enhanced_photo_album"
+      name="sd_enhanced_photoalbum"
       schema=".interfaces.IEnhancedPhotoAlbumConfig"
       sheet=".sheets.EnhancedPhotoAlbumConfig"
       />
