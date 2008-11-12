@@ -5,7 +5,6 @@
   <!-- Additional and internal packages -->
   <include package="sd.rendering" />
   <include package=".browser" />
-  <include package=".config" />
 
   <!-- Grokking the renderers -->
   <grok:grok package=".renderers" />

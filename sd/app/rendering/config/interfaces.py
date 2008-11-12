@@ -2,7 +2,7 @@
 
 from zope.schema import Int, Bool
 from zope.i18nmessageid import MessageFactory
-from sd.config.interfaces import IConfigurationSheet
+from sd.rendering.interfaces import IConfigurationSheet
 
 _ = MessageFactory("sd")
 

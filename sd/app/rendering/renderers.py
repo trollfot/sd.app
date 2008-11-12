@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import sd.config
 import sd.rendering
 
 from five import grok
@@ -121,8 +120,8 @@ class PhotoAlbum(FolderAsChapter):
 
 class EnhancedPhotoalbum(PhotoAlbum):
     sd.rendering.name("sd_enhanced_photoalbum")
-    sd.config.configuration(IEnhancedPhotoAlbumConfig,
-                            EnhancedPhotoAlbumConfig)
+    sd.rendering.configuration(IEnhancedPhotoAlbumConfig,
+                               EnhancedPhotoAlbumConfig)
 
     label = _("enhanced_photoalbum",
               default=u"Photo album with slideshow options and javascript.")

@@ -2,11 +2,13 @@
 
 from five import grok
 from zope.component import queryUtility
-from sd.app.rendering.browser.viewlets import AboveRendererBody
 from zope.cachedescriptors.property import CachedProperty
-from sd.config.interfaces import IConfigurationSheetType
-from sd.contents.interfaces import IStructuredItem
 from zope.i18nmessageid import MessageFactory
+
+from sd.app.rendering.browser.viewlets import AboveRendererBody
+from sd.rendering.interfaces import IConfigurableRenderer
+from sd.contents.interfaces import IStructuredItem
+
 _ = MessageFactory("sd")
 
 
@@ -21,18 +23,19 @@ class LayoutConfiguration(grok.Viewlet):
         return self.view.__view_name__
 
     @CachedProperty
-    def configurable(self):
-        return bool(self.view.configurable)
-
-    @CachedProperty
     def url(self):
-        if self.view.configuration is not None or self.configurable:
-            return "%s/++configuration++%s" % (self.context.absolute_url(),
-                                               self.layout)
-        return None
+        layout = self.view.__view_name__
+        if self.view.configuration:
+            return "%s/@@%s/configuration/@@edit" % (
+                self.view.absolute_url(), layout
+                )
+            
+        return "%s/@@%s/@@configure" % (
+                self.view.absolute_url(), layout
+                )
 
     def render(self):
-        if not self.url:
+        if not IConfigurableRenderer.providedBy(self.view):
             return u''
         return u'''<p class="configuration-sheet discreet">
                    <a href="%s">%s</a>
