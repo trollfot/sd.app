@@ -4,10 +4,10 @@
   
   <!-- Additional and internal packages -->
   <include package="sd.rendering" />
-  <include package=".browser" />
 
   <!-- Grokking the renderers -->
+  <grok:grok package=".browser" />
   <grok:grok package=".renderers" />
   <grok:grok package=".providers" />
-
+  
 </configure>
