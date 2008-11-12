@@ -5,17 +5,4 @@
   
   <include package="sd.config" />
 
-  <browser:viewlet
-      name="sd.layout_configuration"
-      manager="sd.app.rendering.browser.interfaces.IAboveContentBody"
-      class=".viewlets.LayoutConfiguration"
-      permission="cmf.ModifyPortalContent" 
-      />
-
-  <sd:rendererConfiguration
-      name="sd_enhanced_photoalbum"
-      schema=".interfaces.IEnhancedPhotoAlbumConfig"
-      sheet=".sheets.EnhancedPhotoAlbumConfig"
-      />
-
 </configure>
