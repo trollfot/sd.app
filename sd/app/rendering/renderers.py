@@ -1,15 +1,19 @@
 # -*- coding: utf-8 -*-
 
+import sd.config
 import sd.rendering
+
 from five import grok
 from Acquisition import aq_base
+from config.interfaces import IEnhancedPhotoAlbumConfig
+from config.sheets import EnhancedPhotoAlbumConfig
 from zope.i18nmessageid import MessageFactory
 from zope.cachedescriptors.property import CachedProperty
 from sd.app.contents import interfaces as sdct
 from Products.ATContentTypes import interface as atct
 
-grok.templatedir('templates')
 _ = MessageFactory("sd")
+grok.templatedir('templates')
 
 
 class Document(sd.rendering.StructuredRenderer):
@@ -117,6 +121,8 @@ class PhotoAlbum(FolderAsChapter):
 
 class EnhancedPhotoalbum(PhotoAlbum):
     sd.rendering.name("sd_enhanced_photoalbum")
+    sd.config.configuration(IEnhancedPhotoAlbumConfig,
+                            EnhancedPhotoAlbumConfig)
 
     label = _("enhanced_photoalbum",
               default=u"Photo album with slideshow options and javascript.")
