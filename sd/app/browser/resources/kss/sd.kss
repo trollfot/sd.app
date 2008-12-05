@@ -27,3 +27,10 @@ a.move_down:click {
    orderMoveDown-parent: kssAttr('parent');
    orderMoveDown-oid: kssAttr('oid');
 }
+
+a.sd-inline-edit:click {
+   evt-click-preventdefault: True;
+   action-server: prepareAndShowPopup;
+   prepareAndShowPopup-dom_node_id: kssAttr('uid', true);
+   prepareAndShowPopup-item_uid: kssAttr('uid', true);
+}

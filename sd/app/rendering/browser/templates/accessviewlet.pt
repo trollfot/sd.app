@@ -18,7 +18,7 @@
 	</li>
 	<li class="submenu-item">
 	  <a tal:attributes="href viewlet/edit"
-	     i18n:translate="">Edit</a>
+	     i18n:translate="" class="sd-inline-edit">Edit</a>
 	</li>
 	<li class="submenu-item" i18n:domain="sd">
 	  <a tal:attributes="href viewlet/preferences"
