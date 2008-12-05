@@ -364,3 +364,7 @@ dl.portlet dd.picture {
   padding: 1em 0 1em 18px;
   background: transparent url(++resource++sd.renderer.config.gif) 0 50% no-repeat !important;
 }
+
+div.atimage {
+  text-align: center;
+}
