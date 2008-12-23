@@ -1,26 +1,42 @@
 # -*- coding: utf-8 -*-
 
+from five import grok
 from zope.component import queryUtility
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-from plone.app.layout.viewlets.common import ViewletBase
-from sd.config.interfaces import IConfigurationSheetType
+from zope.cachedescriptors.property import CachedProperty
+from zope.i18nmessageid import MessageFactory
+
+from sd.app.rendering.browser.viewlets import AboveRendererBody
+from sd.rendering.interfaces import IConfigurableRenderer
+from sd.contents.interfaces import IStructuredItem
+
+_ = MessageFactory("sd")
 
 
-class LayoutConfiguration(ViewletBase):
-    render = ViewPageTemplateFile("config.pt")
+class LayoutConfiguration(grok.Viewlet):
+    grok.order(60)
+    grok.context(IStructuredItem)
+    grok.viewletmanager(AboveRendererBody)
+    grok.require('cmf.ModifyPortalContent')
 
-    @property
+    @CachedProperty
     def layout(self):
-        return self.view.__name__
+        return self.view.__view_name__
 
-    @property
-    def configurable(self):
-        util = queryUtility(IConfigurationSheetType, self.layout, None)
-        return bool(util)
-
-    @property
+    @CachedProperty
     def url(self):
-        if self.view.configuration is not None or self.configurable:
-            return "%s/++configuration++%s" % (self.context.absolute_url(),
-                                               self.layout)
-        return None
+        layout = self.view.__view_name__
+        if self.view.configuration:
+            return "%s/@@%s/configuration/@@edit" % (
+                self.view.absolute_url(), layout
+                )
+            
+        return "%s/@@%s/@@configure" % (
+                self.view.absolute_url(), layout
+                )
+
+    def render(self):
+        if not IConfigurableRenderer.providedBy(self.view):
+            return u''
+        return u'''<p class="configuration-sheet discreet">
+                   <a href="%s">%s</a>
+                  </p>''' % (self.url, _("Display configuration"))

@@ -28,26 +28,6 @@ class TestContentsBasics(ptc.PloneTestCase):
         self.failIfEqual(doc, None)
         self.failUnless(doc_id in self.portal.objectIds())
 
-        # Pushing a chapter in
-        chapter_id = "my_chapter"
-        chapter = _createObjectByType('SimpleChapter', doc, chapter_id)
-        self.failIfEqual(chapter, None)
-        self.failUnless(chapter_id in doc.objectIds())
-
-        # Pushing a paragraph in
-        para_id = "my_paragraph"
-        para = _createObjectByType('SimpleParagraph', chapter, para_id)
-        self.failIfEqual(para, None)
-        self.failUnless(para_id in chapter.objectIds())
-
-        # Cleaning the paragraph
-        chapter._delObject(para_id)
-        self.failIf(para_id in chapter.objectIds())
-
-        # Cleaning the chapter
-        doc._delObject(chapter_id)
-        self.failIf(chapter_id in doc.objectIds())
-
         # Cleaning the portal
         self.portal._delObject(doc_id)
         self.failIf(doc_id in self.portal.objectIds())

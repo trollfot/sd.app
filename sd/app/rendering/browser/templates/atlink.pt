@@ -1,8 +1,0 @@
-<div class="paragraph-body atlink-paragraph"
-     i18n:domain="plone">
-  <p>
-    <span i18n:translate="link_address">The link address is:</span>
-    <a href="#" tal:attributes="href context/remote_url"
-       tal:content="context/remote_url">remote url</a>
-  </p>
-</div>

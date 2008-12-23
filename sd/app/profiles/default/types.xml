@@ -3,12 +3,6 @@
   <object name="StructuredDocument"
 	  meta_type="Factory-based Type Information with dynamic views"/>
 
-  <object name="SimpleChapter"
-	  meta_type="Factory-based Type Information with dynamic views"/>
-
   <object name="SimpleParagraph"
-	  meta_type="Factory-based Type Information with dynamic views"/>
-
-  <object name="ListingParagraph"
 	  meta_type="Factory-based Type Information with dynamic views"/>
 </object>

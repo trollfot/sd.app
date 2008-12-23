@@ -8,13 +8,11 @@ def define_right(right, roles=('Manager', 'Owner')):
 
 # Add permissions
 AddDocument   = define_right("sd: add Structured Document")
-AddChapters   = define_right("sd: add Structured Chapters")
 AddParagraphs = define_right("sd: add Structured Paragraphs")
 
 DEFAULT_ADD_CONTENT_PERMISSION = AddPortalContent
 ADD_CONTENT_PERMISSIONS = {
     'StructuredDocument' : AddDocument,
-    'SimpleChapter'      : AddChapters,
     'SimpleParagraph'    : AddParagraphs,
 }
 

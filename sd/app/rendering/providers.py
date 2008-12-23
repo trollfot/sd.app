@@ -1,72 +1,23 @@
 # -*- coding: utf-8 -*-
 
-from zope.interface import Interface, implements
-from zope.component import queryAdapter, adapts, provideAdapter
+from five import grok
 from zope.component import queryMultiAdapter
 from zope.cachedescriptors.property import CachedProperty
-from zope.publisher.interfaces.browser import IBrowserRequest
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from sd.rendering.interfaces import IStructuredView, IRendererResolver
+from sd.contents.interfaces import IStructuredItem
 
-from sd.rendering.base import BaseStructuredContentProvider
-from sd.rendering.interfaces import *
-from sd.contents.interfaces import *
+grok.templatedir('browser/templates')
 
-
-class DocumentChaptering(BaseStructuredContentProvider):
-    """A content provider serving chapters.
+class StructuredContentProvider(grok.ViewletManager):
+    """A content provider serving the contents.
     """
-    implements(IStructuredDocumentChaptering)
-    adapts(Interface, IBrowserRequest, IBaseStructuredContentProvider)
-
-    template = ViewPageTemplateFile("browser/templates/chaptering.pt")
-
-    def render(self):
-        chapters = list()
-        for chapter in self.chapters:
-            name = IDynamicStructuredChapter(chapter).sd_layout
-            renderer = queryMultiAdapter((chapter, self.request),
-                                         IChapterRenderer,
-                                         name = name)
-            if renderer:
-                chapters.append(renderer)
-
-        return self.template(chapters = chapters)
+    grok.name("sd.contents")
+    grok.require('zope2.View')
+    grok.view(IStructuredView)
+    grok.context(IStructuredItem)
 
     @CachedProperty
-    def chapters(self):
-        return self.view.contents(full_objects=True)
-
-
-class DocumentParagraphing(BaseStructuredContentProvider):
-    """A content provider serving paragraphs.
-    """
-    implements(IStructuredDocumentParagraphing)
-    adapts(Interface, IBrowserRequest, IBaseStructuredContentProvider)
-
-    template = ViewPageTemplateFile("browser/templates/paragraphing.pt")
-
-    def render(self):
-        paragraphs = list()
-        for paragraph in self.paragraphs:
-            name = IDynamicStructuredParagraph(paragraph).sd_layout
-            renderer = queryMultiAdapter((paragraph, self.request),
-                                         IParagraphRenderer,
-                                         name = name)
-            if renderer:
-                paragraphs.append(renderer)
-
-        return self.template(paragraphs = paragraphs)
-
-    @CachedProperty
-    def paragraphs(self):
-        return self.view.contents(full_objects=True)
-
-
-# Registering content providers
-provideAdapter(DocumentChaptering,
-               provides=IStructuredDocumentChaptering,
-               name=u"sd.chaptering")
-
-provideAdapter(DocumentParagraphing,
-               provides=IStructuredDocumentParagraphing,
-               name=u"sd.paragraphing")
+    def renderers(self):
+        return [queryMultiAdapter((content, self.request),
+                                  IRendererResolver).renderer
+                for content in self.view.contents(full_objects=True)]

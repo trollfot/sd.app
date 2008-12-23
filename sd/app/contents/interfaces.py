@@ -1,12 +1,21 @@
 # -*- coding: utf-8 -*-
 
-from sd.contents import interfaces
+from zope.interface import Interface
+from sd.contents.interfaces import IDynamicStructuredItem
+from Products.ATContentTypes.interface.image import IImageContent
 
-class ISimpleChapter(interfaces.IDynamicStructuredChapter):
-    """Marker interface
+
+class ITextContent(Interface):
+    """Defines a content that have textual data.
+    """
+    def getText(self):
+        """Return the body text as a string or unicode string.
+        """
+
+class ITextWithImage(ITextContent, IImageContent):
+    """Defines a content that have textual content as well as an image.
     """
 
-class ISimpleParagraph(interfaces.IDynamicStructuredParagraph):
+class ISimpleParagraph(ITextWithImage, IDynamicStructuredItem):
     """Marker interface
     """
-

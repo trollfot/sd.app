@@ -2,7 +2,7 @@
 
 from zope.interface import implements
 from zope.schema.fieldproperty import FieldProperty
-from sd.config.base import BaseConfigSheet
+from sd.rendering.base import BaseConfigSheet
 from interfaces import IEnhancedPhotoAlbumConfig
 
 

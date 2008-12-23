@@ -1,0 +1,28 @@
+<div class="imagecontent">
+  <div class="embedded-image-left"
+       tal:condition="view/image">
+    <a class="pop-image"
+       tal:attributes="href string:${view/absolute_url}/image;
+		       title view/caption;
+		       alt view/caption;
+		       rel context/aq_parent/getId;">
+      <tal:image replace="structure view/image" />
+      <br/>
+      <tal:comment condition="view/caption">
+      <img src="" alt=""
+	   tal:attributes="src string:${view/absolute_url}/search_icon.gif" />
+      <span class="discreet embedded-image-comment"
+	    tal:content="view/caption">
+	Image's caption text
+      </span>
+      </tal:comment>
+    </a>
+  </div>
+  
+  <div class="imagecontent-text"
+       tal:content="structure context/getText">
+    Paragraph's body text
+  </div>
+
+  <div class="structured-footer"></div>
+</div>

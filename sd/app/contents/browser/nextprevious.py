@@ -1,27 +1,29 @@
 # -*- coding: utf-8 -*-
+
+from five import grok
 from Acquisition import aq_base
-from zope.component import adapts, provideAdapter
-from zope.interface import implements
+from zope.cachedescriptors.property import CachedProperty
 from plone.memoize.instance import memoize
 from plone.app.layout.nextprevious.interfaces import INextPreviousProvider
 from Products.CMFCore.utils import getToolByName
 from sd.contents.interfaces import IStructuredDocument
 
 
-class SDNextPrevious(object):
+class SDNextPrevious(grok.Adapter):
     """Let a structured document act as a next/previous provider.
     This will be automatically found by the @@plone_nextprevious_view
     and viewlet.
     """
-    implements(INextPreviousProvider)
-    adapts(IStructuredDocument)
+    grok.context(IStructuredDocument)
+    grok.provides(INextPreviousProvider)
 
     def __init__(self, context):
         self.context  = context
-        
+
+    @CachedProperty
+    def view_action_types(self):
         sp = getToolByName(self.context, 'portal_properties').site_properties
-        self.view_action_types = sp.getProperty('typesUseViewActionInListings',
-                                                ())
+        return sp.getProperty('typesUseViewActionInListings', ())
 
     def getNextItem(self, obj):
         relatives = self.itemRelatives(obj.getId())
@@ -32,7 +34,7 @@ class SDNextPrevious(object):
         relatives = self.itemRelatives(obj.getId())
         return relatives["previous"]
 
-    @property
+    @CachedProperty
     def enabled(self):
         return self.context.getNextPreviousEnabled()
 
@@ -75,7 +77,7 @@ class SDNextPrevious(object):
         query = {}
         query['sort_on'] = sort_on
         query['sort_limit'] = 1
-        query['object_provides'] = ("sd.contents.interfaces.IStructuredChapter")
+        query['object_provides'] = ("sd.contents.interfaces.IStructuredItem")
         query['path'] = dict(query = '/'.join(self.context.getPhysicalPath()),
                              depth = 1)
                 
@@ -110,7 +112,3 @@ class SDNextPrevious(object):
         if brain.portal_type in self.view_action_types:
             return "%s/view" % brain.getURL()
         return brain.getURL()
-
-
-provideAdapter(SDNextPrevious,
-               provides=INextPreviousProvider)

@@ -2,12 +2,12 @@
 from zope.schema import Object
 from zope.interface import Interface
 from zope.viewlet.interfaces import IViewletManager
-from sd.rendering.interfaces import IBaseStructuredRenderer
+from sd.rendering.interfaces import IStructuredRenderer
 
 
 class ISdItemAwareManager(Interface):
     item = Object(title=u'The iterated item',
-                  schema=IBaseStructuredRenderer)
+                  schema=IStructuredRenderer)
 
 
 class IAboveRendererTitle(IViewletManager):

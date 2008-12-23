@@ -5,63 +5,57 @@
   <!-- Subpackages -->
   <include package=".browser" />
 
-
-  <!-- Forms adapters -->
-  <adapter
-      factory=".adapters.DynamicLayoutChapterAdapter" 
-      provides="sd.contents.interfaces.IDynamicStructuredChapter"
-      />
-
-  <adapter
-      factory=".adapters.DynamicLayoutParagraphAdapter"
-      provides="sd.contents.interfaces.IDynamicStructuredParagraph"
-      />
-
-  <adapter
-      factory=".adapters.AnnonationBatchAdapter"
-      provides="sd.contents.interfaces.IBatchProvider"
-      />
-
-
   <!-- Implementations -->
   <five:implements
       class="Products.ATContentTypes.content.image.ATImage"
-      interface="sd.contents.interfaces.IExternalStructuredParagraph
-		 Products.ATContentTypes.interface.image.IPhotoAlbumAble" />
+      interface="sd.contents.interfaces.IExternalStructuredItem"
+      />
 
   <five:implements
       class="Products.ATContentTypes.content.document.ATDocument"
-      interface="sd.contents.interfaces.IExternalStructuredParagraph" />
-
+      interface="sd.contents.interfaces.IExternalStructuredItem
+		 sd.app.contents.interfaces.ITextContent"
+      />
 
   <five:implements
       class="Products.ATContentTypes.content.folder.ATFolder"
-      interface="sd.contents.interfaces.IExternalStructuredChapter
-		 sd.contents.interfaces.IExternalStructuredParagraph
-		 sd.contents.interfaces.IPossibleBatchProvider" />
+      interface="sd.contents.interfaces.IExternalStructuredItem
+		 sd.contents.interfaces.IPossibleBatchProvider"
+      />
+
+  <five:implements
+      class="Products.ATContentTypes.content.folder.ATBTreeFolder"
+      interface="sd.contents.interfaces.IExternalStructuredItem
+                 sd.contents.interfaces.IPossibleBatchProvider"
+      />
 
   <five:implements
       class="Products.ATContentTypes.content.topic.ATTopic"
-      interface="sd.contents.interfaces.IExternalStructuredChapter
-		 sd.contents.interfaces.IExternalStructuredParagraph
-		 sd.contents.interfaces.IPossibleBatchProvider" />
+      interface="sd.contents.interfaces.IExternalStructuredItem
+		 sd.contents.interfaces.IPossibleBatchProvider"
+      />
 
   <five:implements
       class="Products.ATContentTypes.content.event.ATEvent"
-      interface="sd.contents.interfaces.IExternalStructuredParagraph" />
+      interface="sd.app.contents.interfaces.ITextContent
+		 sd.contents.interfaces.IExternalStructuredItem"
+      />
 
   <five:implements
       class="Products.ATContentTypes.content.newsitem.ATNewsItem"
-      interface="sd.contents.interfaces.IExternalStructuredParagraph
-		 Products.ATContentTypes.interface.image.IPhotoAlbumAble
-		 Products.ATContentTypes.interface.image.IImageContent" />
+      interface="sd.contents.interfaces.IExternalStructuredItem
+		 sd.app.contents.interfaces.ITextWithImage
+		 Products.ATContentTypes.interface.image.IImageContent"
+      />
 
   <five:implements
       class="Products.ATContentTypes.content.file.ATFile"
-      interface="sd.contents.interfaces.IExternalStructuredParagraph" />
+      interface="sd.contents.interfaces.IExternalStructuredItem"
+      />
 
   <five:implements
       class="Products.ATContentTypes.content.link.ATLink"
-      interface="sd.contents.interfaces.IExternalStructuredParagraph" />
+      interface="sd.contents.interfaces.IExternalStructuredItem"
+      />
 
 </configure>

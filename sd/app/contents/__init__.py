@@ -10,7 +10,7 @@ from Products.Archetypes.public import listTypes
 def at_processing(context):
     """Registers Archetypes content types
     """
-    import document, chapters, paragraphs
+    import document, paragraphs
     from security import *
 
     contentTypes, constructors, ftis = process_types(listTypes(PROJECTNAME),

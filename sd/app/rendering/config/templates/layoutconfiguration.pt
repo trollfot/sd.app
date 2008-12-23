@@ -1,0 +1,8 @@
+<p i18n:domain="sd" 
+     class="configuration-sheet discreet"
+     tal:define="url view/url"
+     tal:condition="url">
+  <a href=""
+     tal:attributes="href url"
+     i18n:translate="configure_display">Display configuration</a>
+</p>

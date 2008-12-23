@@ -1,3 +1,7 @@
+/***
+**** Structured Document 2 stylesheet
+***/
+
 .field {
   clear: both;
 }
@@ -14,75 +18,80 @@
   margin: 0;
 }
 
-.structured-footer {
-  clear: both;
-}
-
-.chapter-title {
-  padding: 0;
-  margin: 1em 0 0.2em 0;
-  font-size: 120%;
-}
-
-.chapter-body {
-  padding: 0 0 0 1.5em;;
-}
-
-.chapter-title a:hover,
-.chapter-title a {
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.structured-paragraph {
-  margin: 0;
-  padding: 0;
+/** Folder listing **/
+.embedded-folder-listing dt {
   font-size: 100%;
 }
 
-.paragraph-body {
-  margin: 0.5em 0 0.2em 0;
-  padding: 0;
-}
+/** Embedded image **/
 
-.structured-paragraph-footer {
-  padding: 0.5em 0 0 0;
-  margin: 0 0 0.5em 0;
-  clear: both;
-}
-
-.paragraph-image-right {
+.embedded-image-right {
   float: right;
   padding: 0 0 0 1.1em;
   position: relative;
 }
 
-.paragraph-image-left {
+.embedded-image-left {
   float: left;
   padding: 0 1.1em 0 0;
   position: relative;
 }
 
-.structured-paragraph a {
-  text-decoration: none !important;
+.embedded-image-center {
+  text-align: center;
+  margin-bottom: 0.5em;
 }
 
-.paragraph-image {
+.embedded-image {
   text-align: center;
 }
 
-.paragraph-title {
-  font-size: 110%;
-  margin: 0.4em 0 0.2em 0;
+.embedded-image-comment {
+  padding: 0.3em 0 0 0;
+}
+
+
+/** Global content display **/
+
+.structured-item a {
+  text-decoration: none !important;
+  border: 0 !important;
+}
+
+dt.structured-item-title {
+  font-size: 125%;
   padding: 0;
   border-width: 0 0 1px 0;
   border-style: solid;
   border-color: #ddd;
 }
 
-.paragraph-image-comment {
-  padding: 0.3em 0 0 0;
+.structured-item-description {
+  margin-bottom: 0.5em;
 }
+
+.structured-item-body {
+  padding: 0.5em 0 0 0.5em;;
+}
+
+dl.structured-item dl.structured-item {
+  margin-left: 1.5em;
+}
+
+dd.structured-item-content dt.structured-item-title {
+  font-size: 110%;
+}
+
+dd.structured-item-content dd.structured-item-content dt {
+  font-size: 100%;
+}
+
+.structured-footer {
+  clear: both;
+}
+
+
+/** Table of contents **/
 
 #document-whole-index {
   margin: 1em 0 2em 0;
@@ -116,22 +125,9 @@
   margin-top: 2em;
 }
 
-dd#add-chapter {
-  margin: 0;
-}
-
-dd#add-chapter a {
-  background: transparent url(structuredchapter_icon.gif) 0 0 no-repeat;
-  padding-left: 18px;
-}
-
 ul.chapter-translations {
   float: right;
   margin: 0 1em 0 0 !important;
-}
-
-.chapter-ordering {
-  float: right;
 }
 
 #structured-document-index {
@@ -367,4 +363,8 @@ dl.portlet dd.picture {
 .configuration-sheet {
   padding: 1em 0 1em 18px;
   background: transparent url(++resource++sd.renderer.config.gif) 0 50% no-repeat !important;
+}
+
+div.atimage {
+  text-align: center;
 }

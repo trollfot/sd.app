@@ -3,27 +3,17 @@
 
   <include file="resources.zcml" />
 
-  <page
-      for="*"
-      name="if_checkers"
-      class=".checkers.SDAvailabilityCheckers"
-      allowed_interface=".interfaces.ISDAvailabilityCheckers"
-      permission="zope2.View"
+  <menu
+      id="sd_contentmenu_options"
+      title="Structured Document options"
+      class=".menu.StructuredDocumentOptions"
       />
 
   <page
       for="*"
-      name="paragraphBatch"
-      class=".batch.SDBatch"
-      attribute="paragraphBatch"
-      permission="zope2.View"
-      />
-
-  <page
-      for="*"
-      name="chapterBatch"
-      class=".batch.SDBatch"
-      attribute="chapterBatch"
+      name="batch"
+      class=".batch.AjaxBatch"
+      attribute="batch"
       permission="zope2.View"
       />
 
@@ -44,7 +34,7 @@
       />
 
   <page
-      for="sd.rendering.interfaces.IBaseStructuredRenderer"
+      for="sd.rendering.interfaces.IStructuredRenderer"
       name="reordering"
       template="templates/reordering.pt"
       permission="cmf.ModifyPortalContent"
@@ -68,17 +58,9 @@
 
   <page
       for="sd.contents.interfaces.IStructuredContainer"
-      name="changeParagraphLayout"
-      class=".layout.SDChangeLayout"
-      attribute="changeParagraphLayout"
-      permission="cmf.ModifyPortalContent"
-      />
-
-  <page
-      for="sd.contents.interfaces.IStructuredContainer"
-      name="changeChapterLayout"
-      class=".layout.SDChangeLayout"
-      attribute="changeChapterLayout"
+      name="changeLayout"
+      class=".layout.ChangeLayout"
+      attribute="changeLayout"
       permission="cmf.ModifyPortalContent"
       />
 

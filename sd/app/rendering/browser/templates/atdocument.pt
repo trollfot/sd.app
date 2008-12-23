@@ -1,2 +1,0 @@
-<div class="atdocument-paragraph"
-     tal:content="structure context/getText" />

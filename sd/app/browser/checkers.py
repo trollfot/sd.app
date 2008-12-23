@@ -1,36 +1,64 @@
 # -*- coding: utf-8 -*-
 
-# Zope
-from zope.interface import implements
-from Products.Five.browser import BrowserView
-from plone.memoize.view import memoize
-
-# Locals
-from interfaces import ISDAvailabilityCheckers
-from sd.contents.interfaces import IStructuredDocument, IBatchProvider
-from sd.contents.interfaces import IStructuredChapter, IStructuredParagraph
+from five import grok
+from sd.contents import interfaces as sdct
+from zope.interface import directlyProvides, noLongerProvides
 
 
-class SDAvailabilityCheckers( BrowserView ):
+class ShowPreferences(grok.View):
 
-    implements(ISDAvailabilityCheckers)
+    grok.context(sdct.IStructuredItem)
+    grok.name("sd.show_preferences")
+    grok.require("zope2.View")
 
-    @memoize
-    def is_chapter(self, explicit=None):
-        if not explicit:
-            explicit = self.context
-        parent = getattr(explicit.aq_inner, 'aq_parent', None)        
-        if parent and IStructuredDocument.providedBy(parent):
-            return IStructuredChapter.providedBy(explicit)
-        return False
+    def render(self):
+        return True
 
-    @memoize
-    def is_paragraph(self):
-        parent = getattr(self.context.aq_inner, 'aq_parent', None)
-        if parent and self.is_chapter(explicit = parent):
-            return IStructuredParagraph.providedBy(self.context)
-        return False
 
-    @memoize
-    def is_batchable(self):
-        return bool(IBatchProvider(self.context, False))
+class ShowPortlets(grok.View):
+
+    grok.context(sdct.IStructuredDocument)
+    grok.name("sd.is_structured_document")
+    grok.require("zope2.View")
+
+    def render(self):
+        return True
+
+
+class Tagging(grok.View):
+
+    grok.context(sdct.IStructuredItem)
+    grok.name("sd.tagging")
+    grok.require("cmf.ModifyPortalContent")
+
+    def render(self):
+        directlyProvides(self.context, sdct.IStructuredDocument)
+        self.context.setLayout("@@sd.document.onepage")
+        self.context.reindexObject()
+        self.redirect(self.context.absolute_url())
+
+
+class UnTagging(grok.View):
+
+    grok.context(sdct.IStructuredDocument)
+    grok.name("sd.untagging")
+    grok.require("cmf.ModifyPortalContent")
+
+    def render(self):
+        noLongerProvides(self.context, sdct.IStructuredDocument)
+        self.context.setLayout(self.context.getDefaultLayout())
+        self.context.reindexObject()
+        self.redirect(self.context.absolute_url())
+
+
+class DocumentOptions(grok.View):
+
+    grok.context(sdct.IStructuredDocument)
+    grok.name("sd.options")
+    grok.require("cmf.ModifyPortalContent")
+
+    def render(self):
+        layout = self.request.get('layout', None)
+        if layout:
+            self.context.setLayout(layout)
+        self.redirect(self.context.absolute_url())

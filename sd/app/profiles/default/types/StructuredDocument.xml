@@ -3,11 +3,15 @@
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     name="StructuredDocument"
     meta_type="Factory-based Type Information with dynamic views"
-    i18n:domain="plone">
+    i18n:domain="sd">
 
-  <property name="title">StructuredDocument</property>
-  <property name="description">
-    A folder which can contain other items.
+  <property
+      name="title"
+      i18n:translate="">StructuredDocument</property>
+  <property
+      name="description"
+      i18n:translate="StructuredDocument_desc">
+    A folder that can display its content in a customable way
   </property>
   
   <!-- General configuration -->
@@ -25,10 +29,9 @@
   </property>
   
   <!-- Views and aliases configuration -->
-  <property name="immediate_view">document_whole</property>
-  <property name="default_view">document_whole</property>
+  <property name="immediate_view">sd.document.onepage</property>
+  <property name="default_view">sd.document.onepage</property>
   <property name="view_methods">
-    <element value="document_whole"/>
     <element value="folder_summary_view"/>
     <element value="folder_tabular_view"/>
     <element value="folder_listing"/>
@@ -37,7 +40,7 @@
   <alias from="edit" to="atct_edit"/>
   <alias from="sharing" to="@@sharing"/>
   <alias from="view" to="(selected layout)"/>
-  <alias from="document_whole" to="@@document_whole"/>
+  <alias from="sd.document.onepage" to="@@sd.document.onepage"/>
   
   <!-- Actions -->
   <action title="View" action_id="view" category="object" condition_expr=""
@@ -47,13 +50,6 @@
   
   <action title="Edit" action_id="edit" category="object" condition_expr=""
 	  url_expr="string:${object_url}/edit" visible="True">
-    <permission value="Modify portal content"/>
-  </action>
-
-  <action i18n:translate="manage_portlets_link"
-	  title="Manage portlets" action_id="manage_portlets_link" category="object"
-	  condition_expr=""
-	  url_expr="string:${object_url}/@@manage-blocks" visible="True">
     <permission value="Modify portal content"/>
   </action>
 

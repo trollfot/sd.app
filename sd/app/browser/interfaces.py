@@ -1,15 +1,13 @@
 # -*- coding: utf-8 -*-
 
 from zope.interface import Interface
+from zope.app.publisher.interfaces.browser import IBrowserMenu
+from zope.app.publisher.interfaces.browser import IBrowserSubMenuItem
 
-
-class ISDAvailabilityCheckers( Interface ):
-    """A convenient way to check interfaces availability on objects.
+class IStructuredMenu(IBrowserMenu):
     """
-    def is_chapter(self):
-        """Return True is the context is an IStructuredChapter
-        """
+    """
 
-    def is_paragraph(self):
-        """Return True is the context is an IStructuredParagraph
-        """
+class IStructuredSubMenu(IBrowserSubMenuItem):
+    """
+    """
