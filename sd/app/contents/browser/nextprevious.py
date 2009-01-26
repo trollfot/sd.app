@@ -36,7 +36,8 @@ class SDNextPrevious(grok.Adapter):
 
     @CachedProperty
     def enabled(self):
-        return self.context.getNextPreviousEnabled()
+        enabled = getattr(self.context, 'getNextPreviousEnabled', False)
+        return enabled and enabled()
 
     @memoize
     def itemRelatives(self, oid):
