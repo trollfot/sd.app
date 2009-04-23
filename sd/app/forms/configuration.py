@@ -29,3 +29,11 @@ class PreferencesForm(grok.EditForm):
             ifaces.append(interfaces.IBatchProvider)
         return form.FormFields(*ifaces)
     
+    @grok.action(_(u"label_save", default=u"Save"))
+    def handle_save_action(self, *args, **data):
+        if form.applyChanges(self.context,
+                             self.form_fields, data,
+                             self.adapters):
+            self.status = u"Save changed"
+        else:
+            self.status = u"No changes"
