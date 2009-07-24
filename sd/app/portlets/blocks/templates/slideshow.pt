@@ -21,7 +21,7 @@
 			   alt title;
 			   title desc">
 	  <img src="" alt="" title=""
-	       tal:attributes="src string:${img}_thumb;
+	       tal:attributes="src string:${img}_${view/size};
 			       alt title;
 			       title desc" />
 	</a>

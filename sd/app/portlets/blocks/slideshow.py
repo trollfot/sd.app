@@ -28,12 +28,14 @@ class Assignment(base.Assignment):
     source = None
     links = True
     timer = 0
-    
-    def __init__(self, name=u"", source=None, timer=0, links=None):
+    size = 'thumb'
+
+    def __init__(self, name=u"", source=None, timer=0, links=None, size='thumb'):
         self.name = name
         self.source = source
         self.timer = timer
         self.links = links
+        self.size = size
 
     @CachedProperty
     def title(self):
@@ -44,7 +46,7 @@ class Assignment(base.Assignment):
 
 class Renderer(base.Renderer):
     """Renders a slideshow portlet.
-    """   
+    """
     render = ViewPageTemplateFile('templates/slideshow.pt')
 
     def update(self):
@@ -63,6 +65,10 @@ class Renderer(base.Renderer):
         return self.data.links
 
     @CachedProperty
+    def size(self):
+        return self.data.size
+
+    @CachedProperty
     def results(self):
         """Get the actual result brains from the collection.
         It will limit the actual selection to photos.
@@ -78,8 +84,8 @@ class Renderer(base.Renderer):
 
     @CachedProperty
     def javascript_snippet(self):
-        return """jq(document).ready(function(){ 
-          jq('#slideshow-%(uid)s .slideshow').cycle({ 
+        return """jq(document).ready(function(){
+          jq('#slideshow-%(uid)s .slideshow').cycle({
           fx:     'fade',
           speed:  'fast',
           timeout: %(timer)i,
@@ -96,10 +102,10 @@ class Renderer(base.Renderer):
         """Get the source provider.
         """
         source = self.data.source
-        
+
         if source.startswith('/'):
             source = source[1:]
-        
+
         if not source:
             return None
 

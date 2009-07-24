@@ -156,3 +156,10 @@ class ISlideshowPortlet(IStructuredBlock):
                         u"each image can be triggered manually. "),
         required = False
         )
+
+    size = Choice(
+        title = _(u"Image size"),
+        default = 'thumb',
+        values = ['thumb', 'mini'],
+        required = True,
+        )
