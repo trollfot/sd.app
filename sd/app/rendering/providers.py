@@ -6,7 +6,7 @@ from zope.cachedescriptors.property import CachedProperty
 from sd.rendering.interfaces import IStructuredView, IRendererResolver
 from sd.contents.interfaces import IStructuredItem
 
-grok.templatedir('browser/templates')
+grok.templatedir('templates')
 
 class StructuredContentProvider(grok.ViewletManager):
     """A content provider serving the contents.
