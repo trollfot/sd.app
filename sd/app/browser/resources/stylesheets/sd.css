@@ -7,8 +7,7 @@
 }
 
 #structured-document .documentDescription {
-  overflow: hidden;
-  width: 100%;
+  clear: both;
 }
 
 #sd-document-introduction {
