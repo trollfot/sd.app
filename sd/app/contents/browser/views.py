@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from five import grok
-from zope.interface import implements
 from zope.component import queryMultiAdapter
 from zope.cachedescriptors.property import CachedProperty
 from sd.contents.interfaces import IStructuredDocument, IStructuredItem

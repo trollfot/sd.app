@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
 
-from five import grok
-from Acquisition import aq_base
-from zope.cachedescriptors.property import CachedProperty
-from plone.memoize.instance import memoize
-from plone.app.layout.nextprevious.interfaces import INextPreviousProvider
 from Products.CMFCore.utils import getToolByName
+from five import grok
+from plone.app.layout.nextprevious.interfaces import INextPreviousProvider
+from plone.memoize.instance import memoize
 from sd.contents.interfaces import IStructuredDocument
+from zope.cachedescriptors.property import CachedProperty
 
 
 class SDNextPrevious(grok.Adapter):
@@ -29,7 +28,7 @@ class SDNextPrevious(grok.Adapter):
         relatives = self.itemRelatives(obj.getId())
         return relatives["next"]
 
-        
+
     def getPreviousItem(self, obj):
         relatives = self.itemRelatives(obj.getId())
         return relatives["previous"]
@@ -71,17 +70,17 @@ class SDNextPrevious(grok.Adapter):
 
         return dict(next=next, previous=previous)
 
-        
+
     def buildNextPreviousQuery(self, position, range, sort_order = None):
         sort_on = 'getObjPositionInParent'
-        
+
         query = {}
         query['sort_on'] = sort_on
         query['sort_limit'] = 1
         query['object_provides'] = ("sd.contents.interfaces.IStructuredItem")
         query['path'] = dict(query = '/'.join(self.context.getPhysicalPath()),
                              depth = 1)
-                
+
         # Query the position using a range
         query[sort_on] = 0
         if position != 0:
@@ -108,8 +107,8 @@ class SDNextPrevious(grok.Adapter):
 
 
     def getViewUrl(self, brain):
-        """create link and support contents that requires /view 
-        """    
+        """create link and support contents that requires /view
+        """
         if brain.portal_type in self.view_action_types:
             return "%s/view" % brain.getURL()
         return brain.getURL()

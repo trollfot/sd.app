@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from zope.schema import Int, Bool
+from zope.schema import Int
 from zope.i18nmessageid import MessageFactory
 from sd.rendering.interfaces import IConfigurationSheet
 

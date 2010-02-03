@@ -1,14 +1,12 @@
 # -*- coding: utf-8 -*-
 
-from zope.interface import Attribute
-from zope.schema import Int, List, TextLine, Object, Choice, Bool
+from zope.schema import Int, List, TextLine, Choice, Bool
 from zope.i18nmessageid import MessageFactory
 
 from Products.ATContentTypes.interface import IATTopic
 from Products.Archetypes.interfaces._base import IBaseFolder
 from plone.app.vocabularies.catalog import SearchableTextSourceBinder
 
-from sd.imaging.field import ImageField
 from sd.imaging.interfaces import IPortletWithImage
 from sd.contents.interfaces import IStructuredBlock
 from sd.app.forms.fields import TermField

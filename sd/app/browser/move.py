@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from kss.core import KSSView, kssaction
-from zope.interface import Interface
 from zope.i18nmessageid import MessageFactory
 from Products.Five import BrowserView
 from Products.CMFCore.utils import getToolByName

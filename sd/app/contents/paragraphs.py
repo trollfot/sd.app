@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from zope.interface import implements, directlyProvides
+from zope.interface import implements
 from Products.ATContentTypes.content import document, newsitem, image
 from Products.ATContentTypes.interface.image import IPhotoAlbumAble
 
@@ -18,7 +18,7 @@ class SimpleParagraph(document.ATDocumentBase, image.ATCTImageTransform):
     sd_layout = u"default"
     show_title = True
     show_description = True
-    
+
     ## Schema customization
     schema = newsitem.ATNewsItemSchema.copy() + tagselector
     schema['image'].original_size = ORIGINAL_SIZE
@@ -34,7 +34,7 @@ class SimpleParagraph(document.ATDocumentBase, image.ATCTImageTransform):
             if not 'scale' in kwargs:
                 kwargs['scale'] = self.getImage_scale() or 'normal'
             return self.getWrappedField('image').tag(self, **kwargs)
-            
+
         return None
 
 

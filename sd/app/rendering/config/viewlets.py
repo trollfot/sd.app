@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from five import grok
-from zope.component import queryUtility
 from zope.cachedescriptors.property import CachedProperty
 from zope.i18nmessageid import MessageFactory
 
@@ -29,7 +28,7 @@ class LayoutConfiguration(grok.Viewlet):
             return "%s/@@%s/configuration/@@edit" % (
                 self.view.absolute_url(), layout
                 )
-            
+
         return "%s/@@%s/@@configure" % (
                 self.view.absolute_url(), layout
                 )
