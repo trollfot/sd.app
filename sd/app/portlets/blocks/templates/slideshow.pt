@@ -34,12 +34,12 @@
   </dd>
   <dd class="portletItem portletFooter"
       tal:condition="view/show_links">
-    <a class="prev" href="">&#8592;
+    <a class="prev" href="">
       <tal:label i18n:translate="label_previous">Previous</tal:label>
     </a>
-    &bull;
-    <a class="next" href=""><tal:label
-       i18n:translate="label_next">Next</tal:label> &#8594;
+    <span class="divider">&nbsp;</span>
+    <a class="next" href="">
+      <tal:label i18n:translate="label_next">Next</tal:label>
     </a>
   </dd>
 </dl>
