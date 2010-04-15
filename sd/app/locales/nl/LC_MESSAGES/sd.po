@@ -1,0 +1,154 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: sd\n"
+"POT-Creation-Date: 2007-10-12 16:08+0100\n"
+"PO-Revision-Date: 2007-10-12 16:08+0100\n"
+"Last-Translator: Wim Boucquaert <wim@infrae.com>\n"
+"Language-Team: Souheil CHELFOUH <souheil@chelfouh.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language-Code: nl\n"
+"Language-Name: Nederlands\n"
+"Preferred-Encodings: utf-8\n"
+"Domain: sd\n"
+"X-Is-Fallback-For: nl-be\n"
+
+msgid  "StructuredDocument"
+msgstr ""
+
+msgid  "StructuredDocument_desc"
+msgstr ""
+
+msgid  "manage_portlets_link"
+msgstr "Portlets configureren"
+
+msgid  "Illustrated document"
+msgstr "Geïllustreerd document"
+
+msgid  "SimpleParagraph_desc"
+msgstr "Een document met afbeelding"
+
+## Les vues ##
+msgid  "default"
+msgstr "Standaard weergave"
+
+msgid  "sd.photo_album"
+msgstr "Fotoalbum met thumbnails"
+
+msgid  "sd.imagecontent.right"
+msgstr "Afbeelding rechts"
+
+msgid  "sd.imagecontent.center"
+msgstr "Afbeelding gecentreerd boven de tekst"
+
+msgid  "sd.topic.custom_view"
+msgstr "Gepersonaliseerde weergave"
+
+msgid  "sd.listing"
+msgstr "Inhoud in de vorm van een eenvoudige lijst"
+
+msgid  "sd.enhanced_photo_album"
+msgstr "Fotoalbum met slideshow (javascript)"
+
+msgid  "sd.summary_view"
+msgstr "Gepersonaliseerde samenvattingsweergave"
+
+## Les formulaires ##
+msgid  "sd.preferences"
+msgstr "Weergave instellingen"
+
+msgid  "adv_config"
+msgstr "Geavanceerde instellingen"
+
+msgid  "sd.preferences.desc"
+msgstr "De isntellingen hieronder laten u toe het gedrag van de paragrafen te personaliseren"
+
+## Les champs ##
+msgid  "Title"
+msgstr "Titel"
+
+msgid  "Layout"
+msgstr "Weergave"
+
+msgid  "chapter_layout_desc"
+msgstr "Type weergave gebruikt voor dit hoofdstuk"
+
+msgid  "paragraph_layout_desc"
+msgstr "Type weergave gebruikt voor de de paragraaf"
+
+msgid  "show_title"
+msgstr "De titel weergeven"
+
+msgid  "show_title_desc"
+msgstr "Uitgevinkt zal de titel niet verschijnen bij de weergave van het document"
+
+msgid  "show_description"
+msgstr "Weergave van de beschrijving activeren"
+
+msgid  "show_description_desc"
+msgstr "Uitgevinkt zal de beschrijving niet verschijnen bij de weergave van het document"
+
+msgid  "slideshow_timer"
+msgstr "Timer"
+
+msgid  "slideshow_timer_desc"
+msgstr "Tijd tussen elke afbeelding (in seconden)"
+
+msgid "no_image"
+msgstr "Geen afbeelding"
+
+msgid "leave_empty"
+msgstr "Geen afbeelding plaatsen"
+
+msgid "upload_image"
+msgstr "Een nieuwe afbeelding uploaden:"
+
+msgid "keep_image"
+msgstr "Bestaande afbeelding behouden"
+
+msgid "delete_image"
+msgstr "Afbeelding verwijderen"
+
+msgid "upload_new_image"
+msgstr "Afbeelding vervangen:"
+
+msgid "label_next"
+msgstr "Volgende"
+
+msgid "label_previous"
+msgstr "Vorige"
+
+msgid  "timer"
+msgstr "Tijd tussen elke afbeelding (in seconden)"
+
+msgid  "timer_desc"
+msgstr "Deze waarde bepaald het tijdsinterval tussen elke afbeelding. Bij waarde 0 zal de overgang manueel gebeuren."
+
+msgid  "slideshow_links"
+msgstr "Volgende en vorige links weergeven"
+
+msgid  "Target folder or topic"
+msgstr "Map of collectie bron"
+
+msgid  "Find the source which provides the pictures."
+msgstr "Selecteer de bron met afbeeldingen voor de slideshow."
+
+msgid  "slideshow_links_desc"
+msgstr "U kan links weergeven die het toelaten manueel te bladeren doorheen de afbeeldingen"
+
+msgid  "Edit Slideshow Portlet"
+msgstr "De slideshow portlet bewerken"
+
+msgid  "This portlet display a collection of images."
+msgstr "De portlet geeft een fotoalbum weer onder de vorm van een slideshow."
+
+msgid  "configure_display"
+msgstr "Configuratie van de weergave"
+
+msgid  "configuration_form_name"
+msgstr "Personalisatie instellingen"
+
+msgid  "no_custom_view"
+msgstr "De gepersonaliseeerde weergave is niet actief op dit element."
