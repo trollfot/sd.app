@@ -1,4 +1,4 @@
-<script language="javascript"
+<script language="javascript" type="text/javascript"
 	tal:content="view/javascript_snippet" />
 
 <dl class="portlet portlet-photoalbum"
