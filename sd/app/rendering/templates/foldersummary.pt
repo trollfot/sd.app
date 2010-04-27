@@ -16,7 +16,7 @@
 		     item_icon python:plone_view.getIcon(item);
 		     item_type_title item/Type;">
       
-      <a href="" alt="" class="pop-image"
+      <a href="" class="pop-image"
 	 tal:define="info item/hasImageAndCaption"
 	 tal:condition="info/image|nothing"
 	 tal:attributes="alt info/caption|item_description;
