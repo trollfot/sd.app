@@ -1,0 +1,11 @@
+Changes
+=======
+
+2.6.1 (2010/05/03)
+------------------
+
+* Add dutch translations,
+
+* Fix XHTML isues in some templates,
+
+* Update slideshow templates to be more skinable.
