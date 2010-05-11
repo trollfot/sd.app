@@ -28,6 +28,6 @@
       initialize=".contents.at_processing" />
 
   <!-- Translations -->
-  <i18n:registerTranslations directory="locales"/>
+  <i18n:registerTranslations directory="i18n"/>
 
 </configure>
