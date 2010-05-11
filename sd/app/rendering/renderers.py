@@ -20,7 +20,7 @@ class Document(sd.rendering.StructuredRenderer):
 
     label = _("sd_document",
               default=u"Document rendering.")
-    
+
     def render(self):
         return self.context.getText()
 
@@ -30,21 +30,21 @@ class ATFile(sd.rendering.StructuredRenderer):
 
     label = _("sd_atfile",
               default=u"Classical file rendering.")
-    
+
 
 class ATLink(sd.rendering.StructuredRenderer):
     sd.rendering.target(atct.IATLink)
-    
+
     label = _("sd_atlink",
               default=u"Classical link rendering.")
-    
-    
+
+
 class ATEvent(sd.rendering.StructuredRenderer):
     sd.rendering.target(atct.IATEvent)
 
     label = _("sd_atevent",
               default=u"Classical event rendering.")
-    
+
 
 class Image(sd.rendering.StructuredRenderer):
     sd.rendering.target(atct.IATImage)
@@ -61,8 +61,8 @@ class ImageContent(sd.rendering.StructuredRenderer):
     sd.rendering.target(sdct.ITextWithImage)
 
     label = _("sd_imagecontent_center",
-              default=u"Centered image above text.")    
-    
+              default=u"Centered image above text.")
+
     def getSize(self):
         scale = getattr(aq_base(self.context), "getImage_scale", None)
         return scale is not None and scale() or 'thumb'
@@ -71,7 +71,7 @@ class ImageContent(sd.rendering.StructuredRenderer):
     def caption(self):
         caption = getattr(aq_base(self.context), "getImageCaption", None)
         return caption is not None and caption() or self.context.Rights()
-    
+
     @CachedProperty
     def image(self):
         return self.context.tag(scale=self.getSize())
@@ -125,7 +125,7 @@ class EnhancedPhotoalbum(PhotoAlbum):
 
     label = _("enhanced_photoalbum",
               default=u"Photo album with slideshow options and javascript.")
-        
+
     @CachedProperty
     def timer(self):
         conf = self.configuration
@@ -133,16 +133,16 @@ class EnhancedPhotoalbum(PhotoAlbum):
 
     def javascript(self):
         return """
-        jq('#gallery-%(uid)s .main_image').cycle({ 
-        fx: 'fade', 
+        jq('#gallery-%(uid)s .main_image').cycle({
+        fx: 'fade',
         timeout: %(timer)s,
         height: 400,
         width: 400,
-        pager:  '#gallery-%(uid)s .nav', 
+        pager:  '#gallery-%(uid)s .nav',
         pagerAnchorBuilder: function(idx, slide) {
           return '#gallery-%(uid)s .nav li:eq(' + idx + ') a';
         },
-        updateActivePagerLink : function(pager, currSlideIndex) { 
+        updateActivePagerLink : function(pager, currSlideIndex) {
             jq(pager).find('li.activeSlide').removeClass('activeSlide')
               .fadeTo('fast',0.3)
               .filter('li:eq('+currSlideIndex+')')
@@ -159,11 +159,11 @@ class TopicCustomView(sd.rendering.FolderishRenderer):
 
     label = _("topiccustom",
               default=u"Custom view (if defined).")
-    
+
     @CachedProperty
     def enabled(self):
         return self.context.getCustomView()
-    
+
     @CachedProperty
     def fields(self):
         return self.context.getCustomViewFields()

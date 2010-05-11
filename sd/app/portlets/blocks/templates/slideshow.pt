@@ -1,45 +1,47 @@
-<script language="javascript" type="text/javascript"
-	tal:content="view/javascript_snippet" />
+<tal:slideshow
+   i18n:domain="sd">
+  <script language="javascript" type="text/javascript"
+          tal:content="view/javascript_snippet" />
 
-<dl class="portlet portlet-photoalbum"
-    tal:attributes="id string:slideshow-${view/uid}"
-    i18n:domain="sd">
-  <dt class="portletHeader">
-    <span class="portletTopLeft"></span>
-    <a class="tile" tal:content="view/Title" />
-    <span class="portletTopRight"></span>
-  </dt>
-  <dd class="portletItem">
-    <div class="slideshow">
-    <tal:images repeat="image view/results">
-      <p tal:define="img string:${image/getURL}/image;
-		  title image/Title;
-		  desc image/Description;">
-	<a href=""
-	   class="pop-image"
-	   tal:attributes="href img;
-			   alt title;
-			   title desc">
-	  <img src="" alt="" title=""
-	       tal:attributes="src string:${img}_${view/size};
-			       alt title;
-			       title desc" />
-	</a>
-	<span class="slideshow-description"
-	      tal:condition="desc"
-	      tal:content="desc" />
-      </p>
-    </tal:images>
-    </div>
-  </dd>
-  <dd class="portletItem portletFooter"
-      tal:condition="view/show_links">
-    <a class="prev" href="">
-      <tal:label i18n:translate="label_previous">Previous</tal:label>
-    </a>
-    <span class="divider">&nbsp;</span>
-    <a class="next" href="">
-      <tal:label i18n:translate="label_next">Next</tal:label>
-    </a>
-  </dd>
-</dl>
+  <dl class="portlet portlet-photoalbum"
+      tal:attributes="id string:slideshow-${view/uid}">
+    <dt class="portletHeader">
+      <span class="portletTopLeft"></span>
+      <a class="tile" tal:content="view/Title" />
+      <span class="portletTopRight"></span>
+    </dt>
+    <dd class="portletItem">
+      <div class="slideshow">
+        <tal:images repeat="image view/results">
+          <p tal:define="img string:${image/getURL}/image;
+                         title image/Title;
+                         desc image/Description;">
+            <a href=""
+               class="pop-image"
+               tal:attributes="href img;
+                               alt title;
+                               title desc">
+              <img src="" alt="" title=""
+                   tal:attributes="src string:${img}_${view/size};
+                                   alt title;
+                                   title desc" />
+            </a>
+            <span class="slideshow-description"
+                  tal:condition="desc"
+                  tal:content="desc" />
+          </p>
+        </tal:images>
+      </div>
+    </dd>
+    <dd class="portletItem portletFooter"
+        tal:condition="view/show_links">
+      <a class="prev" href="">
+        <tal:label i18n:translate="label_previous">Previous</tal:label>
+      </a>
+      <span class="divider">&nbsp;</span>
+      <a class="next" href="">
+        <tal:label i18n:translate="label_next">Next</tal:label>
+      </a>
+    </dd>
+  </dl>
+</tal:slideshow>

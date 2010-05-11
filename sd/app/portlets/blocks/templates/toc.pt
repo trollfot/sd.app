@@ -7,18 +7,18 @@
   </dt>
   <dd class="portletItem">
     <ol tal:define="entries view/entries;
-		    desc view/display_description">
+            desc view/display_description">
       <li tal:repeat="chapter entries">
-	<a href=""
-	   tal:attributes="href string:#${chapter/getId};
-			   title chapter/Description;"
-	   tal:content="chapter/Title">
-	  Chapter's title
-	</a>
-	<br/>
-	<span class="discreet"
-	      tal:condition="desc"
-	      tal:content="chapter/Description" />
+    <a href=""
+       tal:attributes="href string:#${chapter/getId};
+               title chapter/Description;"
+       tal:content="chapter/Title">
+      Chapter's title
+    </a>
+    <br/>
+    <span class="discreet"
+          tal:condition="desc"
+          tal:content="chapter/Description" />
       </li>
     </ol>
   </dd>

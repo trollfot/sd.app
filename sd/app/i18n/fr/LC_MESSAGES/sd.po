@@ -1,12 +1,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: sd\n"
-"POT-Creation-Date: 2007-10-12 16:08+0100\n"
+"POT-Creation-Date: Tue May 11 10:54:26 2010\n"
 "PO-Revision-Date: 2007-10-12 16:08+0100\n"
 "Last-Translator: Souheil CHELFOUH <souheil@chelfouh.com>\n"
 "Language-Team: Souheil CHELFOUH <souheil@chelfouh.com>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "Language-Code: fr\n"
@@ -15,143 +15,450 @@ msgstr ""
 "Domain: sd\n"
 "X-Is-Fallback-For: fr-be fr-ca fr-lu fr-mc fr-ch fr-fr\n"
 
-msgid  "StructuredDocument"
-msgstr "Document Structuré"
+#. Default: "Structured Document"
+#: sd.app:/browser/menu.py:25
+msgid "label_sd_contentmenu_options"
+msgstr ""
 
-msgid  "StructuredDocument_desc"
-msgstr "Un dossier dont la vue est paramétrable"
+#. Default: "Options altering the content behavior."
+#: sd.app:/browser/menu.py:28
+msgid "title_sd_contentmenu_options"
+msgstr ""
 
-msgid  "manage_portlets_link"
-msgstr "Configurer les portlets"
+#: sd.app:/browser/move.py:15
+msgid "Item's position has changed."
+msgstr ""
 
-msgid  "Illustrated document"
-msgstr "Document illustré"
-
-msgid  "SimpleParagraph_desc"
-msgstr "Un document avec une image"
-
-## Les vues ##
-msgid  "default"
-msgstr "Vue par défaut"
-
-msgid  "sd.photo_album"
-msgstr "Album photo avec vignettes"
-
-msgid  "sd.imagecontent.right"
-msgstr "Image sur la droite"
-
-msgid  "sd.imagecontent.center"
-msgstr "Image centré au dessus du texte"
-
-msgid  "sd.topic.custom_view"
-msgstr "Vue personnalisée"
-
-msgid  "sd.listing"
-msgstr "Contenu sous forme d'une simple liste"
-
-msgid  "sd.enhanced_photo_album"
-msgstr "Album photo avec diaporama (javascript)"
-
-msgid  "sd.summary_view"
-msgstr "Vue sommaire avec prévisualisation"
-
-
-## Les formulaires ##
-msgid  "sd.preferences"
+# # Les formulaires ##
+#. Default: "Rendering preferences"
+#: sd.app:/forms/configuration.py:19
+#: sd.app:/rendering/browser/templates/accessviewlet.pt:24
+msgid "sd.preferences"
 msgstr "Préférences de rendu"
 
-msgid  "adv_config"
+#. Default: "Advanced configuration"
+#: sd.app:/forms/configuration.py:22
+msgid "adv_config"
 msgstr "Configuration avancée"
 
-msgid  "sd.preferences.desc"
-msgstr "Les options ci-dessous vous permettent de personaliser le "
-       "comportement du paragraphe"
+#. Default: "Save"
+#: sd.app:/forms/configuration.py:32
+msgid "label_save"
+msgstr ""
 
+#: sd.app:/portlets/blocks/book.py:41
+msgid "Edit book block"
+msgstr ""
 
-## Les champs ##
-msgid  "Title"
+#: sd.app:/portlets/blocks/book.py:42
+msgid "This form allow you to edit your book block."
+msgstr ""
+
+#: sd.app:/portlets/blocks/country.py:36
+msgid "Edit Country block"
+msgstr ""
+
+#: sd.app:/portlets/blocks/country.py:37
+msgid "This form allow you to edit your country block."
+msgstr ""
+
+#: sd.app:/portlets/blocks/interfaces.py:100
+#: sd.app:/portlets/blocks/templates/book.pt:34
+msgid "Serie"
+msgstr ""
+
+#: sd.app:/portlets/blocks/interfaces.py:101
+msgid "The name of the serie of book"
+msgstr ""
+
+#: sd.app:/portlets/blocks/interfaces.py:107
+#: sd.app:/portlets/blocks/templates/book.pt:38
+msgid "Tome"
+msgstr ""
+
+#: sd.app:/portlets/blocks/interfaces.py:108
+msgid "The tome number"
+msgstr ""
+
+#: sd.app:/portlets/blocks/interfaces.py:132
+msgid "Target folder or topic"
+msgstr "Répertoire ou collection source"
+
+#: sd.app:/portlets/blocks/interfaces.py:133
+msgid "Find the source which provides the pictures."
+msgstr "Selectionner la source fournissant les images du diaporama"
+
+#. Default: "Timer (in seconds)"
+#: sd.app:/portlets/blocks/interfaces.py:143
+msgid "timer"
+msgstr "Temps entre chaque image (en secondes)"
+
+#. Default: "The timer defines the time between each image. If the timer is set to 0, a click is needed to trigger the transition."
+#: sd.app:/portlets/blocks/interfaces.py:144
+msgid "timer_desc"
+msgstr ""
+"Cette valeur définit l'intervalle de temps entre chaque image. Si la valeur "
+"est de 0, la transition devra s'effectuer manuellement."
+
+#. Default: "Display next-previous links"
+#: sd.app:/portlets/blocks/interfaces.py:151
+msgid "slideshow_links"
+msgstr "Afficher les liens suivant-précédent"
+
+#. Default: "You can display links to trigger manually the transition between each image can be triggered manually."
+#: sd.app:/portlets/blocks/interfaces.py:152
+msgid "slideshow_links_desc"
+msgstr ""
+"Vous pouvez afficher des liens permettant de passer manuellement d'un image "
+"à l'autre"
+
+#: sd.app:/portlets/blocks/interfaces.py:159
+msgid "Image size"
+msgstr ""
+
+#: sd.app:/portlets/blocks/interfaces.py:25
+msgid "Name of the country"
+msgstr ""
+
+#: sd.app:/portlets/blocks/interfaces.py:26
+msgid "Name of the country in the site's language"
+msgstr ""
+
+#: sd.app:/portlets/blocks/interfaces.py:31
+msgid "Local names"
+msgstr ""
+
+#: sd.app:/portlets/blocks/interfaces.py:32
+msgid "The country name in other dialects or languages."
+msgstr ""
+
+#: sd.app:/portlets/blocks/interfaces.py:43
+msgid "Name of the person"
+msgstr ""
+
+#: sd.app:/portlets/blocks/interfaces.py:44
+msgid "Fullname"
+msgstr ""
+
+#: sd.app:/portlets/blocks/interfaces.py:50
+#: sd.app:/portlets/blocks/interfaces.py:114
+msgid "Details"
+msgstr ""
+
+#: sd.app:/portlets/blocks/interfaces.py:51
+#: sd.app:/portlets/blocks/interfaces.py:115
+msgid "Add more information"
+msgstr ""
+
+# # Les champs ##
+#: sd.app:/portlets/blocks/interfaces.py:62
+#: sd.app:/portlets/blocks/interfaces.py:80
+#: sd.app:/portlets/blocks/interfaces.py:126
+msgid "Title"
 msgstr "Titre"
 
-msgid  "Layout"
-msgstr "Affichage"
+#: sd.app:/portlets/blocks/interfaces.py:63
+msgid "Title of the table of contents"
+msgstr ""
 
-msgid  "chapter_layout_desc"
-msgstr "Type d'affichage utilisé pour le chapitre"
+#: sd.app:/portlets/blocks/interfaces.py:69
+msgid "Display description"
+msgstr ""
 
-msgid  "paragraph_layout_desc"
-msgstr "Type d'affichage utilisé pour le paragraphe"
+#: sd.app:/portlets/blocks/interfaces.py:70
+msgid "Display the description of each item"
+msgstr ""
 
-msgid  "show_title"
-msgstr "Activer le rendu du titre"
+#: sd.app:/portlets/blocks/interfaces.py:86
+#: sd.app:/portlets/blocks/templates/book.pt:26
+msgid "Author"
+msgstr ""
 
-msgid  "show_title_desc"
-msgstr "Décoché, le titre ne sera pas rendu lors de l'affichage du document"
+#: sd.app:/portlets/blocks/interfaces.py:87
+msgid "Name of the writer/author"
+msgstr ""
 
-msgid  "show_description"
-msgstr "Activer le rendu de la description"
+#: sd.app:/portlets/blocks/interfaces.py:93
+msgid "Year"
+msgstr ""
 
-msgid  "show_description_desc"
-msgstr "Décoché, la description ne sera pas rendue lors de l'affichage du document"
+#: sd.app:/portlets/blocks/interfaces.py:94
+msgid "Year of first publishing"
+msgstr ""
 
-msgid  "slideshow_timer"
-msgstr "Minutage"
+#: sd.app:/portlets/blocks/person.py:38
+msgid "Edit Person block"
+msgstr ""
 
-msgid  "slideshow_timer_desc"
-msgstr "Temps entre chaque image (en seconde)"
+#: sd.app:/portlets/blocks/person.py:39
+msgid "This form allow you to edit your person block."
+msgstr ""
 
-msgid "no_image"
-msgstr "Aucune image"
+#: sd.app:/portlets/blocks/slideshow.py:125
+msgid "Edit Slideshow Portlet"
+msgstr "Editer la boite diaporama"
 
-msgid "leave_empty"
-msgstr "Ne pas mettre d'image"
+#: sd.app:/portlets/blocks/slideshow.py:126
+msgid "This portlet display a collection of images."
+msgstr "Cette boite affiche un album photo sous la forme d'un diaporama."
 
-msgid "upload_image"
-msgstr "Télécharger une nouvelle image:"
+#: sd.app:/portlets/blocks/templates/book.pt:30
+msgid "Year of publication"
+msgstr ""
 
-msgid "keep_image"
-msgstr "Garder l'image existante"
+#. Default: "Names of the country in the different dialects"
+#: sd.app:/portlets/blocks/templates/country.pt:28
+msgid "desc_localnames"
+msgstr ""
 
-msgid "delete_image"
-msgstr "Supprimer l'image"
-
-msgid "upload_new_image"
-msgstr "Remplacer l'image:"
-
-msgid "label_next"
-msgstr "Suivant"
-
+#. Default: "Previous"
+#: sd.app:/portlets/blocks/templates/slideshow.pt:39
+#: sd.app:/rendering/browser/templates/batchviewlet.pt:11
 msgid "label_previous"
 msgstr "Précédent"
 
-msgid  "timer"
-msgstr "Temps entre chaque image (en secondes)"
+#. Default: "Next"
+#: sd.app:/portlets/blocks/templates/slideshow.pt:43
+#: sd.app:/rendering/browser/templates/batchviewlet.pt:17
+msgid "label_next"
+msgstr "Suivant"
 
-msgid  "timer_desc"
-msgstr "Cette valeur définit l'intervalle de temps entre chaque image. Si la valeur est de 0, la transition devra s'effectuer manuellement."
+#: sd.app:/portlets/blocks/toc.py:42
+msgid "Edit table of contents block"
+msgstr ""
 
-msgid  "slideshow_links"
-msgstr "Afficher les liens suivant-précédent"
+#: sd.app:/portlets/blocks/toc.py:43
+msgid "This form allow you to edit your table of contents."
+msgstr ""
 
-msgid  "Target folder or topic"
-msgstr "Répertoire ou collection source"
-
-msgid  "Find the source which provides the pictures."
-msgstr "Selectionner la source fournissant les images du diaporama"
-
-msgid  "slideshow_links_desc"
-msgstr "Vous pouvez afficher des liens permettant de passer manuellement d'un image à l'autre"
-
-msgid  "Edit Slideshow Portlet"
-msgstr "Editer la boite diaporama"
-
-msgid  "This portlet display a collection of images."
-msgstr "Cette boite affiche un album photo sous la forme d'un diaporama."
-
-msgid  "configure_display"
+#. Default: "Display configuration"
+#: sd.app:/rendering/config/config.pt:5
+#: sd.app:/rendering/config/templates/layoutconfiguration.pt:5
+#: sd.rendering:/forms.py:36 sd.rendering:/forms.py:82
+msgid "configure_display"
 msgstr "Configuration du rendu"
 
-msgid  "configuration_form_name"
+#. Default: "Timer"
+#: sd.app:/rendering/config/interfaces.py:13
+msgid "slideshow_timer"
+msgstr "Minutage"
+
+#. Default: "The time between each image (sec)"
+#: sd.app:/rendering/config/interfaces.py:14
+msgid "slideshow_timer_desc"
+msgstr "Temps entre chaque image (en seconde)"
+
+#: sd.app:/rendering/config/viewlets.py:41
+msgid "Display configuration"
+msgstr ""
+
+#. Default: "Contents as standalone items."
+#: sd.app:/rendering/renderers.py:109
+msgid "chapter"
+msgstr ""
+
+#. Default: "Photo album with thumbnails."
+#: sd.app:/rendering/renderers.py:117
+msgid "photoalbum"
+msgstr ""
+
+#. Default: "Photo album with slideshow options and javascript."
+#: sd.app:/rendering/renderers.py:126
+msgid "enhanced_photoalbum"
+msgstr ""
+
+#. Default: "Custom view (if defined)."
+#: sd.app:/rendering/renderers.py:160
+msgid "topiccustom"
+msgstr ""
+
+#. Default: "Document rendering."
+#: sd.app:/rendering/renderers.py:21
+msgid "sd_document"
+msgstr ""
+
+#. Default: "Classical file rendering."
+#: sd.app:/rendering/renderers.py:31
+msgid "sd_atfile"
+msgstr ""
+
+#. Default: "Classical link rendering."
+#: sd.app:/rendering/renderers.py:38
+msgid "sd_atlink"
+msgstr ""
+
+#. Default: "Classical event rendering."
+#: sd.app:/rendering/renderers.py:45
+msgid "sd_atevent"
+msgstr ""
+
+#. Default: "Centered image."
+#: sd.app:/rendering/renderers.py:52
+msgid "sd_image"
+msgstr ""
+
+#. Default: "Centered image above text."
+#: sd.app:/rendering/renderers.py:63
+msgid "sd_imagecontent_center"
+msgstr ""
+
+#. Default: "Text with an image on the left."
+#: sd.app:/rendering/renderers.py:83
+msgid "imagecontent_left"
+msgstr ""
+
+#. Default: "Text with an image on the right."
+#: sd.app:/rendering/renderers.py:90
+msgid "imagecontent_right"
+msgstr ""
+
+#. Default: "Listing of the content."
+#: sd.app:/rendering/renderers.py:99
+msgid "sd_folderlisting"
+msgstr ""
+
+#. Default: "The custom view is not enabled on this collection."
+#: sd.app:/rendering/templates/topiccustomview.pt:50
+msgid "no_custom_view"
+msgstr "La vue personnalisée n'est pas active sur cet élément."
+
+#. Default: "Size of the batch"
+#: sd.contents:/interfaces/batch.py:18
+msgid "batch_size"
+msgstr ""
+
+#. Default: "Number of items rendered.Zero disables the  batch."
+#: sd.contents:/interfaces/batch.py:20
+msgid "batch_size_desc"
+msgstr ""
+
+#. Default: "Enable title rendering"
+#: sd.contents:/interfaces/layout.py:19
+msgid "show_title"
+msgstr "Activer le rendu du titre"
+
+#. Default: "Show the item description in the rendering."
+#: sd.contents:/interfaces/layout.py:20
+msgid "show_title_desc"
+msgstr "Décoché, le titre ne sera pas rendu lors de l'affichage du document"
+
+#. Default: "Enable description rendering"
+#: sd.contents:/interfaces/layout.py:26
+msgid "show_description"
+msgstr "Activer le rendu de la description"
+
+#. Default: "Show the item description in the rendering."
+#: sd.contents:/interfaces/layout.py:27
+msgid "show_description_desc"
+msgstr ""
+"Décoché, la description ne sera pas rendue lors de l'affichage du document"
+
+#: sd.contents:/interfaces/layout.py:33
+msgid "Layout"
+msgstr "Affichage"
+
+#. Default: "Layout used to render the item."
+#: sd.contents:/interfaces/layout.py:36
+msgid "sd_layout_desc"
+msgstr ""
+
+#: sd.imaging:/interfaces.py:27
+msgid "Portlet's title"
+msgstr ""
+
+#: sd.imaging:/interfaces.py:28
+msgid "Title of the image portlet"
+msgstr ""
+
+#: sd.imaging:/interfaces.py:33
+msgid "Picture"
+msgstr ""
+
+#: sd.imaging:/interfaces.py:34
+msgid "The illustration/picture associated"
+msgstr ""
+
+#. Default: "Keep this field empty"
+#: sd.imaging:/templates/empty_widget.pt:10
+msgid "leave_empty"
+msgstr "Ne pas mettre d'image"
+
+#. Default: "No image uploaded yet."
+#: sd.imaging:/templates/empty_widget.pt:4 sd.imaging:/templates/display.pt:6
+msgid "no_image"
+msgstr "Aucune image"
+
+#. Default: "Keep existing image"
+#: sd.imaging:/templates/exist_widget.pt:11
+msgid "keep_image"
+msgstr "Garder l'image existante"
+
+#. Default: "Delete the existing file"
+#: sd.imaging:/templates/exist_widget.pt:18
+msgid "delete_image"
+msgstr "Supprimer l'image"
+
+#. Default: "Replace with new file:"
+#: sd.imaging:/templates/exist_widget.pt:26
+#: sd.imaging:/templates/empty_widget.pt:17
+msgid "upload_image"
+msgstr "Télécharger une nouvelle image:"
+
+#. Default: "Rendering customization options"
+#: sd.rendering:/forms.py:34 sd.rendering:/forms.py:80
+msgid "configuration_form_name"
 msgstr "Options de personnalisation"
 
-msgid  "no_custom_view"
-msgstr "La vue personnalisée n'est pas active sur cet élément."
+#~ msgid "StructuredDocument"
+#~ msgstr "Document Structuré"
+
+#~ msgid "StructuredDocument_desc"
+#~ msgstr "Un dossier dont la vue est paramétrable"
+
+#~ msgid "manage_portlets_link"
+#~ msgstr "Configurer les portlets"
+
+#~ msgid "Illustrated document"
+#~ msgstr "Document illustré"
+
+#~ msgid "SimpleParagraph_desc"
+#~ msgstr "Un document avec une image"
+
+# # Les vues ##
+#~ msgid "default"
+#~ msgstr "Vue par défaut"
+
+#~ msgid "sd.photo_album"
+#~ msgstr "Album photo avec vignettes"
+
+#~ msgid "sd.imagecontent.right"
+#~ msgstr "Image sur la droite"
+
+#~ msgid "sd.imagecontent.center"
+#~ msgstr "Image centré au dessus du texte"
+
+#~ msgid "sd.topic.custom_view"
+#~ msgstr "Vue personnalisée"
+
+#~ msgid "sd.listing"
+#~ msgstr "Contenu sous forme d'une simple liste"
+
+#~ msgid "sd.enhanced_photo_album"
+#~ msgstr "Album photo avec diaporama (javascript)"
+
+#~ msgid "sd.summary_view"
+#~ msgstr "Vue sommaire avec prévisualisation"
+
+#~ msgid "sd.preferences.desc"
+#~ msgstr ""
+#~ "Les options ci-dessous vous permettent de personaliser le comportement du "
+#~ "paragraphe"
+
+#~ msgid "chapter_layout_desc"
+#~ msgstr "Type d'affichage utilisé pour le chapitre"
+
+#~ msgid "paragraph_layout_desc"
+#~ msgstr "Type d'affichage utilisé pour le paragraphe"
+
+#~ msgid "upload_new_image"
+#~ msgstr "Remplacer l'image:"

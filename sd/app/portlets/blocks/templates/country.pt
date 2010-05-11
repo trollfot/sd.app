@@ -10,12 +10,12 @@
       tal:condition="flag">
     <a class="pop-image"
        tal:attributes="href view/getImageUrl;
-		       alt comment;">
+                       alt comment;">
       <tal:portait replace="structure flag" />
     </a>
     <div class="picture-caption"
-	 tal:condition="comment"
-	 tal:content="comment">
+         tal:condition="comment"
+         tal:content="comment">
       caption
     </div>
   </dd>
@@ -24,18 +24,18 @@
       tal:condition="names">
     <table class="vertical listing block-details nosort">
       <thead>
-	<tr>
-	  <th colspan="2"
-	      i18n:translate="desc_localnames">
-	    Names of the country in the different dialects
-	  </th>
-	</tr>
+        <tr>
+          <th colspan="2"
+              i18n:translate="desc_localnames">
+            Names of the country in the different dialects
+          </th>
+        </tr>
       </thead>
       <tbody>
-	<tr tal:repeat="name names">
-	  <th tal:content="name/label" />
-	  <td tal:content="name/value" />
-	</tr>
+        <tr tal:repeat="name names">
+          <th tal:content="name/label" />
+          <td tal:content="name/value" />
+        </tr>
       </tbody>
     </table>
   </dd>

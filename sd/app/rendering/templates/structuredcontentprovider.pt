@@ -1,43 +1,43 @@
 <tal:loop repeat="item viewletmanager/renderers">
-     
-<dl tal:condition="nocall:item"
-    tal:attributes="id string:${context/UID}-${item/getId};
-		    class string:structured-item kssattr-uid-${item/UID}">
 
-  <tal:block define="item nocall:item" 
-	     replace="structure provider:sd.above_item_title" />
+  <dl tal:condition="nocall:item"
+      tal:attributes="id string:${context/UID}-${item/getId};
+                      class string:structured-item kssattr-uid-${item/UID}">
 
-  <dt class="structured-item-title"
-      tal:condition="item/show_title">
-    <a tal:content="item/Title"
-       tal:attributes="title item/Title;
-		       href  string:${item/absolute_url}/@@sd.generic_view;
-		       name  item/getId;">
-      Title
-    </a>
-  </dt>
+    <tal:block define="item nocall:item"
+               replace="structure provider:sd.above_item_title" />
 
-  <dd class="structured-item-content">
-    <div class="structured-actions"
-       tal:define="item nocall:item;
-		   content provider:sd.below_item_title"
-       tal:condition="content"
-       tal:content="structure content" />
-  
-    <tal:desc condition="item/show_description">
-    <p class="discreet structured-item-description"
-      tal:condition="item/Description"
-       tal:content="item/Description">
-      Description
-    </p>
-    </tal:desc>
-  
-    <div tal:attributes="id string:kssattr-bodyid-${item/UID}"
-	 class="structured-item-body">
-      <tal:paragraph content="structure item/render" />
-    </div>
-  </dd>
-  
-</dl>
+    <dt class="structured-item-title"
+        tal:condition="item/show_title">
+      <a tal:content="item/Title"
+         tal:attributes="title item/Title;
+                         href  string:${item/absolute_url}/@@sd.generic_view;
+                         name  item/getId;">
+        Title
+      </a>
+    </dt>
+
+    <dd class="structured-item-content">
+      <div class="structured-actions"
+           tal:define="item nocall:item;
+                       content provider:sd.below_item_title"
+           tal:condition="content"
+           tal:content="structure content" />
+
+      <tal:desc condition="item/show_description">
+        <p class="discreet structured-item-description"
+           tal:condition="item/Description"
+           tal:content="item/Description">
+          Description
+        </p>
+      </tal:desc>
+
+      <div tal:attributes="id string:kssattr-bodyid-${item/UID}"
+           class="structured-item-body">
+        <tal:paragraph content="structure item/render" />
+      </div>
+    </dd>
+
+  </dl>
 
 </tal:loop>

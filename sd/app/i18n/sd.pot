@@ -1,27 +1,35 @@
+##############################################################################
+#
+# Copyright (c) 2003-2004 Zope Corporation and Contributors.
+# All Rights Reserved.
+#
+# This software is subject to the provisions of the Zope Public License,
+# Version 2.1 (ZPL).  A copy of the ZPL should accompany this distribution.
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY AND ALL EXPRESS OR IMPLIED
+# WARRANTIES ARE DISCLAIMED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+# WARRANTIES OF TITLE, MERCHANTABILITY, AGAINST INFRINGEMENT, AND FITNESS
+# FOR A PARTICULAR PURPOSE.
+#
+##############################################################################
 msgid ""
 msgstr ""
-"Project-Id-Version: sd\n"
-"POT-Creation-Date: 2007-10-12 16:08+0100\n"
-"PO-Revision-Date: 2007-10-12 16:08+0100\n"
-"Last-Translator: Wim Boucquaert <wim@infrae.com>\n"
-"Language-Team: Souheil CHELFOUH <souheil@chelfouh.com>\n"
+"Project-Id-Version: 1.0\n"
+"POT-Creation-Date: Tue May 11 10:54:26 2010\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Zope 3 Developers <zope3-dev@zope.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"Language-Code: nl\n"
-"Language-Name: Nederlands\n"
-"Preferred-Encodings: utf-8\n"
-"Domain: sd\n"
-"X-Is-Fallback-For: nl-be\n"
+"Generated-By: zope/app/locales/extract.py\n"
 
-#. Default: "Structured Document"
 #: sd.app:/browser/menu.py:25
+#. Default: "Structured Document"
 msgid "label_sd_contentmenu_options"
 msgstr ""
 
-#. Default: "Options altering the content behavior."
 #: sd.app:/browser/menu.py:28
+#. Default: "Options altering the content behavior."
 msgid "title_sd_contentmenu_options"
 msgstr ""
 
@@ -29,19 +37,19 @@ msgstr ""
 msgid "Item's position has changed."
 msgstr ""
 
-#. Default: "Rendering preferences"
 #: sd.app:/forms/configuration.py:19
 #: sd.app:/rendering/browser/templates/accessviewlet.pt:24
+#. Default: "Rendering preferences"
 msgid "sd.preferences"
-msgstr "Weergave instellingen"
+msgstr ""
 
-#. Default: "Advanced configuration"
 #: sd.app:/forms/configuration.py:22
+#. Default: "Advanced configuration"
 msgid "adv_config"
-msgstr "Geavanceerde instellingen"
+msgstr ""
 
-#. Default: "Save"
 #: sd.app:/forms/configuration.py:32
+#. Default: "Save"
 msgid "label_save"
 msgstr ""
 
@@ -81,35 +89,31 @@ msgstr ""
 
 #: sd.app:/portlets/blocks/interfaces.py:132
 msgid "Target folder or topic"
-msgstr "Map of collectie bron"
+msgstr ""
 
 #: sd.app:/portlets/blocks/interfaces.py:133
 msgid "Find the source which provides the pictures."
-msgstr "Selecteer de bron met afbeeldingen voor de slideshow."
+msgstr ""
 
-#. Default: "Timer (in seconds)"
 #: sd.app:/portlets/blocks/interfaces.py:143
+#. Default: "Timer (in seconds)"
 msgid "timer"
-msgstr "Tijd tussen elke afbeelding (in seconden)"
+msgstr ""
 
-#. Default: "The timer defines the time between each image. If the timer is set to 0, a click is needed to trigger the transition."
 #: sd.app:/portlets/blocks/interfaces.py:144
+#. Default: "The timer defines the time between each image. If the timer is set to 0, a click is needed to trigger the transition."
 msgid "timer_desc"
 msgstr ""
-"Deze waarde bepaald het tijdsinterval tussen elke afbeelding. Bij waarde 0 "
-"zal de overgang manueel gebeuren."
 
-#. Default: "Display next-previous links"
 #: sd.app:/portlets/blocks/interfaces.py:151
+#. Default: "Display next-previous links"
 msgid "slideshow_links"
-msgstr "Volgende en vorige links weergeven"
+msgstr ""
 
-#. Default: "You can display links to trigger manually the transition between each image can be triggered manually."
 #: sd.app:/portlets/blocks/interfaces.py:152
+#. Default: "You can display links to trigger manually the transition between each image can be triggered manually."
 msgid "slideshow_links_desc"
 msgstr ""
-"U kan links weergeven die het toelaten manueel te bladeren doorheen de "
-"afbeeldingen"
 
 #: sd.app:/portlets/blocks/interfaces.py:159
 msgid "Image size"
@@ -153,7 +157,7 @@ msgstr ""
 #: sd.app:/portlets/blocks/interfaces.py:80
 #: sd.app:/portlets/blocks/interfaces.py:126
 msgid "Title"
-msgstr "Titel"
+msgstr ""
 
 #: sd.app:/portlets/blocks/interfaces.py:63
 msgid "Title of the table of contents"
@@ -194,32 +198,32 @@ msgstr ""
 
 #: sd.app:/portlets/blocks/slideshow.py:125
 msgid "Edit Slideshow Portlet"
-msgstr "De slideshow portlet bewerken"
+msgstr ""
 
 #: sd.app:/portlets/blocks/slideshow.py:126
 msgid "This portlet display a collection of images."
-msgstr "De portlet geeft een fotoalbum weer onder de vorm van een slideshow."
+msgstr ""
 
 #: sd.app:/portlets/blocks/templates/book.pt:30
 msgid "Year of publication"
 msgstr ""
 
-#. Default: "Names of the country in the different dialects"
 #: sd.app:/portlets/blocks/templates/country.pt:28
+#. Default: "Names of the country in the different dialects"
 msgid "desc_localnames"
 msgstr ""
 
-#. Default: "Previous"
 #: sd.app:/portlets/blocks/templates/slideshow.pt:39
 #: sd.app:/rendering/browser/templates/batchviewlet.pt:11
+#. Default: "Previous"
 msgid "label_previous"
-msgstr "Vorige"
+msgstr ""
 
-#. Default: "Next"
 #: sd.app:/portlets/blocks/templates/slideshow.pt:43
 #: sd.app:/rendering/browser/templates/batchviewlet.pt:17
+#. Default: "Next"
 msgid "label_next"
-msgstr "Volgende"
+msgstr ""
 
 #: sd.app:/portlets/blocks/toc.py:42
 msgid "Edit table of contents block"
@@ -229,136 +233,134 @@ msgstr ""
 msgid "This form allow you to edit your table of contents."
 msgstr ""
 
-#. Default: "Display configuration"
 #: sd.app:/rendering/config/config.pt:5
 #: sd.app:/rendering/config/templates/layoutconfiguration.pt:5
-#: sd.rendering:/forms.py:36 sd.rendering:/forms.py:82
+#: sd.rendering:/forms.py:36
+#: sd.rendering:/forms.py:82
+#. Default: "Display configuration"
 msgid "configure_display"
-msgstr "Configuratie van de weergave"
+msgstr ""
 
-#. Default: "Timer"
 #: sd.app:/rendering/config/interfaces.py:13
+#. Default: "Timer"
 msgid "slideshow_timer"
-msgstr "Timer"
+msgstr ""
 
-#. Default: "The time between each image (sec)"
 #: sd.app:/rendering/config/interfaces.py:14
+#. Default: "The time between each image (sec)"
 msgid "slideshow_timer_desc"
-msgstr "Tijd tussen elke afbeelding (in seconden)"
+msgstr ""
 
 #: sd.app:/rendering/config/viewlets.py:41
 msgid "Display configuration"
 msgstr ""
 
-#. Default: "Contents as standalone items."
 #: sd.app:/rendering/renderers.py:109
+#. Default: "Contents as standalone items."
 msgid "chapter"
 msgstr ""
 
-#. Default: "Photo album with thumbnails."
 #: sd.app:/rendering/renderers.py:117
+#. Default: "Photo album with thumbnails."
 msgid "photoalbum"
-msgstr "Fotoalbum met thumbnails"
+msgstr ""
 
-#. Default: "Photo album with slideshow options and javascript."
 #: sd.app:/rendering/renderers.py:126
+#. Default: "Photo album with slideshow options and javascript."
 msgid "enhanced_photoalbum"
-msgstr "Fotoalbum met slideshow (javascript)"
+msgstr ""
 
-#. Default: "Custom view (if defined)."
 #: sd.app:/rendering/renderers.py:160
+#. Default: "Custom view (if defined)."
 msgid "topiccustom"
 msgstr ""
 
-#. Default: "Document rendering."
 #: sd.app:/rendering/renderers.py:21
+#. Default: "Document rendering."
 msgid "sd_document"
 msgstr ""
 
-#. Default: "Classical file rendering."
 #: sd.app:/rendering/renderers.py:31
+#. Default: "Classical file rendering."
 msgid "sd_atfile"
 msgstr ""
 
-#. Default: "Classical link rendering."
 #: sd.app:/rendering/renderers.py:38
+#. Default: "Classical link rendering."
 msgid "sd_atlink"
 msgstr ""
 
-#. Default: "Classical event rendering."
 #: sd.app:/rendering/renderers.py:45
+#. Default: "Classical event rendering."
 msgid "sd_atevent"
 msgstr ""
 
-#. Default: "Centered image."
 #: sd.app:/rendering/renderers.py:52
+#. Default: "Centered image."
 msgid "sd_image"
 msgstr ""
 
-#. Default: "Centered image above text."
 #: sd.app:/rendering/renderers.py:63
+#. Default: "Centered image above text."
 msgid "sd_imagecontent_center"
-msgstr "Afbeelding gecentreerd boven de tekst"
+msgstr ""
 
-#. Default: "Text with an image on the left."
 #: sd.app:/rendering/renderers.py:83
+#. Default: "Text with an image on the left."
 msgid "imagecontent_left"
 msgstr ""
 
-#. Default: "Text with an image on the right."
 #: sd.app:/rendering/renderers.py:90
+#. Default: "Text with an image on the right."
 msgid "imagecontent_right"
-msgstr "Afbeelding rechts"
+msgstr ""
 
-#. Default: "Listing of the content."
 #: sd.app:/rendering/renderers.py:99
+#. Default: "Listing of the content."
 msgid "sd_folderlisting"
 msgstr ""
 
-#. Default: "The custom view is not enabled on this collection."
 #: sd.app:/rendering/templates/topiccustomview.pt:50
+#. Default: "The custom view is not enabled on this collection."
 msgid "no_custom_view"
-msgstr "De gepersonaliseeerde weergave is niet actief op dit element."
+msgstr ""
 
-#. Default: "Size of the batch"
 #: sd.contents:/interfaces/batch.py:18
+#. Default: "Size of the batch"
 msgid "batch_size"
 msgstr ""
 
-#. Default: "Number of items rendered.Zero disables the  batch."
 #: sd.contents:/interfaces/batch.py:20
+#. Default: "Number of items rendered.Zero disables the  batch."
 msgid "batch_size_desc"
 msgstr ""
 
-#. Default: "Enable title rendering"
 #: sd.contents:/interfaces/layout.py:19
+#. Default: "Enable title rendering"
 msgid "show_title"
-msgstr "De titel weergeven"
+msgstr ""
 
-#. Default: "Show the item description in the rendering."
 #: sd.contents:/interfaces/layout.py:20
+#. Default: "Show the item description in the rendering."
 msgid "show_title_desc"
 msgstr ""
-"Uitgevinkt zal de titel niet verschijnen bij de weergave van het document"
 
-#. Default: "Enable description rendering"
 #: sd.contents:/interfaces/layout.py:26
+#. Default: "Enable description rendering"
 msgid "show_description"
-msgstr "Weergave van de beschrijving activeren"
+msgstr ""
 
-#. Default: "Show the item description in the rendering."
 #: sd.contents:/interfaces/layout.py:27
+#. Default: "Show the item description in the rendering."
 msgid "show_description_desc"
 msgstr ""
-"Uitgevinkt zal de beschrijving niet verschijnen bij de weergave van het "
-"document"
 
 #: sd.contents:/interfaces/layout.py:33
 msgid "Layout"
-msgstr "Weergave"
+msgstr ""
 
-#. Default: "Layout used to render the item."
 #: sd.contents:/interfaces/layout.py:36
+#. Default: "Layout used to render the item."
 msgid "sd_layout_desc"
 msgstr ""
 
@@ -378,33 +380,36 @@ msgstr ""
 msgid "The illustration/picture associated"
 msgstr ""
 
-#. Default: "Keep this field empty"
 #: sd.imaging:/templates/empty_widget.pt:10
+#. Default: "Keep this field empty"
 msgid "leave_empty"
-msgstr "Geen afbeelding plaatsen"
+msgstr ""
 
+#: sd.imaging:/templates/empty_widget.pt:4
+#: sd.imaging:/templates/display.pt:6
 #. Default: "No image uploaded yet."
-#: sd.imaging:/templates/empty_widget.pt:4 sd.imaging:/templates/display.pt:6
 msgid "no_image"
-msgstr "Geen afbeelding"
+msgstr ""
 
-#. Default: "Keep existing image"
 #: sd.imaging:/templates/exist_widget.pt:11
+#. Default: "Keep existing image"
 msgid "keep_image"
-msgstr "Bestaande afbeelding behouden"
+msgstr ""
 
-#. Default: "Delete the existing file"
 #: sd.imaging:/templates/exist_widget.pt:18
+#. Default: "Delete the existing file"
 msgid "delete_image"
-msgstr "Afbeelding verwijderen"
+msgstr ""
 
-#. Default: "Replace with new file:"
 #: sd.imaging:/templates/exist_widget.pt:26
 #: sd.imaging:/templates/empty_widget.pt:17
+#. Default: "Replace with new file:"
 msgid "upload_image"
-msgstr "Een nieuwe afbeelding uploaden:"
+msgstr ""
 
+#: sd.rendering:/forms.py:34
+#: sd.rendering:/forms.py:80
 #. Default: "Rendering customization options"
-#: sd.rendering:/forms.py:34 sd.rendering:/forms.py:80
 msgid "configuration_form_name"
-msgstr "Personalisatie instellingen"
+msgstr ""
+
