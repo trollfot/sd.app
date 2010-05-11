@@ -43,7 +43,7 @@ msgstr "Geavanceerde instellingen"
 #. Default: "Save"
 #: sd.app:/forms/configuration.py:32
 msgid "label_save"
-msgstr ""
+msgstr "Bewaren"
 
 #: sd.app:/portlets/blocks/book.py:41
 msgid "Edit book block"
