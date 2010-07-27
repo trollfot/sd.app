@@ -4,7 +4,7 @@ Changes
 2.6.3 (unreleased)
 ------------------
 
-* ...
+* replaced <a> in <dt> by a <span> as it is not a link 
 
 2.6.2 (2010/05/13)
 ------------------
