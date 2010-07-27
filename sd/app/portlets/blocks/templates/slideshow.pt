@@ -7,7 +7,7 @@
       tal:attributes="id string:slideshow-${view/uid}">
     <dt class="portletHeader">
       <span class="portletTopLeft"></span>
-      <a class="tile" tal:content="view/Title" />
+      <span class="tile" tal:content="view/Title">Title</span>
       <span class="portletTopRight"></span>
     </dt>
     <dd class="portletItem">
