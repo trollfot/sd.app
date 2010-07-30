@@ -18,8 +18,7 @@
                          desc image/Description;">
             <a href=""
                class="pop-image"
-               tal:attributes="href img;
-                               alt title;
+               tal:attributes="href img;                               
                                title desc">
               <img src="" alt="" title=""
                    tal:attributes="src string:${img}_${view/size};
