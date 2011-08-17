@@ -1,0 +1,3 @@
+recursive-include sd *.css *.gif *.js *.kss *.mo *.png *.po *.pot *.pt *.py *.sh *.txt *.xml *.zcml
+recursive-include docs *.txt
+include README.txt
