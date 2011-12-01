@@ -7,7 +7,6 @@ from zope.i18nmessageid import MessageFactory
 from zope.cachedescriptors.property import CachedProperty
 
 from plone.app.portlets.portlets import base
-from plone.portlets.interfaces import IPortletDataProvider
 from plone.app.form.widgets.uberselectionwidget import UberSelectionWidget
 
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
@@ -27,15 +26,17 @@ class Assignment(base.Assignment):
     name = u""
     source = None
     links = True
+    links_start = False
     timer = 0
     size = 'thumb'
 
-    def __init__(self, name=u"", source=None, timer=0, links=None, size='thumb'):
+    def __init__(self, name=u"", source=None, timer=0, links=False, size='thumb', links_start=False):
         self.name = name
         self.source = source
         self.timer = timer
         self.links = links
         self.size = size
+        self.links_start = links_start
 
     @CachedProperty
     def title(self):
@@ -60,13 +61,17 @@ class Renderer(base.Renderer):
     def available(self):
         return len(self.results)
 
-    @CachedProperty
-    def show_links(self):
-        return self.data.links
-
-    @CachedProperty
     def size(self):
         return self.data.size
+
+    def timeout(self):
+        return self.data.timer * 1000
+
+    def show_links_next(self):
+        return self.data.links
+
+    def show_links_start(self):
+        return self.data.links_start
 
     @CachedProperty
     def results(self):

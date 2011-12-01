@@ -1,24 +1,31 @@
 <tal:slideshow
    i18n:domain="sd">
-  <script language="javascript" type="text/javascript"
-          tal:content="view/javascript_snippet" />
-
-  <dl class="portlet portlet-photoalbum"
-      tal:attributes="id string:slideshow-${view/uid}">
+  <dl class="portlet portlet-photoalbum">
     <dt class="portletHeader">
       <span class="portletTopLeft"></span>
       <span class="tile" tal:content="view/Title">Title</span>
       <span class="portletTopRight"></span>
     </dt>
+    <dd class="portletItem"
+        tal:condition="view/show_links_start">
+      <a class="start" href="">
+        <tal:label i18n:translate="label_start">Start</tal:label>
+      </a>
+      <span class="divider">&nbsp;</span>
+      <a class="stop" href="">
+        <tal:label i18n:translate="label_stop">Stop</tal:label>
+      </a>
+    </dd>
     <dd class="portletItem">
-      <div class="slideshow">
+      <div class="slideshow" data-slideshow-timeout=""
+           tal:attributes="data-slideshow-timeout view/timeout">
         <tal:images repeat="image view/results">
           <p tal:define="img string:${image/getURL}/image;
                          title image/Title;
                          desc image/Description;">
             <a href=""
                class="pop-image"
-               tal:attributes="href img;                               
+               tal:attributes="href img;
                                title desc">
               <img src="" alt="" title=""
                    tal:attributes="src string:${img}_${view/size};
@@ -33,7 +40,7 @@
       </div>
     </dd>
     <dd class="portletItem portletFooter"
-        tal:condition="view/show_links">
+        tal:condition="view/show_links_next">
       <a class="prev" href="">
         <tal:label i18n:translate="label_previous">Previous</tal:label>
       </a>

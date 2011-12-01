@@ -155,6 +155,14 @@ class ISlideshowPortlet(IStructuredBlock):
         required = False
         )
 
+    links_start = Bool(
+        title = _(u"slideshow_links_start", default=u"Display start-stop links"),
+        description = _(u"slideshow_links_desc", default=u"You can display "
+                        "links to trigger manually the start and stop of slideshow. "),
+        required = False
+        )
+
+
     size = Choice(
         title = _(u"Image size"),
         default = 'thumb',

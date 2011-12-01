@@ -11,7 +11,8 @@ def at_processing(context):
     """Registers Archetypes content types
     """
     import document, paragraphs
-    from security import *
+    from security import DEFAULT_ADD_CONTENT_PERMISSION
+    from security import ADD_CONTENT_PERMISSIONS
 
     contentTypes, constructors, ftis = process_types(listTypes(PROJECTNAME),
                                                      PROJECTNAME)
