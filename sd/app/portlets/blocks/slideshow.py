@@ -88,21 +88,6 @@ class Renderer(base.Renderer):
         return results
 
     @CachedProperty
-    def javascript_snippet(self):
-        return """jq(document).ready(function(){
-          jq('#slideshow-%(uid)s .slideshow').cycle({
-          fx:     'fade',
-          speed:  'fast',
-          timeout: %(timer)i,
-          height: 160,
-          width: 180,
-          next: '#slideshow-%(uid)s .next',
-          prev: '#slideshow-%(uid)s .prev'
-          }); })
-          """ % {'uid': self.uid,
-                 'timer': self.data.timer*1000}
-
-    @CachedProperty
     def source(self):
         """Get the source provider.
         """
