@@ -9,7 +9,7 @@
         $('body').intercept('click', {
             'a.action-header, a.action-header small': function(event){
                 var $parent = $(this).parent();
-                $("ul.submenu", $parent).addClass('clicked').toggle()
+                $("ul.submenu", $parent).addClass('clicked').toggle();
                 $("ul.submenu:visible").not('.clicked').hide();
                 $("ul.submenu").removeClass('clicked');
                 event.preventDefault();
@@ -33,8 +33,6 @@
                 fx:     'fade',
                 speed:  'fast',
                 timeout: +$slideshow.attr('data-slideshow-timeout'),
-                height: 160,
-                width:  180,
                 next:   $portlet.find('.next'),
                 prev:   $portlet.find('.prev')
             });
@@ -56,6 +54,6 @@
                 .filter('li:eq('+currSlideIndex+')').addClass('activeSlide').fadeTo('fast', 1);
         };
 
-    })
+    });
 })(jQuery);
 

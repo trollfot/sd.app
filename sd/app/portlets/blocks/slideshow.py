@@ -27,16 +27,18 @@ class Assignment(base.Assignment):
     source = None
     links = True
     links_start = False
+    image_description = False
     timer = 0
     size = 'thumb'
 
-    def __init__(self, name=u"", source=None, timer=0, links=False, size='thumb', links_start=False):
+    def __init__(self, name=u"", source=None, timer=0, links=False, size='thumb', links_start=False, image_description=False):
         self.name = name
         self.source = source
         self.timer = timer
         self.links = links
         self.size = size
         self.links_start = links_start
+        self.image_description = image_description
 
     @CachedProperty
     def title(self):
@@ -72,6 +74,9 @@ class Renderer(base.Renderer):
 
     def show_links_start(self):
         return self.data.links_start
+
+    def show_image_description(self):
+        return self.data.image_description
 
     @CachedProperty
     def results(self):

@@ -162,6 +162,12 @@ class ISlideshowPortlet(IStructuredBlock):
         required = False
         )
 
+    image_description = Bool(
+        title = _(u"slideshow_image_description", default=u"Display image description"),
+        description = _(u"slideshow_image_description_desc", default=u"You can display "
+                        "the image description. "),
+        required = False
+        )
 
     size = Choice(
         title = _(u"Image size"),
