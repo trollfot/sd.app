@@ -1,55 +1,55 @@
-<tal:slideshow
-   i18n:domain="sd">
-  <dl class="portlet portlet-photoalbum">
-    <dt class="portletHeader">
-      <span class="portletTopLeft"></span>
-      <span class="tile" tal:content="view/Title">Title</span>
-      <span class="portletTopRight"></span>
-    </dt>
-    <dd class="portletItem slideshow-controls"
-        tal:condition="view/show_links_start">
-      <a class="start" href="" title="start slideshow" i18n:attributes="title">
-        <tal:label i18n:translate="label_start">Start</tal:label>
-      </a>
-      <span class="divider">&nbsp;</span>
-      <a class="stop" href="" title="stop slideshow" i18n:attributes="title">
-        <tal:label i18n:translate="label_stop">Stop</tal:label>
-      </a>
-    </dd>
-     <dd class="portletItem">
-      <div class="slideshow" data-slideshow-timeout=""
-           tal:attributes="data-slideshow-timeout view/timeout">
-        <tal:images repeat="image view/results">
-          <p tal:define="img string:${image/getURL}/image;
-                         title image/Title;
-                         desc image/Description;">
-            <a href=""
-               class="pop-image"
-               tal:attributes="href img;
-                               title desc">
-              <img src="" alt="" title=""
-                   tal:attributes="src string:${img}_${view/size};
-                                   alt title;
-                                   title desc" />
-            </a>
-            <tal:description tal:condition="view/show_image_description">
+<dl class="portlet portlet-photoalbum slideshow-container"
+    i18n:domain="sd">
+  <dt class="portletHeader">
+    <span class="portletTopLeft"></span>
+    <span class="tile" tal:content="view/Title">Title</span>
+    <span class="portletTopRight"></span>
+  </dt>
+  <dd class="portletItem slideshow-controls"
+      tal:condition="view/show_links_start">
+    <a class="start" href="" title="start slideshow" i18n:attributes="title">
+      <tal:label i18n:translate="label_start">Start</tal:label>
+    </a>
+    <span class="divider">&nbsp;</span>
+    <a class="stop" href="" title="stop slideshow" i18n:attributes="title">
+      <tal:label i18n:translate="label_stop">Stop</tal:label>
+    </a>
+  </dd>
+  <dd class="portletItem">
+    <div class="slideshow" data-slideshow-timeout=""
+         tal:attributes="data-slideshow-timeout view/timeout">
+      <tal:images repeat="image view/results">
+        <p tal:define="img string:${image/getURL}/image;
+                       title image/Title;
+                       desc image/Description;">
+          <a href=""
+             class="pop-image"
+             tal:attributes="href img;
+                             title desc">
+            <img src="" alt="" title=""
+                 tal:attributes="src string:${img}_${view/size};
+                                 alt title;
+                                 title desc" />
+          </a>
+          <tal:description tal:condition="view/show_image_description">
             <span class="slideshow-description"
                   tal:condition="desc"
                   tal:content="desc" />
-            </tal:description>
-          </p>
-        </tal:images>
-      </div>
-    </dd>
-   <dd class="portletItem portletFooter slideshow-navigation"
-        tal:condition="view/show_links_next">
-      <a class="prev" href="" title="previous" i18n:attributes="title label_previous">
-        <tal:label i18n:translate="label_previous">Previous</tal:label>
-      </a>
-      <span class="divider">&nbsp;</span>
-      <a class="next" href="" title="next" i18n:attributes="title label_next">
-        <tal:label i18n:translate="label_next">Next</tal:label>
-      </a>
-    </dd>
-  </dl>
-</tal:slideshow>
+          </tal:description>
+        </p>
+      </tal:images>
+    </div>
+  </dd>
+  <dd class="portletItem portletFooter slideshow-navigation"
+      tal:condition="view/show_links_next">
+    <a class="prev" href="" title="previous"
+       i18n:attributes="title label_previous">
+      <tal:label i18n:translate="label_previous">Previous</tal:label>
+    </a>
+    <span class="divider">&nbsp;</span>
+    <a class="next" href="" title="next"
+       i18n:attributes="title label_next">
+      <tal:label i18n:translate="label_next">Next</tal:label>
+    </a>
+  </dd>
+</dl>

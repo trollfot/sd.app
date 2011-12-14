@@ -23,7 +23,7 @@
             }
         });
 
-        $('.portlet-photoalbum').each(function() {
+        $('.slideshow-container').each(function() {
             var $portlet = $(this);
             var $slideshow = $portlet.find('.slideshow');
             var $start = $portlet.find('.start');

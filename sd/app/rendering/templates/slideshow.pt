@@ -1,0 +1,47 @@
+<div class="slideshow-container"
+     i18n:domain="sd">
+  <div tal:replace="structure provider:sd.above_content_body" />
+  <div class="slideshow-controls"
+       tal:condition="view/show_links_start">
+    <a class="start" href="" title="start slideshow" i18n:attributes="title">
+      <tal:label i18n:translate="label_start">Start</tal:label>
+    </a>
+    <span class="divider">&nbsp;</span>
+    <a class="stop" href="" title="stop slideshow" i18n:attributes="title">
+      <tal:label i18n:translate="label_stop">Stop</tal:label>
+    </a>
+  </div>
+  <div class="slideshow" data-slideshow-timeout=""
+       tal:attributes="data-slideshow-timeout view/timeout">
+    <tal:images repeat="image view/contents">
+      <p tal:define="img string:${image/getURL}/image;
+                     title image/Title;
+                     desc image/Description;">
+        <a href=""
+           class="pop-image"
+           tal:attributes="href img;
+                           title desc">
+          <img src="" alt="" title=""
+               tal:attributes="src string:${img}_${view/image_size};
+                               alt title;
+                               title desc" />
+        </a>
+        <span class="slideshow-description"
+              tal:condition="python: view.show_image_description and desc"
+              tal:content="desc" />
+      </p>
+    </tal:images>
+  </div>
+  <div class="slideshow-navigation"
+       tal:condition="view/show_links_next">
+    <a class="prev" href="" title="previous"
+       i18n:attributes="title label_previous">
+      <tal:label i18n:translate="label_previous">Previous</tal:label>
+    </a>
+    <span class="divider">&nbsp;</span>
+    <a class="next" href="" title="next"
+       i18n:attributes="title label_next">
+      <tal:label i18n:translate="label_next">Next</tal:label>
+    </a>
+  </div>
+</div>

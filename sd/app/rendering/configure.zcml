@@ -1,7 +1,7 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:grok="http://namespaces.zope.org/grok">
-  
+
   <!-- Additional and internal packages -->
   <include package="sd.rendering" />
 
@@ -9,5 +9,5 @@
   <grok:grok package=".browser" />
   <grok:grok package=".renderers" />
   <grok:grok package=".providers" />
-  
+
 </configure>

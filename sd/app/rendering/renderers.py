@@ -4,8 +4,8 @@ import sd.rendering
 
 from five import grok
 from Acquisition import aq_base
-from config.interfaces import IEnhancedPhotoAlbumConfig
-from config.sheets import EnhancedPhotoAlbumConfig
+from config.interfaces import IEnhancedPhotoAlbumConfig, ISlideshowConfig
+from config.sheets import EnhancedPhotoAlbumConfig, SlideshowConfig
 from zope.i18nmessageid import MessageFactory
 from zope.cachedescriptors.property import CachedProperty
 from sd.app.contents import interfaces as sdct
@@ -133,24 +133,63 @@ class EnhancedPhotoalbum(PhotoAlbum):
 
     def javascript(self):
         return """
-        jq('#gallery-%(uid)s .main_image').cycle({
-        fx: 'fade',
-        timeout: %(timer)s,
-        height: 400,
-        width: 400,
-        pager:  '#gallery-%(uid)s .nav',
-        pagerAnchorBuilder: function(idx, slide) {
-          return '#gallery-%(uid)s .nav li:eq(' + idx + ') a';
-        },
-        updateActivePagerLink : function(pager, currSlideIndex) {
-            jq(pager).find('li.activeSlide').removeClass('activeSlide')
-              .fadeTo('fast',0.3)
-              .filter('li:eq('+currSlideIndex+')')
-              .addClass('activeSlide').fadeTo('fast', 1);
-        }
-        })
+        (function($) {
+        $(document).ready(function() {
+          $('#gallery-%(uid)s .main_image').cycle({
+             fx:     'fade',
+             timeout: %(timer)s,
+             height: 400,
+             width:  400,
+             pager:  '#gallery-%(uid)s .nav',
+             pagerAnchorBuilder: function(idx, slide) {
+                return '#gallery-%(uid)s .nav li:eq(' + idx + ') a';
+             },
+             updateActivePagerLink : function(pager, currSlideIndex) {
+                $(pager).find('li.activeSlide').removeClass('activeSlide')
+                   .fadeTo('fast', 0.3)
+                   .filter('li:eq('+currSlideIndex+')')
+                   .addClass('activeSlide').fadeTo('fast', 1);
+             }
+          });
+        });
+        })(jQuery);
         """ % {"uid" : self.UID(),
                "timer": self.timer }
+
+
+class Slideshow(PhotoAlbum):
+    sd.rendering.name("sd_enhanced_slideshow")
+    sd.rendering.configuration(ISlideshowConfig,
+                               SlideshowConfig)
+
+    label = _("enhanced_slideshow",
+              default=u"Slideshow.")
+
+    @CachedProperty
+    def timeout(self):
+        conf = self.configuration
+        return conf and conf.timer * 1000 or 0
+
+    @CachedProperty
+    def image_size(self):
+        conf = self.configuration
+        return conf and conf.image_size or 'mini'
+
+    @CachedProperty
+    def show_links_next(self):
+        conf = self.configuration
+        return conf and conf.links_next or False
+
+    @CachedProperty
+    def show_links_start(self):
+        conf = self.configuration
+        return conf and conf.links_start or False
+
+    @CachedProperty
+    def show_image_description(self):
+        conf = self.configuration
+        return conf and conf.image_description or False
+
 
 
 class TopicCustomView(sd.rendering.FolderishRenderer):

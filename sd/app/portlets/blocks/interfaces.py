@@ -24,16 +24,13 @@ class ICountryBlock(IStructuredIllustratedBlock):
     name = TextLine(
         title=_("Name of the country"),
         description=_(u"Name of the country in the site's language"),
-        required = True
-        )
-
+        required = True)
     local_names = List(
         title = _(u"Local names"),
         description = _(u"The country name in other dialects or languages."),
         default = list(),
         value_type = TermField(),
-        required = False
-        )
+        required = False)
 
 
 class IPersonBlock(IStructuredIllustratedBlock):
@@ -43,16 +40,13 @@ class IPersonBlock(IStructuredIllustratedBlock):
         title=_("Name of the person"),
         description=_(u"Fullname"),
         default=u"",
-        required = True
-        )
-
+        required = True)
     details = List(
         title = _(u"Details"),
         description = _(u"Add more information"),
         default = list(),
         value_type = TermField(),
-        required = False
-        )
+        required = False)
 
 
 class ITableOfContents(IStructuredBlock):
@@ -62,16 +56,13 @@ class ITableOfContents(IStructuredBlock):
         title=_("Title"),
         description=_(u"Title of the table of contents"),
         default=u"Table of contents",
-        required = True
-        )
-
+        required = True)
     display_description = Bool(
         title = _(u"Display description"),
         description = _(u"Display the description of each item"),
         default = False,
-        required = True
-        )
-    
+        required = True)
+
 
 class IBookBlock(IStructuredIllustratedBlock):
     """A schema representing a book.
@@ -79,44 +70,33 @@ class IBookBlock(IStructuredIllustratedBlock):
     name = TextLine(
         title=_("Title"),
         default=u"",
-        required = True
-        )
-
+        required = True)
     author = TextLine(
         title=_("Author"),
         description=_(u"Name of the writer/author"),
         default=u"",
-        required = False
-        )
-
+        required = False)
     publishing_year = TextLine(
         title=_("Year"),
         description=_(u"Year of first publishing"),
         default=u"",
-        required = False
-        )
-
+        required = False)
     serie = TextLine(
         title=_("Serie"),
         description=_(u"The name of the serie of book"),
         default=u"",
-        required = False
-        )
-
+        required = False)
     tome = Int(
         title=_("Tome"),
         description=_(u"The tome number"),
         default=1,
-        required = False
-        )
-
+        required = False)
     details = List(
         title = _(u"Details"),
         description = _(u"Add more information"),
         default = list(),
         value_type = TermField(),
-        required = False
-        )
+        required = False)
 
 
 class ISlideshowPortlet(IStructuredBlock):
@@ -125,9 +105,7 @@ class ISlideshowPortlet(IStructuredBlock):
     name = TextLine(
         title=_("Title"),
         default=u"",
-        required = True
-        )
-
+        required = True)
     source = Choice(
         title = _(u"Target folder or topic"),
         description = _(u"Find the source which provides the pictures."),
@@ -136,42 +114,38 @@ class ISlideshowPortlet(IStructuredBlock):
           {'object_provides' : (IATTopic.__identifier__,
                                 IBaseFolder.__identifier__)},
           default_query = 'path:'
-          )
-        )
-
+          ))
     timer = Int(
         title = _(u"timer", default=u"Timer (in seconds)"),
         description = _(u"timer_desc", default=u"The timer defines the time "
                         u"between each image. If the timer is set to 0, a "
                         u"click is needed to trigger the transition."),
-        required = True
-        )
-
+        required = True)
     links = Bool(
         title = _(u"slideshow_links", default=u"Display next-previous links"),
         description = _(u"slideshow_links_desc", default=u"You can display "
                         "links to trigger manually the transition between "
                         u"each image can be triggered manually. "),
-        required = False
-        )
-
+        required = False)
     links_start = Bool(
-        title = _(u"slideshow_links_start", default=u"Display start-stop links"),
-        description = _(u"slideshow_links_desc", default=u"You can display "
-                        "links to trigger manually the start and stop of slideshow. "),
-        required = False
-        )
-
+        title = _(
+            u"slideshow_links_start",
+            default=u"Display start-stop links"),
+        description = _(
+            u"slideshow_links_desc",
+            default=u"You can display links to trigger manually " \
+                u"the start and stop of slideshow. "),
+        required = False)
     image_description = Bool(
-        title = _(u"slideshow_image_description", default=u"Display image description"),
-        description = _(u"slideshow_image_description_desc", default=u"You can display "
-                        "the image description. "),
-        required = False
-        )
-
+        title = _(
+            u"slideshow_image_description",
+            default=u"Display image description"),
+        description = _(
+            u"slideshow_image_description_desc",
+            default=u"You can display the image description. "),
+        required = False)
     size = Choice(
         title = _(u"Image size"),
         default = 'thumb',
         values = ['thumb', 'mini'],
-        required = True,
-        )
+        required = True)
