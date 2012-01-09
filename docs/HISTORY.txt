@@ -1,20 +1,25 @@
 Changes
 =======
 
-2.6.5 (unreleased)
-------------------
+2.7 (2012/01/09)
+----------------
 
-* ...
+* Add option start and stop to slideshow portlet.
+
+* Add a slideshow renderer, that behave like the portlet, and can be
+  selected to render a folder.
+
+* Compatibility fixes for Plone 3.3. This now requires Plone 3.3.
 
 2.6.4 (2010/08/17)
 ------------------
 
-* add a MANIFEST to do a proper release.
+* Add a MANIFEST to do a proper release.
 
 2.6.3 (2010/07/27)
 ------------------
 
-* replaced <a> in <dt> by a <span> as it is not a link in slideshow.pt 
+* replaced <a> in <dt> by a <span> as it is not a link in slideshow.pt.
 
 2.6.2 (2010/05/13)
 ------------------
